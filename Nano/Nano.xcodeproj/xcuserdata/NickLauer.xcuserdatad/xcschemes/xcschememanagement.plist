@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>NanoTodayExtension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +23,11 @@
 			<true/>
 		</dict>
 		<key>8567005719BBA990007DA4BB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8567006B19BBADAB007DA4BB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

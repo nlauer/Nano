@@ -13,6 +13,10 @@
 		8567005119BBA98D007DA4BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8567004F19BBA98D007DA4BB /* Main.storyboard */; };
 		8567005319BBA98D007DA4BB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8567005219BBA98D007DA4BB /* Images.xcassets */; };
 		8567005F19BBA991007DA4BB /* NanoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8567005E19BBA991007DA4BB /* NanoTests.m */; };
+		8567006F19BBADAB007DA4BB /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8567006E19BBADAB007DA4BB /* NotificationCenter.framework */; };
+		8567007519BBADAB007DA4BB /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8567007419BBADAB007DA4BB /* TodayViewController.m */; };
+		8567007719BBADAB007DA4BB /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8567007619BBADAB007DA4BB /* MainInterface.storyboard */; };
+		8567007A19BBADAB007DA4BB /* NanoTodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8567006C19BBADAB007DA4BB /* NanoTodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,7 +27,35 @@
 			remoteGlobalIDString = 8567004119BBA98A007DA4BB;
 			remoteInfo = Nano;
 		};
+		8567007819BBADAB007DA4BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8567003A19BBA989007DA4BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8567006B19BBADAB007DA4BB;
+			remoteInfo = NanoTodayExtension;
+		};
+		8567007B19BBADAB007DA4BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8567003A19BBA989007DA4BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8567006B19BBADAB007DA4BB;
+			remoteInfo = NanoTodayExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8567008019BBADAB007DA4BB /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8567007A19BBADAB007DA4BB /* NanoTodayExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8567004219BBA98B007DA4BB /* Nano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nano.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +70,12 @@
 		8567005819BBA990007DA4BB /* NanoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NanoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8567005D19BBA991007DA4BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8567005E19BBA991007DA4BB /* NanoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NanoTests.m; sourceTree = "<group>"; };
+		8567006C19BBADAB007DA4BB /* NanoTodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NanoTodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8567006E19BBADAB007DA4BB /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		8567007219BBADAB007DA4BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8567007319BBADAB007DA4BB /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
+		8567007419BBADAB007DA4BB /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		8567007619BBADAB007DA4BB /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +93,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8567006919BBADAB007DA4BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8567006F19BBADAB007DA4BB /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -63,6 +109,8 @@
 			children = (
 				8567004419BBA98B007DA4BB /* Nano */,
 				8567005B19BBA991007DA4BB /* NanoTests */,
+				8567007019BBADAB007DA4BB /* NanoTodayExtension */,
+				8567006D19BBADAB007DA4BB /* Frameworks */,
 				8567004319BBA98B007DA4BB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,6 +120,7 @@
 			children = (
 				8567004219BBA98B007DA4BB /* Nano.app */,
 				8567005819BBA990007DA4BB /* NanoTests.xctest */,
+				8567006C19BBADAB007DA4BB /* NanoTodayExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -116,6 +165,33 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		8567006D19BBADAB007DA4BB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8567006E19BBADAB007DA4BB /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8567007019BBADAB007DA4BB /* NanoTodayExtension */ = {
+			isa = PBXGroup;
+			children = (
+				8567007319BBADAB007DA4BB /* TodayViewController.h */,
+				8567007419BBADAB007DA4BB /* TodayViewController.m */,
+				8567007619BBADAB007DA4BB /* MainInterface.storyboard */,
+				8567007119BBADAB007DA4BB /* Supporting Files */,
+			);
+			path = NanoTodayExtension;
+			sourceTree = "<group>";
+		};
+		8567007119BBADAB007DA4BB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8567007219BBADAB007DA4BB /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,10 +202,13 @@
 				8567003E19BBA98A007DA4BB /* Sources */,
 				8567003F19BBA98A007DA4BB /* Frameworks */,
 				8567004019BBA98A007DA4BB /* Resources */,
+				8567008019BBADAB007DA4BB /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8567007919BBADAB007DA4BB /* PBXTargetDependency */,
+				8567007C19BBADAB007DA4BB /* PBXTargetDependency */,
 			);
 			name = Nano;
 			productName = Nano;
@@ -154,6 +233,23 @@
 			productReference = 8567005819BBA990007DA4BB /* NanoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		8567006B19BBADAB007DA4BB /* NanoTodayExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8567007D19BBADAB007DA4BB /* Build configuration list for PBXNativeTarget "NanoTodayExtension" */;
+			buildPhases = (
+				8567006819BBADAB007DA4BB /* Sources */,
+				8567006919BBADAB007DA4BB /* Frameworks */,
+				8567006A19BBADAB007DA4BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NanoTodayExtension;
+			productName = NanoTodayExtension;
+			productReference = 8567006C19BBADAB007DA4BB /* NanoTodayExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -169,6 +265,9 @@
 					8567005719BBA990007DA4BB = {
 						CreatedOnToolsVersion = 6.0;
 						TestTargetID = 8567004119BBA98A007DA4BB;
+					};
+					8567006B19BBADAB007DA4BB = {
+						CreatedOnToolsVersion = 6.0;
 					};
 				};
 			};
@@ -187,6 +286,7 @@
 			targets = (
 				8567004119BBA98A007DA4BB /* Nano */,
 				8567005719BBA990007DA4BB /* NanoTests */,
+				8567006B19BBADAB007DA4BB /* NanoTodayExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -205,6 +305,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8567006A19BBADAB007DA4BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8567007719BBADAB007DA4BB /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +337,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8567006819BBADAB007DA4BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8567007519BBADAB007DA4BB /* TodayViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -236,6 +352,16 @@
 			isa = PBXTargetDependency;
 			target = 8567004119BBA98A007DA4BB /* Nano */;
 			targetProxy = 8567005919BBA991007DA4BB /* PBXContainerItemProxy */;
+		};
+		8567007919BBADAB007DA4BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8567006B19BBADAB007DA4BB /* NanoTodayExtension */;
+			targetProxy = 8567007819BBADAB007DA4BB /* PBXContainerItemProxy */;
+		};
+		8567007C19BBADAB007DA4BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8567006B19BBADAB007DA4BB /* NanoTodayExtension */;
+			targetProxy = 8567007B19BBADAB007DA4BB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -383,6 +509,30 @@
 			};
 			name = Release;
 		};
+		8567007E19BBADAB007DA4BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = NanoTodayExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		8567007F19BBADAB007DA4BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = NanoTodayExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -408,6 +558,14 @@
 			buildConfigurations = (
 				8567006619BBA991007DA4BB /* Debug */,
 				8567006719BBA991007DA4BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8567007D19BBADAB007DA4BB /* Build configuration list for PBXNativeTarget "NanoTodayExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8567007E19BBADAB007DA4BB /* Debug */,
+				8567007F19BBADAB007DA4BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
