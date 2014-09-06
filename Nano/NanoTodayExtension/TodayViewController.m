@@ -10,6 +10,7 @@
 #import <NotificationCenter/NotificationCenter.h>
 
 @interface TodayViewController () <NCWidgetProviding>
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
 
@@ -18,6 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.preferredContentSize = CGSizeMake(0, 80);
+    [self.collectionView registerClass:[UICollectionViewCell class]
+                forCellWithReuseIdentifier:@"NanoCell"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,6 +37,33 @@
     // If there's an update, use NCUpdateResultNewData
 
     completionHandler(NCUpdateResultNewData);
+}
+
+#pragma mark - Collection View
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 8;
+}
+
+- (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView {
+    return 1;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"NanoCell" forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor whiteColor];
+    return cell;
+}
+
+#pragma mark - UICollectionViewDelegate
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSURL *gMapsURL = [NSURL URLWithString:@"comgooglemaps://?saddr=&daddr=Home&directionsmode=transit"];
+    [[self extensionContext] openURL:gMapsURL completionHandler:nil];
+    // TODO: Select Item
+}
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
+    // TODO: Deselect item
 }
 
 @end
