@@ -11,8 +11,7 @@
 
 @interface TodayViewController () <NCWidgetProviding>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (strong, nonatomic) NSArray *shortcuts;
-
+@property (strong, nonatomic) NSArray *shortcutURLs;
 @end
 
 @implementation TodayViewController
@@ -23,6 +22,7 @@
     self.preferredContentSize = CGSizeMake(0, 80);
     [self.collectionView registerClass:[UICollectionViewCell class]
                 forCellWithReuseIdentifier:@"NanoCell"];
+    self.shortcutURLs = [NSArray arrayWithObject:[NSURL URLWithString:@"comgooglemaps://?saddr=&daddr=Home&directionsmode=transit"]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,7 +43,7 @@
 #pragma mark - Collection View
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 8;
+    return [self.shortcutURLs count];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView {
@@ -59,10 +59,10 @@
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSURL *gMapsURL = [NSURL URLWithString:@"comgooglemaps://?saddr=&daddr=Home&directionsmode=transit"];
-    [[self extensionContext] openURL:gMapsURL completionHandler:nil];
-    // TODO: Select Item
+    NSURL *shortcutURL = [self.shortcutURLs objectAtIndex:indexPath.row];
+    [[self extensionContext] openURL:shortcutURL completionHandler:nil];
 }
+
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     // TODO: Deselect item
 }
