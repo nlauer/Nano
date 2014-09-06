@@ -76,6 +76,8 @@
 		8567007319BBADAB007DA4BB /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
 		8567007419BBADAB007DA4BB /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
 		8567007619BBADAB007DA4BB /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		8567008119BBC1DF007DA4BB /* Nano.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Nano.entitlements; sourceTree = "<group>"; };
+		8567008219BBC23B007DA4BB /* NanoTodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = NanoTodayExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 		8567004419BBA98B007DA4BB /* Nano */ = {
 			isa = PBXGroup;
 			children = (
+				8567008119BBC1DF007DA4BB /* Nano.entitlements */,
 				8567004919BBA98D007DA4BB /* AppDelegate.h */,
 				8567004A19BBA98D007DA4BB /* AppDelegate.m */,
 				8567004C19BBA98D007DA4BB /* ViewController.h */,
@@ -176,6 +179,7 @@
 		8567007019BBADAB007DA4BB /* NanoTodayExtension */ = {
 			isa = PBXGroup;
 			children = (
+				8567008219BBC23B007DA4BB /* NanoTodayExtension.entitlements */,
 				8567007319BBADAB007DA4BB /* TodayViewController.h */,
 				8567007419BBADAB007DA4BB /* TodayViewController.m */,
 				8567007619BBADAB007DA4BB /* MainInterface.storyboard */,
@@ -261,6 +265,12 @@
 				TargetAttributes = {
 					8567004119BBA98A007DA4BB = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = 72T3Q958NX;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					8567005719BBA990007DA4BB = {
 						CreatedOnToolsVersion = 6.0;
@@ -268,6 +278,12 @@
 					};
 					8567006B19BBADAB007DA4BB = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = 72T3Q958NX;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -458,9 +474,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Nano/Nano.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Nano/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -469,9 +489,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Nano/Nano.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Nano/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -512,6 +536,9 @@
 		8567007E19BBADAB007DA4BB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = NanoTodayExtension/NanoTodayExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -519,6 +546,7 @@
 				INFOPLIST_FILE = NanoTodayExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -526,9 +554,13 @@
 		8567007F19BBADAB007DA4BB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = NanoTodayExtension/NanoTodayExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = NanoTodayExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
