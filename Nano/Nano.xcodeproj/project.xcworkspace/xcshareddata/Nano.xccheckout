@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>60C779E2-D3D2-44AB-935B-025036214C56</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Nano</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>0D218AF4030DEBB0BAF7755F17EB41420C82E54A</key>
+		<string>github.com:nlauer/Nano.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Nano/Nano.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>0D218AF4030DEBB0BAF7755F17EB41420C82E54A</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:nlauer/Nano.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>0D218AF4030DEBB0BAF7755F17EB41420C82E54A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>0D218AF4030DEBB0BAF7755F17EB41420C82E54A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Nano</string>
+		</dict>
+	</array>
+</dict>
+</plist>

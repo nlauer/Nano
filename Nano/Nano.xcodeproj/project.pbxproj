@@ -1,0 +1,417 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8567004819BBA98D007DA4BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8567004719BBA98D007DA4BB /* main.m */; };
+		8567004B19BBA98D007DA4BB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8567004A19BBA98D007DA4BB /* AppDelegate.m */; };
+		8567004E19BBA98D007DA4BB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8567004D19BBA98D007DA4BB /* ViewController.m */; };
+		8567005119BBA98D007DA4BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8567004F19BBA98D007DA4BB /* Main.storyboard */; };
+		8567005319BBA98D007DA4BB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8567005219BBA98D007DA4BB /* Images.xcassets */; };
+		8567005F19BBA991007DA4BB /* NanoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8567005E19BBA991007DA4BB /* NanoTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8567005919BBA991007DA4BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8567003A19BBA989007DA4BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8567004119BBA98A007DA4BB;
+			remoteInfo = Nano;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8567004219BBA98B007DA4BB /* Nano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nano.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8567004619BBA98D007DA4BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8567004719BBA98D007DA4BB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8567004919BBA98D007DA4BB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8567004A19BBA98D007DA4BB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8567004C19BBA98D007DA4BB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8567004D19BBA98D007DA4BB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8567005019BBA98D007DA4BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8567005219BBA98D007DA4BB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8567005819BBA990007DA4BB /* NanoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NanoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8567005D19BBA991007DA4BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8567005E19BBA991007DA4BB /* NanoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NanoTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8567003F19BBA98A007DA4BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8567005519BBA990007DA4BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8567003919BBA988007DA4BB = {
+			isa = PBXGroup;
+			children = (
+				8567004419BBA98B007DA4BB /* Nano */,
+				8567005B19BBA991007DA4BB /* NanoTests */,
+				8567004319BBA98B007DA4BB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8567004319BBA98B007DA4BB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8567004219BBA98B007DA4BB /* Nano.app */,
+				8567005819BBA990007DA4BB /* NanoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8567004419BBA98B007DA4BB /* Nano */ = {
+			isa = PBXGroup;
+			children = (
+				8567004919BBA98D007DA4BB /* AppDelegate.h */,
+				8567004A19BBA98D007DA4BB /* AppDelegate.m */,
+				8567004C19BBA98D007DA4BB /* ViewController.h */,
+				8567004D19BBA98D007DA4BB /* ViewController.m */,
+				8567004F19BBA98D007DA4BB /* Main.storyboard */,
+				8567005219BBA98D007DA4BB /* Images.xcassets */,
+				8567004519BBA98C007DA4BB /* Supporting Files */,
+			);
+			path = Nano;
+			sourceTree = "<group>";
+		};
+		8567004519BBA98C007DA4BB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8567004619BBA98D007DA4BB /* Info.plist */,
+				8567004719BBA98D007DA4BB /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8567005B19BBA991007DA4BB /* NanoTests */ = {
+			isa = PBXGroup;
+			children = (
+				8567005E19BBA991007DA4BB /* NanoTests.m */,
+				8567005C19BBA991007DA4BB /* Supporting Files */,
+			);
+			path = NanoTests;
+			sourceTree = "<group>";
+		};
+		8567005C19BBA991007DA4BB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8567005D19BBA991007DA4BB /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8567004119BBA98A007DA4BB /* Nano */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8567006219BBA991007DA4BB /* Build configuration list for PBXNativeTarget "Nano" */;
+			buildPhases = (
+				8567003E19BBA98A007DA4BB /* Sources */,
+				8567003F19BBA98A007DA4BB /* Frameworks */,
+				8567004019BBA98A007DA4BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Nano;
+			productName = Nano;
+			productReference = 8567004219BBA98B007DA4BB /* Nano.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8567005719BBA990007DA4BB /* NanoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8567006519BBA991007DA4BB /* Build configuration list for PBXNativeTarget "NanoTests" */;
+			buildPhases = (
+				8567005419BBA990007DA4BB /* Sources */,
+				8567005519BBA990007DA4BB /* Frameworks */,
+				8567005619BBA990007DA4BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8567005A19BBA991007DA4BB /* PBXTargetDependency */,
+			);
+			name = NanoTests;
+			productName = NanoTests;
+			productReference = 8567005819BBA990007DA4BB /* NanoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8567003A19BBA989007DA4BB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = Lauer;
+				TargetAttributes = {
+					8567004119BBA98A007DA4BB = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					8567005719BBA990007DA4BB = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 8567004119BBA98A007DA4BB;
+					};
+				};
+			};
+			buildConfigurationList = 8567003D19BBA989007DA4BB /* Build configuration list for PBXProject "Nano" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8567003919BBA988007DA4BB;
+			productRefGroup = 8567004319BBA98B007DA4BB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8567004119BBA98A007DA4BB /* Nano */,
+				8567005719BBA990007DA4BB /* NanoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8567004019BBA98A007DA4BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8567005119BBA98D007DA4BB /* Main.storyboard in Resources */,
+				8567005319BBA98D007DA4BB /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8567005619BBA990007DA4BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8567003E19BBA98A007DA4BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8567004E19BBA98D007DA4BB /* ViewController.m in Sources */,
+				8567004B19BBA98D007DA4BB /* AppDelegate.m in Sources */,
+				8567004819BBA98D007DA4BB /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8567005419BBA990007DA4BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8567005F19BBA991007DA4BB /* NanoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8567005A19BBA991007DA4BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8567004119BBA98A007DA4BB /* Nano */;
+			targetProxy = 8567005919BBA991007DA4BB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8567004F19BBA98D007DA4BB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8567005019BBA98D007DA4BB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8567006019BBA991007DA4BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8567006119BBA991007DA4BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8567006319BBA991007DA4BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = Nano/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8567006419BBA991007DA4BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = Nano/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		8567006619BBA991007DA4BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = NanoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nano.app/Nano";
+			};
+			name = Debug;
+		};
+		8567006719BBA991007DA4BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = NanoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nano.app/Nano";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8567003D19BBA989007DA4BB /* Build configuration list for PBXProject "Nano" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8567006019BBA991007DA4BB /* Debug */,
+				8567006119BBA991007DA4BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8567006219BBA991007DA4BB /* Build configuration list for PBXNativeTarget "Nano" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8567006319BBA991007DA4BB /* Debug */,
+				8567006419BBA991007DA4BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8567006519BBA991007DA4BB /* Build configuration list for PBXNativeTarget "NanoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8567006619BBA991007DA4BB /* Debug */,
+				8567006719BBA991007DA4BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8567003A19BBA989007DA4BB /* Project object */;
+}
