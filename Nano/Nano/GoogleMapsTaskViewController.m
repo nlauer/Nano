@@ -8,6 +8,7 @@
 
 #import "GoogleMapsTaskViewController.h"
 #import "GoogleMapsTaskSearchViewController.h"
+#import "CreateTaskViewController.h"
 
 @interface GoogleMapsTaskViewController ()
 
@@ -15,15 +16,27 @@
 
 @implementation GoogleMapsTaskViewController {
     NSArray *modes;
+    NSArray *buttons;
+    NSString *mode;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:self.modeOptionsBar.bounds];
+        self.modeOptionsBar.layer.masksToBounds = NO;
+        self.modeOptionsBar.layer.shadowColor = [UIColor blackColor].CGColor;
+        self.modeOptionsBar.layer.shadowOffset = CGSizeMake(0.0f, 5.0f);
+        self.modeOptionsBar.layer.shadowOpacity = 0.5f;
+        self.modeOptionsBar.layer.shadowPath = shadowPath.CGPath;
+    }
     return self;
 }
 
 - (void)viewDidLoad {
     modes = @[@"driving", @"transit", @"bicycling", @"walking"];
+    buttons = @[self.carButton, self.cycleButton, self.transButton, self.walkButton];
+    mode = modes[0];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,13 +55,12 @@
     GoogleMapsTaskSearchViewController *searchController = [[GoogleMapsTaskSearchViewController alloc] init];
     searchController.isStart = false;
     searchController.parent = self;
-    [self presentViewController:searchController animated:YES completion:nil];
+    [self.mainVC presentViewController:searchController animated:YES completion:nil];
 }
 
 - (IBAction)submitButtonClicked:(id)sender {
     NSString *start = @"";
     NSString *end;
-    NSString *mode = modes[[self.modeDropdown selectedRowInComponent:0]];
     
     if (self.startingPlace) {
         start = self.startingPlace.name;
@@ -65,26 +77,10 @@
     NSLog(@"%@", url);
 }
 
-#pragma mark -
-#pragma mark PickerView DataSource
-
-- (NSInteger)numberOfComponentsInPickerView:
-(UIPickerView *)pickerView
-{
-    return 1;
-}
-
-- (NSInteger)pickerView:(UIPickerView *)pickerView
-numberOfRowsInComponent:(NSInteger)component
-{
-    return modes.count;
-}
-
-- (NSString *)pickerView:(UIPickerView *)pickerView
-             titleForRow:(NSInteger)row
-            forComponent:(NSInteger)component
-{
-    return modes[row];
+- (IBAction)modeButtonPressed:(id)sender {
+    [buttons setValue:[NSNumber numberWithBool:NO] forKey:@"selected"];
+    [(UIButton *)sender setSelected:YES];
+    mode = modes[[buttons indexOfObject:sender]];
 }
 
 - (NSURL *)googleMapsURLFrom:(NSString *)from to:(NSString *)to mode:(NSString *)mode

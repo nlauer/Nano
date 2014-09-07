@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Nano-iCarousel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Nano.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -62,57 +67,62 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0246EB1FA3AE42ECAF169782</key>
+		<key>0FDA81D947924E9C8C1372A5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2DD7545F199445AF8466FB11</key>
+		<key>12DAE89326A34C9EACDF4876</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>37B79814864F43F29A742323</key>
+		<key>1E5020E0256A4781AFB131FC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>487443D84EE340529EC1E98D</key>
+		<key>1EC9D23CA86A4B2E9BCBCDC2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>57D483067F4D493084C1DDD9</key>
+		<key>28E11E9D6A0949D380E2E869</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ADCF69FFFA474CE6AD0CF5A1</key>
+		<key>3ADF77FC871A47BA8CADB245</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AE215D795ADE477993D2659A</key>
+		<key>769BC1DD9645414A99B92EB8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BDA09A75698A425DB0CE91F1</key>
+		<key>8DA65EAFE3294481AFCEA0F9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CC66B3F5A7E94BDD8095D0DF</key>
+		<key>AC702E64581341149B1A5418</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E8571D16852A48F2932A1C9E</key>
+		<key>AD1C431E53CB4AD488086D5A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E9CF149BF92F47F995AC537F</key>
+		<key>DE2F5D98007E46F2BC165F47</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FA2FCBA38E3F4224817332AE</key>
 		<dict>
 			<key>primary</key>
 			<true/>

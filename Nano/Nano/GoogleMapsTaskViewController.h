@@ -7,14 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 #import "SPGooglePlacesAutocompletePlace.h"
 
-@interface GoogleMapsTaskViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+@class CreateTaskViewController;
+
+@interface GoogleMapsTaskViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UIButton *endButton;
-@property (weak, nonatomic) IBOutlet UIPickerView *modeDropdown;
+@property (weak, nonatomic) IBOutlet UIButton *carButton;
+@property (weak, nonatomic) IBOutlet UIButton *cycleButton;
+@property (weak, nonatomic) IBOutlet UIButton *transButton;
+@property (weak, nonatomic) IBOutlet UIButton *walkButton;
+@property (weak, nonatomic) IBOutlet UIView *modeOptionsBar;
 
 @property (nonatomic) SPGooglePlacesAutocompletePlace *startingPlace;
 @property (nonatomic) SPGooglePlacesAutocompletePlace *endingPlace;
+@property (weak, nonatomic) CreateTaskViewController *mainVC;
 
 @end

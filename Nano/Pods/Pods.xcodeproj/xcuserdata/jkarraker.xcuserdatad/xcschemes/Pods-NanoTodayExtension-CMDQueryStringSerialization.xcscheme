@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E8571D16852A48F2932A1C9E"
+               BlueprintIdentifier = "AD1C431E53CB4AD488086D5A"
                BuildableName = "libPods-NanoTodayExtension-CMDQueryStringSerialization.a"
                BlueprintName = "Pods-NanoTodayExtension-CMDQueryStringSerialization"
                ReferencedContainer = "container:Pods.xcodeproj">
