@@ -34,6 +34,14 @@
         self.shortcuts = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
         if (self.shortcuts == nil) {
             self.shortcuts = [[NSMutableArray alloc] init];
+            [self addShortcutToStore:[Shortcut facebookEventShortcutForEventID:@"620819504700967" eventName:@"TechCrunch Disrupt Hackathon"]];
+            [self addShortcutToStore:[Shortcut yelpShortcutForSearch:@"Starbucks"]];
+            [self addShortcutToStore:[Shortcut rdioShortcutForWebURLString:@"http://www.rdio.com/people/dvos/playlists/1127421/Coding_Mix/" name:@"Coding Mix"]];
+            [self addShortcutToStore:[Shortcut yoShortcutForRecipient:@"jlauer"]];
+            [self addShortcutToStore:[Shortcut googleMapsShortcutFrom:@"" to:@"Home" mode:@"transit"]];
+            [self addShortcutToStore:[Shortcut uberShortcutFrom:@"" to:@"555 W. Middlefield Road"]];
+            [self addShortcutToStore:[Shortcut venmoShortcutWithRecipient:@"jlauer" amount:1 message:@"payback"]];
+            [self addShortcutToStore:[Shortcut smsShortcutForNumber:@"4159351717" name:@"Josh Lauer"]];
         }
     }
 

@@ -106,10 +106,10 @@
     return [NSURL URLWithString:[NSString stringWithFormat:@"fb://event?id=%@", eventID]];
 }
 
-+ (Shortcut *)rdioShortcutForWebURLString:(NSString *)urlString
++ (Shortcut *)rdioShortcutForWebURLString:(NSString *)urlString name:(NSString *)name
 {
     Shortcut *shortcut = [[Shortcut alloc] init];
-    shortcut.name = @"Listen to Coding Mix";
+    shortcut.name = [NSString stringWithFormat:@"Listen to %@", name];
     shortcut.icon = @"rdio";
     shortcut.url = [NSURL URLWithString:[urlString stringByReplacingOccurrencesOfString:@"http" withString:@"rdio"]];
 
