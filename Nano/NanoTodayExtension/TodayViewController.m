@@ -31,6 +31,7 @@
                          [self smsShortcutForNumber:@"4159351717"],
                          [self yelpShortcutForSearch:@"Starbucks"],
                          [self uberShortcutForDestination:@"555 W. Middlefield Road"],
+                         [self rdioShortcutForCodingMix],
                          nil];
 }
 
@@ -188,6 +189,16 @@
     shortcut.name = @"Uber Home";
     shortcut.icon = @"uber";
     shortcut.url = [NSURL URLWithString:[NSString stringWithFormat:@"uber://"]];
+
+    return shortcut;
+}
+
+- (Shortcut *)rdioShortcutForCodingMix
+{
+    Shortcut *shortcut = [[Shortcut alloc] init];
+    shortcut.name = @"Listen to Coding Mix";
+    shortcut.icon = @"rdio";
+    shortcut.url = [NSURL URLWithString:[NSString stringWithFormat:@"rdio://www.rdio.com/people/dvos/playlists/1127421/Coding_Mix/"]];
 
     return shortcut;
 }
