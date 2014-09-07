@@ -10,6 +10,7 @@
 #import "GoogleMapsTaskViewController.h"
 #import "CreateTaskViewController.h"
 #import <Venmo-iOS-SDK/Venmo.h>
+#import "ShortcutStore.h"
 
 @interface AppDelegate ()
 
@@ -25,6 +26,8 @@
     CreateTaskViewController *viewController = [[CreateTaskViewController alloc] init];
     self.window.rootViewController = viewController;
     [self.window makeKeyAndVisible];
+
+    [ShortcutStore sharedStore];
     
     return YES;
 }

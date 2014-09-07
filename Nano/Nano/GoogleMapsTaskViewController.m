@@ -8,7 +8,12 @@
 
 #import "GoogleMapsTaskViewController.h"
 #import "GoogleMapsTaskSearchViewController.h"
+<<<<<<< HEAD
 #import "CreateTaskViewController.h"
+=======
+#import "Shortcut.h"
+#import "ShortcutStore.h"
+>>>>>>> ae46d1ad705a39527e2e29f951c0269e55893eaf
 
 @interface GoogleMapsTaskViewController ()
 
@@ -74,6 +79,11 @@
     }
 
     NSURL *url = [self googleMapsURLFrom:start to:end mode:mode];
+    Shortcut *shortcut = [[Shortcut alloc] init];
+    shortcut.url = url;
+    shortcut.name = [NSString stringWithFormat:@"Map to %@", self.endingPlace.name];
+    shortcut.icon = @"google";
+    [[ShortcutStore sharedStore] addShortcutToStore:shortcut];
     NSLog(@"%@", url);
 }
 

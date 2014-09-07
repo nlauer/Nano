@@ -31,6 +31,10 @@
 		85E6F22019BC0E5F00C79EE0 /* screen-mock.png in Resources */ = {isa = PBXBuildFile; fileRef = 85E6F21A19BC0E5F00C79EE0 /* screen-mock.png */; };
 		85E6F22119BC0E5F00C79EE0 /* venmo.png in Resources */ = {isa = PBXBuildFile; fileRef = 85E6F21B19BC0E5F00C79EE0 /* venmo.png */; };
 		85E6F22219BC0E5F00C79EE0 /* yelp.png in Resources */ = {isa = PBXBuildFile; fileRef = 85E6F21C19BC0E5F00C79EE0 /* yelp.png */; };
+		85E6F22419BC274D00C79EE0 /* uber.png in Resources */ = {isa = PBXBuildFile; fileRef = 85E6F22319BC274D00C79EE0 /* uber.png */; };
+		85E6F22619BC2FF800C79EE0 /* rdio.png in Resources */ = {isa = PBXBuildFile; fileRef = 85E6F22519BC2FF800C79EE0 /* rdio.png */; };
+		85E6F22919BC350C00C79EE0 /* ShortcutStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E6F22819BC350C00C79EE0 /* ShortcutStore.m */; };
+		85E6F22A19BC367400C79EE0 /* Shortcut.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E6F21419BBF8FE00C79EE0 /* Shortcut.m */; };
 		A09294EAF2334E88AB2A6626 /* libPods-Nano.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A46FE8E9DC47DBAFB8076A /* libPods-Nano.a */; };
 /* End PBXBuildFile section */
 
@@ -104,14 +108,18 @@
 		8567007619BBADAB007DA4BB /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		8567008119BBC1DF007DA4BB /* Nano.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Nano.entitlements; sourceTree = "<group>"; };
 		8567008219BBC23B007DA4BB /* NanoTodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = NanoTodayExtension.entitlements; sourceTree = "<group>"; };
-		85E6F21319BBF8FE00C79EE0 /* Shortcut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shortcut.h; sourceTree = "<group>"; };
-		85E6F21419BBF8FE00C79EE0 /* Shortcut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shortcut.m; sourceTree = "<group>"; };
+		85E6F21319BBF8FE00C79EE0 /* Shortcut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Shortcut.h; path = NanoTodayExtension/Shortcut.h; sourceTree = SOURCE_ROOT; };
+		85E6F21419BBF8FE00C79EE0 /* Shortcut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Shortcut.m; path = NanoTodayExtension/Shortcut.m; sourceTree = SOURCE_ROOT; };
 		85E6F21719BC0E5E00C79EE0 /* fb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb.png; sourceTree = "<group>"; };
 		85E6F21819BC0E5F00C79EE0 /* google.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = google.png; sourceTree = "<group>"; };
 		85E6F21919BC0E5F00C79EE0 /* imessage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imessage.png; sourceTree = "<group>"; };
 		85E6F21A19BC0E5F00C79EE0 /* screen-mock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screen-mock.png"; sourceTree = "<group>"; };
 		85E6F21B19BC0E5F00C79EE0 /* venmo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = venmo.png; sourceTree = "<group>"; };
 		85E6F21C19BC0E5F00C79EE0 /* yelp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yelp.png; sourceTree = "<group>"; };
+		85E6F22319BC274D00C79EE0 /* uber.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uber.png; sourceTree = "<group>"; };
+		85E6F22519BC2FF800C79EE0 /* rdio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rdio.png; sourceTree = "<group>"; };
+		85E6F22719BC350C00C79EE0 /* ShortcutStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShortcutStore.h; sourceTree = "<group>"; };
+		85E6F22819BC350C00C79EE0 /* ShortcutStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShortcutStore.m; sourceTree = "<group>"; };
 		C6A46FE8E9DC47DBAFB8076A /* libPods-Nano.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Nano.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFF5FDB0FC454816978E1BBB /* libPods-NanoTodayExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NanoTodayExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -171,7 +179,6 @@
 		8567004419BBA98B007DA4BB /* Nano */ = {
 			isa = PBXGroup;
 			children = (
-				8567008119BBC1DF007DA4BB /* Nano.entitlements */,
 				8567004919BBA98D007DA4BB /* AppDelegate.h */,
 				8567004A19BBA98D007DA4BB /* AppDelegate.m */,
 				8567004C19BBA98D007DA4BB /* ViewController.h */,
@@ -186,7 +193,14 @@
 				62B1349619BC0B49009C784F /* GoogleMapsTaskSearchViewController.m */,
 				62B1349719BC0B49009C784F /* GoogleMapsTaskSearchViewController.xib */,
 				8567005219BBA98D007DA4BB /* Images.xcassets */,
+				8567008119BBC1DF007DA4BB /* Nano.entitlements */,
+				85E6F21319BBF8FE00C79EE0 /* Shortcut.h */,
+				85E6F21419BBF8FE00C79EE0 /* Shortcut.m */,
+				85E6F22719BC350C00C79EE0 /* ShortcutStore.h */,
+				85E6F22819BC350C00C79EE0 /* ShortcutStore.m */,
 				8567004519BBA98C007DA4BB /* Supporting Files */,
+				8567004C19BBA98D007DA4BB /* ViewController.h */,
+				8567004D19BBA98D007DA4BB /* ViewController.m */,
 			);
 			path = Nano;
 			sourceTree = "<group>";
@@ -237,8 +251,6 @@
 				8567007419BBADAB007DA4BB /* TodayViewController.m */,
 				8567007619BBADAB007DA4BB /* MainInterface.storyboard */,
 				8567007119BBADAB007DA4BB /* Supporting Files */,
-				85E6F21319BBF8FE00C79EE0 /* Shortcut.h */,
-				85E6F21419BBF8FE00C79EE0 /* Shortcut.m */,
 			);
 			path = NanoTodayExtension;
 			sourceTree = "<group>";
@@ -254,6 +266,8 @@
 		85E6F21619BC0E4300C79EE0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				85E6F22519BC2FF800C79EE0 /* rdio.png */,
+				85E6F22319BC274D00C79EE0 /* uber.png */,
 				85E6F21719BC0E5E00C79EE0 /* fb.png */,
 				85E6F21819BC0E5F00C79EE0 /* google.png */,
 				85E6F21919BC0E5F00C79EE0 /* imessage.png */,
@@ -403,6 +417,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8567007719BBADAB007DA4BB /* MainInterface.storyboard in Resources */,
+				85E6F22419BC274D00C79EE0 /* uber.png in Resources */,
+				85E6F22619BC2FF800C79EE0 /* rdio.png in Resources */,
 				85E6F22219BC0E5F00C79EE0 /* yelp.png in Resources */,
 				85E6F22119BC0E5F00C79EE0 /* venmo.png in Resources */,
 				85E6F21F19BC0E5F00C79EE0 /* imessage.png in Resources */,
@@ -486,7 +502,9 @@
 				620B23E119BC25B4004B4804 /* CreateTaskViewController.m in Sources */,
 				62B9265419BBEB82003A2533 /* GoogleMapsTaskViewController.m in Sources */,
 				62B1349819BC0B49009C784F /* GoogleMapsTaskSearchViewController.m in Sources */,
+				85E6F22919BC350C00C79EE0 /* ShortcutStore.m in Sources */,
 				8567004B19BBA98D007DA4BB /* AppDelegate.m in Sources */,
+				85E6F22A19BC367400C79EE0 /* Shortcut.m in Sources */,
 				8567004819BBA98D007DA4BB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
