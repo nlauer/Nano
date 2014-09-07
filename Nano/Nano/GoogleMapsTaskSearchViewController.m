@@ -25,11 +25,18 @@
 }
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
     if (self.isStart) {
         self.searchDisplayController.searchBar.placeholder = @"Starting Address";
     } else {
         self.searchDisplayController.searchBar.placeholder = @"Ending Address";
     }
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.searchBar becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
