@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <Venmo-iOS-SDK/Venmo.h>
 
 @interface AppDelegate ()
 
@@ -40,6 +41,14 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    if ([[Venmo sharedInstance] handleOpenURL:url]) {
+        return YES;
+    }
+    // You can add your app-specific url handling code here if needed
+    return NO;
 }
 
 @end
