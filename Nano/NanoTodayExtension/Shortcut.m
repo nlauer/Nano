@@ -123,6 +123,7 @@
     [encoder encodeObject:self.recipient forKey:@"recipient"];
     [encoder encodeObject:self.icon forKey:@"icon"];
     [encoder encodeObject:self.name forKey:@"name"];
+    [encoder encodeObject:self.message forKey:@"message"];
     [encoder encodeObject:[NSNumber numberWithInt:self.amount] forKey:@"amount"];
 }
 
@@ -133,6 +134,7 @@
         self.recipient = [decoder decodeObjectForKey:@"recipient"];
         self.icon = [decoder decodeObjectForKey:@"icon"];
         self.name = [decoder decodeObjectForKey:@"name"];
+        self.message = [decoder decodeObjectForKey:@"message"];
         self.amount = [[decoder decodeObjectForKey:@"amount"] integerValue];
     }
     return self;
