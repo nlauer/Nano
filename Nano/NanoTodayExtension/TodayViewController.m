@@ -18,6 +18,20 @@
 
 @implementation TodayViewController
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(userDefaultsDidChange:)
+                                                     name:NSUserDefaultsDidChangeNotification
+                                                   object:nil];
+    }
+    return self;
+}
+
+- (void)userDefaultsDidChange:(NSNotification *)notification {
+    [self updateShortcutURLs];
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -31,15 +45,14 @@
 
     [Venmo startWithAppId:@"1944" secret:@"YdFGe8KjDCePjgZshL76xJTPkJenaCbT" name:@"Nano"];
     self.tableView.backgroundColor = [UIColor clearColor];
+}
 
-    self.shortcutURLs = [NSArray arrayWithObjects:
-                         [self googleMapsShortcutFrom:@"" to:@"Home" mode:@"transit"],
-                         [self facebookEventShortcutForEventID:@"620819504700967"],
-                         [self smsShortcutForNumber:@"4159351717"],
-                         [self yelpShortcutForSearch:@"Starbucks"],
-                         [self uberShortcutForDestination:@"555 W. Middlefield Road"],
-                         [self rdioShortcutForCodingMix],
-                         nil];
+- (void)updateShortcutURLs
+{
+    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.lauer.NanoExtension"];
+    NSData *encodedObject = [sharedDefaults objectForKey:@"shortcuts"];
+    self.shortcutURLs = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,7 +64,7 @@
     // Perform any setup necessary in order to update the view.
     self.tableView.bounds = CGRectMake(0, 0, 320, 60*[self.shortcutURLs count]);
     self.preferredContentSize = CGSizeMake(0, 60*[self.shortcutURLs count]);
-    [self.tableView reloadData];
+    [self updateShortcutURLs];
 
     // If an error is encoutered, use NCUpdateResultFailed
     // If there's no update required, use NCUpdateResultNoData
@@ -102,113 +115,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.extensionContext openURL:((Shortcut *)[self.shortcutURLs objectAtIndex:indexPath.row]).url completionHandler:nil];
-}
-
-#pragma mark - Custom Actions
-- (void)sendPaymentTo:(NSString *)recipient amount:(NSUInteger)amount
-{
-    [[Venmo sharedInstance] sendPaymentTo:recipient
-                                   amount:amount
-                                     note:@" "
-                        completionHandler:^(VENTransaction *transaction, BOOL success, NSError *error) {
-                            if (success) {
-                                NSLog(@"Transaction succeeded!");
-                            }
-                            else {
-                                NSLog(@"Transaction failed with error: %@", [error localizedDescription]);
-                            }
-                        }];
-}
-
-- (Shortcut *)venmoShortcutForRecipient:(NSString *)recipient amount:(NSUInteger)amount
-{
-    Shortcut *shortcut = [[Shortcut alloc] init];
-    shortcut.name = @"Venmo";
-    shortcut.amount = amount;
-    shortcut.recipient = recipient;
-    shortcut.icon = @"venmo";
-
-    return shortcut;
-}
-
-- (Shortcut *)googleMapsShortcutFrom:(NSString *)from to:(NSString *)to mode:(NSString *)mode
-{
-    Shortcut *shortcut = [[Shortcut alloc] init];
-    shortcut.name = @"Transit Home";
-    shortcut.icon = @"google";
-    shortcut.url = [self googleMapsURLFrom:from to:to mode:mode];
-
-    return shortcut;
-}
-
-- (NSURL *)googleMapsURLFrom:(NSString *)from to:(NSString *)to mode:(NSString *)mode
-{
-    return [NSURL URLWithString:[NSString stringWithFormat:@"comgooglemaps://?saddr=%@&daddr=%@&directionsmode=%@", from, to, mode]];
-}
-
-- (Shortcut *)facebookEventShortcutForEventID:(NSString *)eventID
-{
-    Shortcut *shortcut = [[Shortcut alloc] init];
-    shortcut.name = @"TechCrunch Disrupt Event";
-    shortcut.icon = @"fb";
-    shortcut.url = [self facebookEventURLForEventID:eventID];
-
-    return shortcut;
-}
-
-- (NSURL *)facebookEventURLForEventID:(NSString *)eventID
-{
-    return [NSURL URLWithString:[NSString stringWithFormat:@"fb://event?id=%@", eventID]];
-}
-
-- (Shortcut *)smsShortcutForNumber:(NSString *)number
-{
-    Shortcut *shortcut = [[Shortcut alloc] init];
-    shortcut.name = @"Text Message Josh";
-    shortcut.icon = @"imessage";
-    shortcut.url = [self smsURLForPhoneNumber:number];
-
-    return shortcut;
-}
-
-- (NSURL *)smsURLForPhoneNumber:(NSString *)number
-{
-    return [NSURL URLWithString:[NSString stringWithFormat:@"sms:%@", number]];
-}
-
-- (Shortcut *)yelpShortcutForSearch:(NSString *)search
-{
-    Shortcut *shortcut = [[Shortcut alloc] init];
-    shortcut.name = @"Search Yelp for Starbucks";
-    shortcut.icon = @"yelp";
-    shortcut.url = [self yelpSearchForName:search];
-
-    return shortcut;
-}
-
-- (NSURL *)yelpSearchForName:(NSString *)name
-{
-    return [NSURL URLWithString:[NSString stringWithFormat:@"yelp:///search?terms=%@", name]];
-}
-
-- (Shortcut *)uberShortcutForDestination:(NSString *)search
-{
-    Shortcut *shortcut = [[Shortcut alloc] init];
-    shortcut.name = @"Uber Home";
-    shortcut.icon = @"uber";
-    shortcut.url = [NSURL URLWithString:[NSString stringWithFormat:@"uber://"]];
-
-    return shortcut;
-}
-
-- (Shortcut *)rdioShortcutForCodingMix
-{
-    Shortcut *shortcut = [[Shortcut alloc] init];
-    shortcut.name = @"Listen to Coding Mix";
-    shortcut.icon = @"rdio";
-    shortcut.url = [NSURL URLWithString:[NSString stringWithFormat:@"rdio://www.rdio.com/people/dvos/playlists/1127421/Coding_Mix/"]];
-
-    return shortcut;
 }
 
 @end
