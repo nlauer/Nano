@@ -1,5 +1,6 @@
 PODS:
   - CMDQueryStringSerialization (0.2.0)
+  - SPGooglePlacesAutocomplete (1.0.3)
   - SSKeychain (1.2.2)
   - VENCore (3.0.1):
     - CMDQueryStringSerialization (~> 0.2.0)
@@ -9,10 +10,12 @@ PODS:
     - VENCore (~> 3.0.0)
 
 DEPENDENCIES:
+  - SPGooglePlacesAutocomplete
   - Venmo-iOS-SDK (~> 1.3)
 
 SPEC CHECKSUMS:
   CMDQueryStringSerialization: e53570ccbce6004acba30b1c1210e254644cdb92
+  SPGooglePlacesAutocomplete: 4caf647c644fe749df0d63a7e2c3e63f57990fdd
   SSKeychain: cc48bd3ad24fcd9125adb9e0d23dd50b8bbd08b9
   VENCore: 944d7fc21a27670cf57342b35ce3d715ce514ca5
   Venmo-iOS-SDK: 2915f7c1df71c51025409be9f507a341248b8735

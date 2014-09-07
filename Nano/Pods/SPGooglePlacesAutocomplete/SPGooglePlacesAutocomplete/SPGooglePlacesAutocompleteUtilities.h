@@ -6,12 +6,12 @@
 //  Copyright (c) 2012 Stephen Poletto. All rights reserved.
 //
 
-#define kGoogleAPIKey @"AIzaSyDIPXDDxtfs84aJbGJkM76eICmC2pY2Yto"
 #define kGoogleAPINSErrorCode 42
 
 @class CLPlacemark;
 
 typedef enum {
+    SPPlaceTypeInvalid = -1,
     SPPlaceTypeGeocode = 0,
     SPPlaceTypeEstablishment
 } SPGooglePlacesAutocompletePlaceType;
@@ -23,8 +23,6 @@ typedef void (^SPGooglePlacesPlaceDetailResultBlock)(NSDictionary *placeDictiona
 extern SPGooglePlacesAutocompletePlaceType SPPlaceTypeFromDictionary(NSDictionary *placeDictionary);
 extern NSString *SPBooleanStringForBool(BOOL boolean);
 extern NSString *SPPlaceTypeStringForPlaceType(SPGooglePlacesAutocompletePlaceType type);
-extern BOOL SPEnsureGoogleAPIKey();
-extern void SPPresentAlertViewWithErrorAndTitle(NSError *error, NSString *title);
 extern BOOL SPIsEmptyString(NSString *string);
 
 @interface NSArray(SPFoundationAdditions)

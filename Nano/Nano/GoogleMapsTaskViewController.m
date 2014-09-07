@@ -15,12 +15,17 @@
 
 @implementation GoogleMapsTaskViewController
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        searchQuery = [[SPGooglePlacesAutocompleteQuery alloc] initWithApiKey:@"AIzaSyDIPXDDxtfs84aJbGJkM76eICmC2pY2Yto"];
+        shouldBeginEditing = YES;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    self.searchQuery = [[SPGooglePlacesAutocompleteQuery alloc] init];
-    self.searchQuery.radius = 100.0;
-    self.shouldBeginEditing = YES;
-    self.startSearchBar.placeholder = @"Starting address";
+    self.searchDisplayController.searchBar.placeholder = @"Search or Address";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,11 +37,14 @@
 #pragma mark UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.searchResultPlaces count];
+    return [searchResultPlaces count];
 }
 
 - (SPGooglePlacesAutocompletePlace *)placeAtIndexPath:(NSIndexPath *)indexPath {
-    return [self.searchResultPlaces objectAtIndex:indexPath.row];
+    NSLog(@"places %@", searchResultPlaces);
+    NSLog(@"row %ld", (long)indexPath.row);
+    NSLog(@"result %@", searchResultPlaces[indexPath.row]);
+    return searchResultPlaces[indexPath.row];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -59,22 +67,21 @@
     NSTimeInterval animationDuration = 0.3;
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:animationDuration];
-    self.startResultsTableView.alpha = 0.0;
+    self.searchDisplayController.searchResultsTableView.alpha = 0.0;
     [UIView commitAnimations];
     
-    [self.startSearchBar setShowsCancelButton:NO animated:YES];
-    [self.startSearchBar resignFirstResponder];
+    [self.searchDisplayController.searchBar setShowsCancelButton:NO animated:YES];
+    [self.searchDisplayController.searchBar resignFirstResponder];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     SPGooglePlacesAutocompletePlace *place = [self placeAtIndexPath:indexPath];
     [place resolveToPlacemark:^(CLPlacemark *placemark, NSString *addressString, NSError *error) {
         if (error) {
-            SPPresentAlertViewWithErrorAndTitle(error, @"Could not map selected Place");
+            NSLog(@"%@", error);
         } else if (placemark) {
-            NSLog(@"selected! %@", placemark);
             [self dismissSearchControllerWhileStayingActive];
-            [self.startResultsTableView deselectRowAtIndexPath:indexPath animated:NO];
+            [self.searchDisplayController.searchResultsTableView deselectRowAtIndexPath:indexPath animated:NO];
         }
     }];
 }
@@ -83,14 +90,15 @@
 #pragma mark UISearchDisplayDelegate
 
 - (void)handleSearchForSearchString:(NSString *)searchString {
-    // add location here TODO
-    //self.searchQuery.location = self.mapView.userLocation.coordinate;
-    self.searchQuery.input = searchString;
-    [self.searchQuery fetchPlaces:^(NSArray *places, NSError *error) {
+//    TODO add location
+//    self.searchQuery.location = self.mapView.userLocation.coordinate;
+    searchQuery.input = searchString;
+    [searchQuery fetchPlaces:^(NSArray *places, NSError *error) {
         if (error) {
-            SPPresentAlertViewWithErrorAndTitle(error, @"Could not fetch Places");
+            NSLog(@"%@", error);
         } else {
-            [self.startResultsTableView reloadData];
+            searchResultPlaces = places;
+            [self.searchDisplayController.searchResultsTableView reloadData];
         }
     }];
 }
@@ -108,24 +116,24 @@
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     if (![searchBar isFirstResponder]) {
         // User tapped the 'clear' button.
-        self.shouldBeginEditing = NO;
-//        [self.searchDisplayController setActive:NO];
+        shouldBeginEditing = NO;
+        [self.searchDisplayController setActive:NO];
     }
 }
 
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
-    if (self.shouldBeginEditing) {
+    if (shouldBeginEditing) {
         // Animate in the table view.
         NSTimeInterval animationDuration = 0.3;
         [UIView beginAnimations:nil context:NULL];
         [UIView setAnimationDuration:animationDuration];
-        self.startResultsTableView.alpha = 1.0;
+        self.searchDisplayController.searchResultsTableView.alpha = 0.75;
         [UIView commitAnimations];
         
-        [self.startSearchBar setShowsCancelButton:YES animated:YES];
+        [self.searchDisplayController.searchBar setShowsCancelButton:YES animated:YES];
     }
-    BOOL boolToReturn = self.shouldBeginEditing;
-    self.shouldBeginEditing = YES;
+    BOOL boolToReturn = shouldBeginEditing;
+    shouldBeginEditing = YES;
     return boolToReturn;
 }
 

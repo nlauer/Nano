@@ -12,6 +12,12 @@
 #define COCOAPODS_VERSION_MINOR_CMDQueryStringSerialization 2
 #define COCOAPODS_VERSION_PATCH_CMDQueryStringSerialization 0
 
+// SPGooglePlacesAutocomplete
+#define COCOAPODS_POD_AVAILABLE_SPGooglePlacesAutocomplete
+#define COCOAPODS_VERSION_MAJOR_SPGooglePlacesAutocomplete 1
+#define COCOAPODS_VERSION_MINOR_SPGooglePlacesAutocomplete 0
+#define COCOAPODS_VERSION_PATCH_SPGooglePlacesAutocomplete 3
+
 // SSKeychain
 #define COCOAPODS_POD_AVAILABLE_SSKeychain
 #define COCOAPODS_VERSION_MAJOR_SSKeychain 1

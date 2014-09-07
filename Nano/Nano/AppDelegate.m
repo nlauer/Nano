@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "GoogleMapsTaskViewController.h"
 #import <Venmo-iOS-SDK/Venmo.h>
 
 @interface AppDelegate ()
@@ -17,7 +18,13 @@
             
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.    
+    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    GoogleMapsTaskViewController *viewController = [[GoogleMapsTaskViewController alloc] init];
+    self.window.rootViewController = viewController;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
