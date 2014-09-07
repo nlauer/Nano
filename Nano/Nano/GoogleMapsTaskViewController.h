@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *walkButton;
 @property (weak, nonatomic) IBOutlet UIView *modeOptionsBar;
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
+@property (weak, nonatomic) IBOutlet UILabel *successLabel;
 
 @property (nonatomic) SPGooglePlacesAutocompletePlace *startingPlace;
 @property (nonatomic) SPGooglePlacesAutocompletePlace *endingPlace;

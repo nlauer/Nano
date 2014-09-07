@@ -30,4 +30,6 @@
 @property (strong, nonatomic) YoTaskViewController *yoVC;
 @property (strong, nonatomic) UIViewController *taskVC;
 
+-(void)refreshCurrentTaskForApp:(NSString *)app;
+
 @end

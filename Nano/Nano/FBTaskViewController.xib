@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="eventField" destination="hDO-6n-xkh" id="bXc-gG-rEE"/>
                 <outlet property="submitButton" destination="Tfu-5h-efg" id="A1u-7d-XLq"/>
+                <outlet property="successLabel" destination="nAC-x3-qTV" id="uyR-Ah-pD0"/>
                 <outlet property="view" destination="yWz-fG-Mb2" id="0Jk-Cc-nKk"/>
             </connections>
         </placeholder>
@@ -59,6 +60,12 @@
                     <rect key="frame" x="59" y="14" width="203" height="21"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your shortcut has been added!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAC-x3-qTV">
+                    <rect key="frame" x="49" y="300" width="223" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.60784316059999999" green="0.6549019814" blue="0.69019609689999994" alpha="1" colorSpace="deviceRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>

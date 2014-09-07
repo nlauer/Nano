@@ -9,12 +9,15 @@
 #import "VenmoTaskViewController.h"
 #import "Shortcut.h"
 #import "ShortcutStore.h"
+#import "CreateTaskViewController.h"
 
 @interface VenmoTaskViewController ()
 
 @end
 
-@implementation VenmoTaskViewController
+@implementation VenmoTaskViewController {
+    BOOL saved;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -49,10 +52,16 @@
 }
 
 - (IBAction)submitButtonClicked:(id)sender {
-    NSUInteger amount = (NSUInteger)(int)roundf((CGFloat)[self.amountField.text floatValue] * 100);
-    Shortcut *shortcut = [Shortcut venmoShortcutWithRecipient:self.recipientField.text amount:amount message:self.messageField.text];
-    [[ShortcutStore sharedStore] addShortcutToStore:shortcut];
-    [self.submitButton setEnabled:NO];
+    if (saved) {
+        [self.mainVC refreshCurrentTaskForApp:@"venmo"];
+    } else {
+        NSUInteger amount = (NSUInteger)(int)roundf((CGFloat)[self.amountField.text floatValue] * 100);
+        Shortcut *shortcut = [Shortcut venmoShortcutWithRecipient:self.recipientField.text amount:amount message:self.messageField.text];
+        [[ShortcutStore sharedStore] addShortcutToStore:shortcut];
+        [self.submitButton setTitle:@"Create New" forState:UIControlStateNormal];
+        [self.successLabel setHidden:NO];
+        saved = true;
+    }
 }
 
 -(void)dismissKeyboard {

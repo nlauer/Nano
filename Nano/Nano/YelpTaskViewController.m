@@ -16,7 +16,9 @@
 
 @end
 
-@implementation YelpTaskViewController
+@implementation YelpTaskViewController {
+    BOOL saved;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -42,18 +44,24 @@
 }
 
 - (IBAction)submitButtonClicked:(id)sender {
-    NSString *end;
-    
-    if (self.endingPlace) {
-        end = self.endingPlace.name;
+    if (saved) {
+        [self.mainVC refreshCurrentTaskForApp:@"yelp"];
     } else {
-        // TODO throw an error
-        NSLog(@"NEED ENDING PLACE");
+        NSString *end;
+        
+        if (self.endingPlace) {
+            end = self.endingPlace.name;
+        } else {
+            // TODO throw an error
+            NSLog(@"NEED ENDING PLACE");
+        }
+        
+        Shortcut *shortcut = [Shortcut yelpShortcutForSearch:self.endingPlace.name];
+        [[ShortcutStore sharedStore] addShortcutToStore:shortcut];
+        [self.submitButton setTitle:@"Create New" forState:UIControlStateNormal];
+        [self.successLabel setHidden:NO];
+        saved = true;
     }
-    
-    Shortcut *shortcut = [Shortcut yelpShortcutForSearch:self.endingPlace.name];
-    [[ShortcutStore sharedStore] addShortcutToStore:shortcut];
-    [self.submitButton setEnabled:NO];
 }
 
 @end

@@ -8,10 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class CreateTaskViewController;
+
 @interface IMessageTaskViewController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *recipientField;
 @property (weak, nonatomic) IBOutlet UITextField *messageField;
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
+@property (weak, nonatomic) IBOutlet UILabel *successLabel;
+
+@property (weak, nonatomic) CreateTaskViewController *mainVC;
 
 @end

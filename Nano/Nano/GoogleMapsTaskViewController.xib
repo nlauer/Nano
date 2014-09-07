@@ -12,6 +12,7 @@
                 <outlet property="modeOptionsBar" destination="j21-db-sQv" id="qg8-sp-dX8"/>
                 <outlet property="startButton" destination="qVX-S1-o1w" id="3L6-hD-qtc"/>
                 <outlet property="submitButton" destination="a9K-xU-Wi9" id="z5O-ce-X3z"/>
+                <outlet property="successLabel" destination="CbK-Gz-LNj" id="geV-A6-eOn"/>
                 <outlet property="transButton" destination="Dyt-Qe-mYI" id="WwB-mw-J6K"/>
                 <outlet property="view" destination="iN0-l3-epB" id="7bX-fB-7bb"/>
                 <outlet property="walkButton" destination="Iqq-A3-mNz" id="tRK-bF-80O"/>
@@ -142,6 +143,12 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your shortcut has been added!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbK-Gz-LNj">
+                    <rect key="frame" x="49" y="300" width="223" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.60784316059999999" green="0.6549019814" blue="0.69019609689999994" alpha="1" colorSpace="deviceRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.91800860969387754" green="0.91800860969387754" blue="0.91800860969387754" alpha="1" colorSpace="calibratedRGB"/>
             <nil key="simulatedStatusBarMetrics"/>

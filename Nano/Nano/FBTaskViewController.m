@@ -9,12 +9,15 @@
 #import "FBTaskViewController.h"
 #import "Shortcut.h"
 #import "ShortcutStore.h"
+#import "CreateTaskViewController.h"
 
 @interface FBTaskViewController ()
 
 @end
 
-@implementation FBTaskViewController
+@implementation FBTaskViewController {
+    BOOL saved;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,9 +43,15 @@
 }
 
 - (IBAction)submitButtonPressed:(id)sender {
-    Shortcut *shortcut = [Shortcut facebookEventShortcutForEventID:@"" eventName:self.eventField.text];
-    [[ShortcutStore sharedStore] addShortcutToStore:shortcut];
-    [self.submitButton setEnabled:NO];
+    if (saved) {
+        [self.mainVC refreshCurrentTaskForApp:@"fb"];
+    } else {
+        Shortcut *shortcut = [Shortcut facebookEventShortcutForEventID:@"" eventName:self.eventField.text];
+        [[ShortcutStore sharedStore] addShortcutToStore:shortcut];
+        [self.submitButton setTitle:@"Create New" forState:UIControlStateNormal];
+        [self.successLabel setHidden:NO];
+        saved = true;
+    }
 }
 
 -(void)dismissKeyboard {

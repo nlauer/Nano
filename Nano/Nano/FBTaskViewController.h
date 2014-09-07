@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class CreateTaskViewController;
+
 @interface FBTaskViewController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *eventField;
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
+@property (weak, nonatomic) IBOutlet UILabel *successLabel;
+
+@property (weak, nonatomic) CreateTaskViewController *mainVC;
 
 @end

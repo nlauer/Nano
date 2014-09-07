@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *amountField;
 @property (weak, nonatomic) IBOutlet UITextField *messageField;
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
+@property (weak, nonatomic) IBOutlet UILabel *successLabel;
 
 @property (weak, nonatomic) CreateTaskViewController *mainVC;
 
