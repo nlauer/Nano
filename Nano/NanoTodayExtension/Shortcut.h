@@ -38,7 +38,6 @@
 + (Shortcut *)facebookEventShortcutForEventID:(NSString *)eventID
                                     eventName:(NSString *)eventName;
 
-+ (Shortcut *)rdioShortcutForWebURLString:(NSString *)urlString
-                                     name:(NSString *)name;
++ (Shortcut *)rdioShortcutForArtistName:(NSString *)name;
 
 @end

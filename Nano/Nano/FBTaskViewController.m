@@ -23,6 +23,7 @@
                                    action:@selector(dismissKeyboard)];
     
     [self.view addGestureRecognizer:tap];
+    self.eventField.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,6 +47,12 @@
 
 -(void)dismissKeyboard {
     [self.eventField resignFirstResponder];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 @end

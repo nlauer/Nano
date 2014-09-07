@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface IMessageTaskViewController : UIViewController
+@interface IMessageTaskViewController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *recipientField;
 @property (weak, nonatomic) IBOutlet UITextField *messageField;
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;

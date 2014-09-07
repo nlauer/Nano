@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FBTaskViewController : UIViewController
+@interface FBTaskViewController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *eventField;
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
 

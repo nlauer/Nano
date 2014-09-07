@@ -23,6 +23,7 @@
                                    action:@selector(dismissKeyboard)];
     
     [self.view addGestureRecognizer:tap];
+    self.artistField.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,7 +32,7 @@
 }
 
 - (IBAction)checkFields:(id)sender {
-    if (self.playlistField.text.length > 0) {
+    if (self.artistField.text.length > 0) {
         [self.submitButton setHidden:NO];
     } else {
         [self.submitButton setHidden:YES];
@@ -39,13 +40,19 @@
 }
 
 - (IBAction)submitButtonPressed:(id)sender {
-    Shortcut *shortcut = [Shortcut rdioShortcutForWebURLString:@"" name:self.playlistField.text];
+    Shortcut *shortcut = [Shortcut rdioShortcutForArtistName:self.artistField.text];
     [[ShortcutStore sharedStore] addShortcutToStore:shortcut];
     [self.submitButton setEnabled:NO];
 }
 
 -(void)dismissKeyboard {
-    [self.playlistField resignFirstResponder];
+    [self.artistField resignFirstResponder];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 @end

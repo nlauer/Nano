@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YoTaskViewController : UIViewController
+@interface YoTaskViewController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
 
