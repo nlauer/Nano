@@ -8,61 +8,90 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 		<key>Pods-Nano-SPGooglePlacesAutocomplete.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>5</integer>
 		</dict>
 		<key>Pods-Nano-SSKeychain.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>6</integer>
 		</dict>
 		<key>Pods-Nano-VENCore.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>7</integer>
 		</dict>
 		<key>Pods-Nano-Venmo-iOS-SDK.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>8</integer>
 		</dict>
 		<key>Pods-Nano-iCarousel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
 		<key>Pods-Nano.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>Pods-NanoTodayExtension-AFNetworking.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>14</integer>
 		</dict>
 		<key>Pods-NanoTodayExtension-CMDQueryStringSerialization.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>10</integer>
 		</dict>
 		<key>Pods-NanoTodayExtension-SSKeychain.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>11</integer>
 		</dict>
 		<key>Pods-NanoTodayExtension-VENCore.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>12</integer>
 		</dict>
 		<key>Pods-NanoTodayExtension-Venmo-iOS-SDK.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>13</integer>
 		</dict>
 		<key>Pods-NanoTodayExtension.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>9</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -92,12 +121,47 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>28E61915A0C748059299640D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3778FCF64A7B4A6FB159F8C6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>3ADF77FC871A47BA8CADB245</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>44376D8A26084C4A959D17B0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>45E63BBE7B3D47A5A3976860</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4FE07597C7034697AE6132EB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>707F30412ACA4E56BEC7A842</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>769BC1DD9645414A99B92EB8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>82946D95C63747FA939F2536</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -117,7 +181,37 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>B02B7918E55542338B1E1140</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B834EC39FAC14173B5774F6E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D1B3707C75D94EE1A47E5A6E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DC614E5FC9EC4A498B684F4B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>DE2F5D98007E46F2BC165F47</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ECA3C6BD9D93401FB4C297A6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F60E495ADE824567B6A965F9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

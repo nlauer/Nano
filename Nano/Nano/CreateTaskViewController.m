@@ -20,7 +20,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        apps = @[@"venmo", @"gmaps", @"uber", @"yelp", @"imessage"];
+        apps = @[@"gmaps", @"venmo", @"uber", @"yelp", @"imessage"];
     }
     return self;
 }
@@ -28,6 +28,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.carousel.type = iCarouselTypeLinear;
+    
+    self.googleVC = [[GoogleMapsTaskViewController alloc] init];
+    self.googleVC.mainVC = self;
+    [self addChildViewController:self.googleVC];
+    [self.containerView addSubview:self.googleVC.view];
+    self.taskVC = self.googleVC;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -85,7 +91,35 @@
         [self.containerView addSubview:self.googleVC.view];
         self.taskVC = self.googleVC;
     } else if ([app  isEqual: @"venmo"]) {
-    } else {
+        if (!self.venmoVC) {
+            self.venmoVC = [[VenmoTaskViewController alloc] init];
+        }
+        [self addChildViewController:self.venmoVC];
+        [self.containerView addSubview:self.venmoVC.view];
+        self.taskVC = self.venmoVC;
+    } else if ([app  isEqual: @"uber"]) {
+        if (!self.uberVC) {
+            self.uberVC = [[UberTaskViewController alloc] init];
+            self.uberVC.mainVC = self;
+        }
+        [self addChildViewController:self.uberVC];
+        [self.containerView addSubview:self.uberVC.view];
+        self.taskVC = self.uberVC;
+    } else if ([app  isEqual: @"yelp"]) {
+        if (!self.yelpVC) {
+            self.yelpVC = [[YelpTaskViewController alloc] init];
+            self.yelpVC.mainVC = self;
+        }
+        [self addChildViewController:self.yelpVC];
+        [self.containerView addSubview:self.yelpVC.view];
+        self.taskVC = self.yelpVC;
+    } else if ([app  isEqual: @"imessage"]) {
+        if (!self.imessageVC) {
+            self.imessageVC = [[IMessageTaskViewController alloc] init];
+        }
+        [self addChildViewController:self.imessageVC];
+        [self.containerView addSubview:self.imessageVC.view];
+        self.taskVC = self.imessageVC;
     }
 }
 
