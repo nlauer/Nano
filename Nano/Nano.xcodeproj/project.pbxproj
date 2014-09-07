@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		62B9263F19BBE543003A2533 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B9262B19BBE3BB003A2533 /* CoreLocation.framework */; };
+		62B9264619BBE594003A2533 /* SPGooglePlacesAutocompletePlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B9264119BBE594003A2533 /* SPGooglePlacesAutocompletePlace.m */; };
+		62B9264719BBE594003A2533 /* SPGooglePlacesAutocompleteQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B9264319BBE594003A2533 /* SPGooglePlacesAutocompleteQuery.m */; };
+		62B9264819BBE594003A2533 /* SPGooglePlacesAutocompleteUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B9264519BBE594003A2533 /* SPGooglePlacesAutocompleteUtilities.m */; };
+		62B9264B19BBE59C003A2533 /* SPGooglePlacesPlaceDetailQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B9264A19BBE59C003A2533 /* SPGooglePlacesPlaceDetailQuery.m */; };
+		62B9265419BBEB82003A2533 /* GoogleMapsTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B9265319BBEB82003A2533 /* GoogleMapsTaskViewController.m */; };
 		8567004819BBA98D007DA4BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8567004719BBA98D007DA4BB /* main.m */; };
 		8567004B19BBA98D007DA4BB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8567004A19BBA98D007DA4BB /* AppDelegate.m */; };
 		8567004E19BBA98D007DA4BB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8567004D19BBA98D007DA4BB /* ViewController.m */; };
@@ -58,6 +64,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		62B9262B19BBE3BB003A2533 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		62B9264019BBE594003A2533 /* SPGooglePlacesAutocompletePlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPGooglePlacesAutocompletePlace.h; path = NanoTodayExtension/SPGooglePlacesAutocompletePlace.h; sourceTree = SOURCE_ROOT; };
+		62B9264119BBE594003A2533 /* SPGooglePlacesAutocompletePlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPGooglePlacesAutocompletePlace.m; path = NanoTodayExtension/SPGooglePlacesAutocompletePlace.m; sourceTree = SOURCE_ROOT; };
+		62B9264219BBE594003A2533 /* SPGooglePlacesAutocompleteQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPGooglePlacesAutocompleteQuery.h; path = NanoTodayExtension/SPGooglePlacesAutocompleteQuery.h; sourceTree = SOURCE_ROOT; };
+		62B9264319BBE594003A2533 /* SPGooglePlacesAutocompleteQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPGooglePlacesAutocompleteQuery.m; path = NanoTodayExtension/SPGooglePlacesAutocompleteQuery.m; sourceTree = SOURCE_ROOT; };
+		62B9264419BBE594003A2533 /* SPGooglePlacesAutocompleteUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPGooglePlacesAutocompleteUtilities.h; path = NanoTodayExtension/SPGooglePlacesAutocompleteUtilities.h; sourceTree = SOURCE_ROOT; };
+		62B9264519BBE594003A2533 /* SPGooglePlacesAutocompleteUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPGooglePlacesAutocompleteUtilities.m; path = NanoTodayExtension/SPGooglePlacesAutocompleteUtilities.m; sourceTree = SOURCE_ROOT; };
+		62B9264919BBE59C003A2533 /* SPGooglePlacesPlaceDetailQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPGooglePlacesPlaceDetailQuery.h; path = NanoTodayExtension/SPGooglePlacesPlaceDetailQuery.h; sourceTree = SOURCE_ROOT; };
+		62B9264A19BBE59C003A2533 /* SPGooglePlacesPlaceDetailQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPGooglePlacesPlaceDetailQuery.m; path = NanoTodayExtension/SPGooglePlacesPlaceDetailQuery.m; sourceTree = SOURCE_ROOT; };
+		62B9265219BBEB82003A2533 /* GoogleMapsTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleMapsTaskViewController.h; sourceTree = "<group>"; };
+		62B9265319BBEB82003A2533 /* GoogleMapsTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleMapsTaskViewController.m; sourceTree = "<group>"; };
 		8567004219BBA98B007DA4BB /* Nano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nano.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8567004619BBA98D007DA4BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8567004719BBA98D007DA4BB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -85,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62B9263F19BBE543003A2533 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +124,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6269744D19BBF3FB008E1A90 /* SPAutocomplete */ = {
+			isa = PBXGroup;
+			children = (
+				62B9264019BBE594003A2533 /* SPGooglePlacesAutocompletePlace.h */,
+				62B9264119BBE594003A2533 /* SPGooglePlacesAutocompletePlace.m */,
+				62B9264219BBE594003A2533 /* SPGooglePlacesAutocompleteQuery.h */,
+				62B9264319BBE594003A2533 /* SPGooglePlacesAutocompleteQuery.m */,
+				62B9264419BBE594003A2533 /* SPGooglePlacesAutocompleteUtilities.h */,
+				62B9264519BBE594003A2533 /* SPGooglePlacesAutocompleteUtilities.m */,
+				62B9264919BBE59C003A2533 /* SPGooglePlacesPlaceDetailQuery.h */,
+				62B9264A19BBE59C003A2533 /* SPGooglePlacesPlaceDetailQuery.m */,
+			);
+			name = SPAutocomplete;
+			sourceTree = "<group>";
+		};
 		8567003919BBA988007DA4BB = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +168,9 @@
 				8567004A19BBA98D007DA4BB /* AppDelegate.m */,
 				8567004C19BBA98D007DA4BB /* ViewController.h */,
 				8567004D19BBA98D007DA4BB /* ViewController.m */,
+				62B9265219BBEB82003A2533 /* GoogleMapsTaskViewController.h */,
+				62B9265319BBEB82003A2533 /* GoogleMapsTaskViewController.m */,
+				6269744D19BBF3FB008E1A90 /* SPAutocomplete */,
 				8567004F19BBA98D007DA4BB /* Main.storyboard */,
 				8567005219BBA98D007DA4BB /* Images.xcassets */,
 				8567004519BBA98C007DA4BB /* Supporting Files */,
@@ -171,6 +207,7 @@
 		8567006D19BBADAB007DA4BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				62B9262B19BBE3BB003A2533 /* CoreLocation.framework */,
 				8567006E19BBADAB007DA4BB /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
@@ -340,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8567004E19BBA98D007DA4BB /* ViewController.m in Sources */,
+				62B9265419BBEB82003A2533 /* GoogleMapsTaskViewController.m in Sources */,
 				8567004B19BBA98D007DA4BB /* AppDelegate.m in Sources */,
 				8567004819BBA98D007DA4BB /* main.m in Sources */,
 			);
@@ -358,6 +396,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8567007519BBADAB007DA4BB /* TodayViewController.m in Sources */,
+				62B9264619BBE594003A2533 /* SPGooglePlacesAutocompletePlace.m in Sources */,
+				62B9264819BBE594003A2533 /* SPGooglePlacesAutocompleteUtilities.m in Sources */,
+				62B9264719BBE594003A2533 /* SPGooglePlacesAutocompleteQuery.m in Sources */,
+				62B9264B19BBE59C003A2533 /* SPGooglePlacesPlaceDetailQuery.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +519,10 @@
 				CODE_SIGN_ENTITLEMENTS = Nano/Nano.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Nano/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -492,6 +538,10 @@
 				CODE_SIGN_ENTITLEMENTS = Nano/Nano.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Nano/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -584,6 +634,7 @@
 				8567006419BBA991007DA4BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8567006519BBA991007DA4BB /* Build configuration list for PBXNativeTarget "NanoTests" */ = {
 			isa = XCConfigurationList;
@@ -592,6 +643,7 @@
 				8567006719BBA991007DA4BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8567007D19BBADAB007DA4BB /* Build configuration list for PBXNativeTarget "NanoTodayExtension" */ = {
 			isa = XCConfigurationList;
@@ -600,6 +652,7 @@
 				8567007F19BBADAB007DA4BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
