@@ -29,6 +29,7 @@
 		85E6F22019BC0E5F00C79EE0 /* screen-mock.png in Resources */ = {isa = PBXBuildFile; fileRef = 85E6F21A19BC0E5F00C79EE0 /* screen-mock.png */; };
 		85E6F22119BC0E5F00C79EE0 /* venmo.png in Resources */ = {isa = PBXBuildFile; fileRef = 85E6F21B19BC0E5F00C79EE0 /* venmo.png */; };
 		85E6F22219BC0E5F00C79EE0 /* yelp.png in Resources */ = {isa = PBXBuildFile; fileRef = 85E6F21C19BC0E5F00C79EE0 /* yelp.png */; };
+		85E6F22419BC274D00C79EE0 /* uber.png in Resources */ = {isa = PBXBuildFile; fileRef = 85E6F22319BC274D00C79EE0 /* uber.png */; };
 		A09294EAF2334E88AB2A6626 /* libPods-Nano.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A46FE8E9DC47DBAFB8076A /* libPods-Nano.a */; };
 /* End PBXBuildFile section */
 
@@ -107,6 +108,7 @@
 		85E6F21A19BC0E5F00C79EE0 /* screen-mock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screen-mock.png"; sourceTree = "<group>"; };
 		85E6F21B19BC0E5F00C79EE0 /* venmo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = venmo.png; sourceTree = "<group>"; };
 		85E6F21C19BC0E5F00C79EE0 /* yelp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yelp.png; sourceTree = "<group>"; };
+		85E6F22319BC274D00C79EE0 /* uber.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uber.png; sourceTree = "<group>"; };
 		C6A46FE8E9DC47DBAFB8076A /* libPods-Nano.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Nano.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFF5FDB0FC454816978E1BBB /* libPods-NanoTodayExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NanoTodayExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -246,6 +248,7 @@
 		85E6F21619BC0E4300C79EE0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				85E6F22319BC274D00C79EE0 /* uber.png */,
 				85E6F21719BC0E5E00C79EE0 /* fb.png */,
 				85E6F21819BC0E5F00C79EE0 /* google.png */,
 				85E6F21919BC0E5F00C79EE0 /* imessage.png */,
@@ -394,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8567007719BBADAB007DA4BB /* MainInterface.storyboard in Resources */,
+				85E6F22419BC274D00C79EE0 /* uber.png in Resources */,
 				85E6F22219BC0E5F00C79EE0 /* yelp.png in Resources */,
 				85E6F22119BC0E5F00C79EE0 /* venmo.png in Resources */,
 				85E6F21F19BC0E5F00C79EE0 /* imessage.png in Resources */,

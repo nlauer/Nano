@@ -30,6 +30,7 @@
                          [self facebookEventShortcutForEventID:@"620819504700967"],
                          [self smsShortcutForNumber:@"4159351717"],
                          [self yelpShortcutForSearch:@"Starbucks"],
+                         [self uberShortcutForDestination:@"555 W. Middlefield Road"],
                          nil];
 }
 
@@ -124,7 +125,7 @@
 - (Shortcut *)googleMapsShortcutFrom:(NSString *)from to:(NSString *)to mode:(NSString *)mode
 {
     Shortcut *shortcut = [[Shortcut alloc] init];
-    shortcut.name = @"Transit from here to home";
+    shortcut.name = @"Transit Home";
     shortcut.icon = @"google";
     shortcut.url = [self googleMapsURLFrom:from to:to mode:mode];
 
@@ -139,7 +140,7 @@
 - (Shortcut *)facebookEventShortcutForEventID:(NSString *)eventID
 {
     Shortcut *shortcut = [[Shortcut alloc] init];
-    shortcut.name = @"Open TechCrunch Disrupt Event";
+    shortcut.name = @"TechCrunch Disrupt Event";
     shortcut.icon = @"fb";
     shortcut.url = [self facebookEventURLForEventID:eventID];
 
@@ -179,6 +180,16 @@
 - (NSURL *)yelpSearchForName:(NSString *)name
 {
     return [NSURL URLWithString:[NSString stringWithFormat:@"yelp:///search?terms=%@", name]];
+}
+
+- (Shortcut *)uberShortcutForDestination:(NSString *)search
+{
+    Shortcut *shortcut = [[Shortcut alloc] init];
+    shortcut.name = @"Uber Home";
+    shortcut.icon = @"uber";
+    shortcut.url = [NSURL URLWithString:[NSString stringWithFormat:@"uber://"]];
+
+    return shortcut;
 }
 
 @end
