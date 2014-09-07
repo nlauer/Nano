@@ -16,6 +16,7 @@
     shortcut.recipient = recipient;
     shortcut.amount = amount;
     shortcut.message = message;
+    shortcut.name = [NSString stringWithFormat:@"Pay %@", recipient];
     shortcut.icon = @"venmo";
 
     return shortcut;
@@ -24,7 +25,7 @@
 + (Shortcut *)googleMapsShortcutFrom:(NSString *)from to:(NSString *)to mode:(NSString *)mode
 {
     Shortcut *shortcut = [[Shortcut alloc] init];
-    shortcut.name = [NSString stringWithFormat:@"%@ to %@", mode, to];
+    shortcut.name = [NSString stringWithFormat:@"%@ to %@", [mode capitalizedString], to];
     shortcut.icon = @"google";
     shortcut.url = [self googleMapsURLFrom:from to:to mode:mode];
 
@@ -33,13 +34,13 @@
 
 + (NSURL *)googleMapsURLFrom:(NSString *)from to:(NSString *)to mode:(NSString *)mode
 {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"comgooglemaps://?saddr=%@&daddr=%@&directionsmode=%@", from, to, mode]];
+    return [NSURL URLWithString:[[NSString stringWithFormat:@"comgooglemaps://?saddr=%@&daddr=%@&directionsmode=%@", from, to, mode] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 }
 
 + (Shortcut *)uberShortcutFrom:(NSString *)from to:(NSString *)to
 {
     Shortcut *shortcut = [[Shortcut alloc] init];
-    shortcut.name = [NSString stringWithFormat:@"Uber to %@", to];
+    shortcut.name = [NSString stringWithFormat:@"Uber Home"];
     shortcut.icon = @"uber";
     shortcut.url = [self uberURLForFrom:from to:to];
 
