@@ -11,6 +11,8 @@
 #import <Venmo-iOS-SDK/Venmo.h>
 #import "Shortcut.h"
 #import "AFHTTPRequestOperationManager.h"
+#import "Yop.h"
+
 
 @interface TodayViewController () <NCWidgetProviding>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -25,6 +27,9 @@
                                                  selector:@selector(userDefaultsDidChange:)
                                                      name:NSUserDefaultsDidChangeNotification
                                                    object:nil];
+        
+        NSString *APIKey = @"f2cb5b0b-cfdd-271f-a5b4-c01cbccf28ff";
+        [YO startWithAPIKey:APIKey];
         [self updateShortcutURLs];
     }
     return self;
@@ -60,6 +65,8 @@
     [self.tableView reloadData];
 
     [self updateUberPrice];
+    
+    [YO sendYOToIndividualUser:@"jlauer"];
 }
 
 - (void)updateUberPrice
