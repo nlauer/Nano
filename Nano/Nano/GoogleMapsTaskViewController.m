@@ -7,25 +7,23 @@
 //
 
 #import "GoogleMapsTaskViewController.h"
-#import "SPGooglePlacesAutocompletePlace.h"
+#import "GoogleMapsTaskSearchViewController.h"
 
 @interface GoogleMapsTaskViewController ()
 
 @end
 
-@implementation GoogleMapsTaskViewController
+@implementation GoogleMapsTaskViewController {
+    NSArray *modes;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        searchQuery = [[SPGooglePlacesAutocompleteQuery alloc] initWithApiKey:@"AIzaSyDIPXDDxtfs84aJbGJkM76eICmC2pY2Yto"];
-        shouldBeginEditing = YES;
-    }
     return self;
 }
 
 - (void)viewDidLoad {
-    self.searchDisplayController.searchBar.placeholder = @"Search or Address";
+    modes = @[@"driving", @"transit", @"bicycling", @"walking"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,108 +31,65 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark -
-#pragma mark UITableViewDataSource
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [searchResultPlaces count];
+- (IBAction)startButtonClicked:(id)sender {
+    GoogleMapsTaskSearchViewController *searchController = [[GoogleMapsTaskSearchViewController alloc] init];
+    searchController.isStart = true;
+    searchController.parent = self;
+    [self presentViewController:searchController animated:YES completion:nil];
 }
 
-- (SPGooglePlacesAutocompletePlace *)placeAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"places %@", searchResultPlaces);
-    NSLog(@"row %ld", (long)indexPath.row);
-    NSLog(@"result %@", searchResultPlaces[indexPath.row]);
-    return searchResultPlaces[indexPath.row];
+- (IBAction)endButtonClicked:(id)sender {
+    GoogleMapsTaskSearchViewController *searchController = [[GoogleMapsTaskSearchViewController alloc] init];
+    searchController.isStart = false;
+    searchController.parent = self;
+    [self presentViewController:searchController animated:YES completion:nil];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellIdentifier = @"SPGooglePlacesAutocompleteCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+- (IBAction)submitButtonClicked:(id)sender {
+    NSString *start = @"";
+    NSString *end;
+    NSString *mode = modes[[self.modeDropdown selectedRowInComponent:0]];
+    
+    if (self.startingPlace) {
+        start = self.startingPlace.name;
     }
     
-    cell.textLabel.font = [UIFont fontWithName:@"GillSans" size:16.0];
-    cell.textLabel.text = [self placeAtIndexPath:indexPath].name;
-    return cell;
-}
-
-#pragma mark -
-#pragma mark UITableViewDelegate
-
-- (void)dismissSearchControllerWhileStayingActive {
-    // Animate out the table view.
-    NSTimeInterval animationDuration = 0.3;
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:animationDuration];
-    self.searchDisplayController.searchResultsTableView.alpha = 0.0;
-    [UIView commitAnimations];
-    
-    [self.searchDisplayController.searchBar setShowsCancelButton:NO animated:YES];
-    [self.searchDisplayController.searchBar resignFirstResponder];
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    SPGooglePlacesAutocompletePlace *place = [self placeAtIndexPath:indexPath];
-    [place resolveToPlacemark:^(CLPlacemark *placemark, NSString *addressString, NSError *error) {
-        if (error) {
-            NSLog(@"%@", error);
-        } else if (placemark) {
-            [self dismissSearchControllerWhileStayingActive];
-            [self.searchDisplayController.searchResultsTableView deselectRowAtIndexPath:indexPath animated:NO];
-        }
-    }];
-}
-
-#pragma mark -
-#pragma mark UISearchDisplayDelegate
-
-- (void)handleSearchForSearchString:(NSString *)searchString {
-//    TODO add location
-//    self.searchQuery.location = self.mapView.userLocation.coordinate;
-    searchQuery.input = searchString;
-    [searchQuery fetchPlaces:^(NSArray *places, NSError *error) {
-        if (error) {
-            NSLog(@"%@", error);
-        } else {
-            searchResultPlaces = places;
-            [self.searchDisplayController.searchResultsTableView reloadData];
-        }
-    }];
-}
-
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
-    [self handleSearchForSearchString:searchString];
-    
-    // Return YES to cause the search result table view to be reloaded.
-    return YES;
-}
-
-#pragma mark -
-#pragma mark UISearchBar Delegate
-
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-    if (![searchBar isFirstResponder]) {
-        // User tapped the 'clear' button.
-        shouldBeginEditing = NO;
-        [self.searchDisplayController setActive:NO];
+    if (self.endingPlace) {
+        end = self.endingPlace.name;
+    } else {
+        // TODO throw an error
+        NSLog(@"NEED ENDING PLACE");
     }
+
+    NSURL *url = [self googleMapsURLFrom:start to:end mode:mode];
+    NSLog(@"%@", url);
 }
 
-- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
-    if (shouldBeginEditing) {
-        // Animate in the table view.
-        NSTimeInterval animationDuration = 0.3;
-        [UIView beginAnimations:nil context:NULL];
-        [UIView setAnimationDuration:animationDuration];
-        self.searchDisplayController.searchResultsTableView.alpha = 0.75;
-        [UIView commitAnimations];
-        
-        [self.searchDisplayController.searchBar setShowsCancelButton:YES animated:YES];
-    }
-    BOOL boolToReturn = shouldBeginEditing;
-    shouldBeginEditing = YES;
-    return boolToReturn;
+#pragma mark -
+#pragma mark PickerView DataSource
+
+- (NSInteger)numberOfComponentsInPickerView:
+(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView
+numberOfRowsInComponent:(NSInteger)component
+{
+    return modes.count;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView
+             titleForRow:(NSInteger)row
+            forComponent:(NSInteger)component
+{
+    return modes[row];
+}
+
+- (NSURL *)googleMapsURLFrom:(NSString *)from to:(NSString *)to mode:(NSString *)mode
+{
+    return [NSURL URLWithString:[[NSString stringWithFormat:@"comgooglemaps://?saddr=%@&daddr=%@&directionsmode=%@", from, to, mode] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 }
 
 @end

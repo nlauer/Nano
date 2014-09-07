@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5C93182BF5254FD8B508E08C /* libPods-NanoTodayExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF5FDB0FC454816978E1BBB /* libPods-NanoTodayExtension.a */; };
 		62B1349419BC0258009C784F /* GoogleMapsTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62B1349319BC0258009C784F /* GoogleMapsTaskViewController.xib */; };
+		62B1349819BC0B49009C784F /* GoogleMapsTaskSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B1349619BC0B49009C784F /* GoogleMapsTaskSearchViewController.m */; };
+		62B1349919BC0B49009C784F /* GoogleMapsTaskSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62B1349719BC0B49009C784F /* GoogleMapsTaskSearchViewController.xib */; };
 		62B9263F19BBE543003A2533 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B9262B19BBE3BB003A2533 /* CoreLocation.framework */; };
 		62B9265419BBEB82003A2533 /* GoogleMapsTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B9265319BBEB82003A2533 /* GoogleMapsTaskViewController.m */; };
 		8567004819BBA98D007DA4BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8567004719BBA98D007DA4BB /* main.m */; };
@@ -65,6 +67,9 @@
 /* Begin PBXFileReference section */
 		3D85E6916D3443EFBBC17F81 /* Pods-NanoTodayExtension.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NanoTodayExtension.xcconfig"; path = "Pods/Pods-NanoTodayExtension.xcconfig"; sourceTree = "<group>"; };
 		62B1349319BC0258009C784F /* GoogleMapsTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoogleMapsTaskViewController.xib; sourceTree = "<group>"; };
+		62B1349519BC0B49009C784F /* GoogleMapsTaskSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleMapsTaskSearchViewController.h; sourceTree = "<group>"; };
+		62B1349619BC0B49009C784F /* GoogleMapsTaskSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleMapsTaskSearchViewController.m; sourceTree = "<group>"; };
+		62B1349719BC0B49009C784F /* GoogleMapsTaskSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoogleMapsTaskSearchViewController.xib; sourceTree = "<group>"; };
 		62B9262B19BBE3BB003A2533 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		62B9265219BBEB82003A2533 /* GoogleMapsTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleMapsTaskViewController.h; sourceTree = "<group>"; };
 		62B9265319BBEB82003A2533 /* GoogleMapsTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleMapsTaskViewController.m; sourceTree = "<group>"; };
@@ -157,6 +162,9 @@
 				62B9265219BBEB82003A2533 /* GoogleMapsTaskViewController.h */,
 				62B9265319BBEB82003A2533 /* GoogleMapsTaskViewController.m */,
 				62B1349319BC0258009C784F /* GoogleMapsTaskViewController.xib */,
+				62B1349519BC0B49009C784F /* GoogleMapsTaskSearchViewController.h */,
+				62B1349619BC0B49009C784F /* GoogleMapsTaskSearchViewController.m */,
+				62B1349719BC0B49009C784F /* GoogleMapsTaskSearchViewController.xib */,
 				8567005219BBA98D007DA4BB /* Images.xcassets */,
 				8567004519BBA98C007DA4BB /* Supporting Files */,
 			);
@@ -344,6 +352,7 @@
 			files = (
 				62B1349419BC0258009C784F /* GoogleMapsTaskViewController.xib in Resources */,
 				8567005319BBA98D007DA4BB /* Images.xcassets in Resources */,
+				62B1349919BC0B49009C784F /* GoogleMapsTaskSearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +443,7 @@
 			files = (
 				8567004E19BBA98D007DA4BB /* ViewController.m in Sources */,
 				62B9265419BBEB82003A2533 /* GoogleMapsTaskViewController.m in Sources */,
+				62B1349819BC0B49009C784F /* GoogleMapsTaskSearchViewController.m in Sources */,
 				8567004B19BBA98D007DA4BB /* AppDelegate.m in Sources */,
 				8567004819BBA98D007DA4BB /* main.m in Sources */,
 			);

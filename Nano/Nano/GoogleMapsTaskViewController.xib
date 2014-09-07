@@ -6,36 +6,58 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GoogleMapsTaskViewController">
             <connections>
-                <outlet property="searchDisplayController" destination="ceX-OB-lAQ" id="0b9-Wz-bPS"/>
+                <outlet property="endButton" destination="WFd-Jx-FhV" id="hxS-cM-nHR"/>
+                <outlet property="modeDropdown" destination="VLx-C1-Qzd" id="gua-Lt-9yN"/>
+                <outlet property="startButton" destination="qVX-S1-o1w" id="3L6-hD-qtc"/>
                 <outlet property="view" destination="iN0-l3-epB" id="7bX-fB-7bb"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="64" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ixN-D8-IW0">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                    <textInputTraits key="textInputTraits"/>
-                </searchBar>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qVX-S1-o1w">
+                    <rect key="frame" x="8" y="30" width="304" height="30"/>
+                    <state key="normal" title="Current Location">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="startButtonClicked:" destination="-1" eventType="touchUpInside" id="mlt-lT-XKT"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WFd-Jx-FhV">
+                    <rect key="frame" x="8" y="68" width="304" height="30"/>
+                    <state key="normal" title="Ending Location">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="endButtonClicked:" destination="-1" eventType="touchUpInside" id="HkD-QI-O6S"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9K-xU-Wi9">
+                    <rect key="frame" x="112" y="530" width="96" height="30"/>
+                    <state key="normal" title="Add Shortcut!">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="submitButtonClicked:" destination="-1" eventType="touchUpInside" id="Gjy-9y-ZjD"/>
+                    </connections>
+                </button>
+                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VLx-C1-Qzd">
+                    <rect key="frame" x="0.0" y="106" width="320" height="162"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="a39-Bn-lgJ"/>
+                        <outlet property="delegate" destination="-1" id="Yve-vF-uih"/>
+                    </connections>
+                </pickerView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <nil key="simulatedStatusBarMetrics"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4">
                 <size key="portraitSize" width="320" height="568"/>
                 <size key="landscapeSize" width="568" height="320"/>
             </simulatedScreenMetrics>
         </view>
-        <searchDisplayController id="ceX-OB-lAQ">
-            <connections>
-                <outlet property="delegate" destination="-1" id="ZIT-Ua-qNC"/>
-                <outlet property="searchBar" destination="ixN-D8-IW0" id="I5H-fv-n24"/>
-                <outlet property="searchContentsController" destination="-1" id="KHT-tp-cjz"/>
-                <outlet property="searchResultsDataSource" destination="-1" id="nZc-zO-FgF"/>
-                <outlet property="searchResultsDelegate" destination="-1" id="VCd-k3-JqW"/>
-            </connections>
-        </searchDisplayController>
     </objects>
 </document>

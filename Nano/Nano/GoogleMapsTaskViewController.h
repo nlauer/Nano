@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SPGooglePlacesAutocompleteQuery.h"
+#import "SPGooglePlacesAutocompletePlace.h"
 
-@interface GoogleMapsTaskViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate, UISearchBarDelegate> {
-    NSArray *searchResultPlaces;
-    SPGooglePlacesAutocompleteQuery *searchQuery;
-    
-    BOOL shouldBeginEditing;
-}
+@interface GoogleMapsTaskViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
+@property (weak, nonatomic) IBOutlet UIButton *endButton;
+@property (weak, nonatomic) IBOutlet UIPickerView *modeDropdown;
+
+@property (nonatomic) SPGooglePlacesAutocompletePlace *startingPlace;
+@property (nonatomic) SPGooglePlacesAutocompletePlace *endingPlace;
 
 @end
