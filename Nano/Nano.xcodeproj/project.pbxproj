@@ -20,6 +20,7 @@
 		8567007519BBADAB007DA4BB /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8567007419BBADAB007DA4BB /* TodayViewController.m */; };
 		8567007719BBADAB007DA4BB /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8567007619BBADAB007DA4BB /* MainInterface.storyboard */; };
 		8567007A19BBADAB007DA4BB /* NanoTodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8567006C19BBADAB007DA4BB /* NanoTodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		85E6F21519BBF8FE00C79EE0 /* Shortcut.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E6F21419BBF8FE00C79EE0 /* Shortcut.m */; };
 		A09294EAF2334E88AB2A6626 /* libPods-Nano.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A46FE8E9DC47DBAFB8076A /* libPods-Nano.a */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +88,8 @@
 		8567007619BBADAB007DA4BB /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		8567008119BBC1DF007DA4BB /* Nano.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Nano.entitlements; sourceTree = "<group>"; };
 		8567008219BBC23B007DA4BB /* NanoTodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = NanoTodayExtension.entitlements; sourceTree = "<group>"; };
+		85E6F21319BBF8FE00C79EE0 /* Shortcut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shortcut.h; sourceTree = "<group>"; };
+		85E6F21419BBF8FE00C79EE0 /* Shortcut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shortcut.m; sourceTree = "<group>"; };
 		C6A46FE8E9DC47DBAFB8076A /* libPods-Nano.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Nano.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFF5FDB0FC454816978E1BBB /* libPods-NanoTodayExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NanoTodayExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -205,6 +208,8 @@
 				8567007419BBADAB007DA4BB /* TodayViewController.m */,
 				8567007619BBADAB007DA4BB /* MainInterface.storyboard */,
 				8567007119BBADAB007DA4BB /* Supporting Files */,
+				85E6F21319BBF8FE00C79EE0 /* Shortcut.h */,
+				85E6F21419BBF8FE00C79EE0 /* Shortcut.m */,
 			);
 			path = NanoTodayExtension;
 			sourceTree = "<group>";
@@ -447,6 +452,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8567007519BBADAB007DA4BB /* TodayViewController.m in Sources */,
+				85E6F21519BBF8FE00C79EE0 /* Shortcut.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

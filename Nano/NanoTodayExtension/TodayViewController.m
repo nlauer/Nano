@@ -9,6 +9,7 @@
 #import "TodayViewController.h"
 #import <NotificationCenter/NotificationCenter.h>
 #import <Venmo-iOS-SDK/Venmo.h>
+#import "Shortcut.h"
 
 @interface TodayViewController () <NCWidgetProviding>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -20,14 +21,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.preferredContentSize = CGSizeMake(0, 80);
-    [self.collectionView registerClass:[UICollectionViewCell class]
-                forCellWithReuseIdentifier:@"NanoCell"];
-    self.shortcutURLs = [NSArray arrayWithObjects:[NSURL URLWithString:@"comgooglemaps://?saddr=&daddr=Home&directionsmode=transit"],
-                         [self facebookEventURLForGroupID:@"620819504700967"],
-                         nil];
 
     [Venmo startWithAppId:@"1944" secret:@"YdFGe8KjDCePjgZshL76xJTPkJenaCbT" name:@"Nano"];
+
+    self.preferredContentSize = CGSizeMake(0, 80);
+
+    [self.collectionView registerClass:[UICollectionViewCell class]
+                forCellWithReuseIdentifier:@"NanoCell"];
+
+    self.shortcutURLs = [NSArray arrayWithObjects:
+                         [self googleMapsURLFrom:@"" to:@"Home" mode:@"transit"],
+                         [self facebookEventURLForGroupID:@"620819504700967"],
+                         [self smsURLForPhoneNumber:@"4159351717"],
+                         [self yelpSearchForName:@"Starbucks"],
+                         nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -72,7 +79,7 @@
     // TODO: Deselect item
 }
 
-#pragma mark - Venmo Payment
+#pragma mark - Custom Actions
 - (void)sendPaymentTo:(NSString *)recipient amount:(NSUInteger)amount
 {
     [[Venmo sharedInstance] sendPaymentTo:recipient
@@ -96,6 +103,16 @@
 - (NSURL *)facebookEventURLForGroupID:(NSString *)eventID
 {
     return [NSURL URLWithString:[NSString stringWithFormat:@"fb://event?id=%@", eventID]];
+}
+
+- (NSURL *)smsURLForPhoneNumber:(NSString *)number
+{
+    return [NSURL URLWithString:[NSString stringWithFormat:@"sms:%@", number]];
+}
+
+- (NSURL *)yelpSearchForName:(NSString *)name
+{
+    return [NSURL URLWithString:[NSString stringWithFormat:@"yelp:///search?terms=%@", name]];
 }
 
 @end
