@@ -40,6 +40,7 @@
             [self addShortcutToStore:[self yelpShortcutForSearch:@"Starbucks"]];
             [self addShortcutToStore:[self uberShortcutForDestination:@"555 W. Middlefield Road"]];
             [self addShortcutToStore:[self rdioShortcutForCodingMix]];
+            [self addShortcutToStore:[self yoShortcutForRecipient:@"jlauer"]];
         }
     }
 
@@ -159,6 +160,16 @@
     shortcut.name = @"Listen to Coding Mix";
     shortcut.icon = @"rdio";
     shortcut.url = [NSURL URLWithString:[NSString stringWithFormat:@"rdio://www.rdio.com/people/dvos/playlists/1127421/Coding_Mix/"]];
+    
+    return shortcut;
+}
+
+- (Shortcut *)yoShortcutForRecipient:(NSString *)recipient
+{
+    Shortcut *shortcut = [[Shortcut alloc] init];
+    shortcut.name = @"YO Josh";
+    shortcut.recipient = recipient;
+    shortcut.icon = @"yo";
     
     return shortcut;
 }

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SPGooglePlacesAutocompleteQuery.h"
-#import "GoogleMapsTaskViewController.h"
+#import "MapTaskProtocol.h"
 
 @interface GoogleMapsTaskSearchViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate, UISearchBarDelegate> {
     NSArray *searchResultPlaces;
@@ -18,7 +18,7 @@
 }
 
 @property BOOL isStart;
-@property (weak, nonatomic) GoogleMapsTaskViewController *parent;
+@property (weak, nonatomic) UIViewController<MapTaskProtocol> *parent;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end
