@@ -83,6 +83,7 @@
 
     Shortcut *shortcut = [Shortcut googleMapsShortcutFrom:start to:end mode:mode];
     [[ShortcutStore sharedStore] addShortcutToStore:shortcut];
+    [self.submitButton setEnabled:NO];
 }
 
 - (IBAction)modeButtonPressed:(id)sender {

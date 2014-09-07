@@ -16,17 +16,16 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-//        self.recipientField.delegate = self.mainVC;
-//        self.amountField.delegate = self.mainVC;
-//        self.messageField.delegate = self.mainVC;
-    }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,17 +34,24 @@
 }
 
 - (IBAction)checkFields:(id)sender {
-//    if (self.recipientField.text.length > 0 &&
-//        self.amountField.text.length > 0 &&
-//        self.messageField.text.length > 0) {
-//        [self.submitButton setHidden:NO];
-//    } else {
-//        [self.submitButton setHidden:YES];
-//    }
+    NSLog(@"%lu %lu %lu", (unsigned long)self.recipientField.text.length, (unsigned long)self.amountField.text.length, (unsigned long)self.messageField.text.length);
+    if (self.recipientField.text.length > 0 &&
+        self.amountField.text.length > 0 &&
+        self.messageField.text.length > 0) {
+        [self.submitButton setHidden:NO];
+    } else {
+        [self.submitButton setHidden:YES];
+    }
 }
 
 - (IBAction)submitButtonClicked:(id)sender {
     // TODO send url for venmo
+}
+
+-(void)dismissKeyboard {
+    [self.recipientField resignFirstResponder];
+    [self.amountField resignFirstResponder];
+    [self.messageField resignFirstResponder];
 }
 
 @end

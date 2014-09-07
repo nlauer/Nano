@@ -20,6 +20,7 @@
                     <state key="normal" title="Save" backgroundImage="add-new">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <state key="disabled" title=" " backgroundImage="checkmark"/>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="selection-bar" translatesAutoresizingMaskIntoConstraints="NO" id="hoM-jD-A3e">
                     <rect key="frame" x="0.0" y="-13" width="320" height="65"/>
@@ -75,6 +76,7 @@
     </objects>
     <resources>
         <image name="add-new" width="408" height="108"/>
+        <image name="checkmark" width="408" height="108"/>
         <image name="selection-bar" width="640" height="131"/>
     </resources>
 </document>

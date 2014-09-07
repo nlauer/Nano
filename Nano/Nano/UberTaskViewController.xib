@@ -23,6 +23,7 @@
                     <state key="normal" title="Save" backgroundImage="add-new">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <state key="disabled" title=" " backgroundImage="checkmark"/>
                     <connections>
                         <action selector="submitButtonClicked:" destination="-1" eventType="touchUpInside" id="KSY-ze-9f5"/>
                     </connections>
@@ -99,6 +100,7 @@
     </objects>
     <resources>
         <image name="add-new" width="408" height="108"/>
+        <image name="checkmark" width="408" height="108"/>
         <image name="selection-bar" width="640" height="131"/>
     </resources>
 </document>

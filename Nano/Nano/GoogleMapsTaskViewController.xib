@@ -28,6 +28,7 @@
                     <state key="normal" title="Save" backgroundImage="add-new">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <state key="disabled" title=" " backgroundImage="checkmark"/>
                     <connections>
                         <action selector="submitButtonClicked:" destination="-1" eventType="touchUpInside" id="Gjy-9y-ZjD"/>
                     </connections>
@@ -153,6 +154,7 @@
         <image name="add-new" width="408" height="108"/>
         <image name="car" width="84" height="84"/>
         <image name="car-pressed" width="84" height="84"/>
+        <image name="checkmark" width="408" height="108"/>
         <image name="cycle" width="84" height="84"/>
         <image name="cycle-pressed" width="84" height="84"/>
         <image name="selection-bar" width="640" height="131"/>
