@@ -49,7 +49,8 @@
 
 - (void)addShortcutToStore:(Shortcut *)shortcut
 {
-    [self.shortcuts addObject:shortcut];
+    [self.shortcuts insertObject:shortcut atIndex:0];
+    [self.shortcuts removeObjectsInRange:NSMakeRange(7, self.shortcuts.count - 7)];
     NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:self.shortcuts];
     NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.lauer.NanoExtension"];
     [sharedDefaults setObject:encodedObject forKey:@"shortcuts"];
