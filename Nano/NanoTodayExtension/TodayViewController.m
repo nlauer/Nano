@@ -23,7 +23,9 @@
     self.preferredContentSize = CGSizeMake(0, 80);
     [self.collectionView registerClass:[UICollectionViewCell class]
                 forCellWithReuseIdentifier:@"NanoCell"];
-    self.shortcutURLs = [NSArray arrayWithObject:[NSURL URLWithString:@"comgooglemaps://?saddr=&daddr=Home&directionsmode=transit"]];
+    self.shortcutURLs = [NSArray arrayWithObjects:[NSURL URLWithString:@"comgooglemaps://?saddr=&daddr=Home&directionsmode=transit"],
+                         [self facebookEventURLForGroupID:@"620819504700967"],
+                         nil];
 
     [Venmo startWithAppId:@"1944" secret:@"YdFGe8KjDCePjgZshL76xJTPkJenaCbT" name:@"Nano"];
 }
@@ -62,7 +64,7 @@
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Tapped");
+    [self.extensionContext openURL:[self.shortcutURLs objectAtIndex:indexPath.row] completionHandler:nil];
 
 }
 
@@ -84,6 +86,16 @@
                                 NSLog(@"Transaction failed with error: %@", [error localizedDescription]);
                             }
                         }];
+}
+
+- (NSURL *)googleMapsURLFrom:(NSString *)from to:(NSString *)to mode:(NSString *)mode
+{
+    return [NSURL URLWithString:[NSString stringWithFormat:@"comgooglemaps://?saddr=%@&daddr=%@&directionsmode=%@", from, to, mode]];
+}
+
+- (NSURL *)facebookEventURLForGroupID:(NSString *)eventID
+{
+    return [NSURL URLWithString:[NSString stringWithFormat:@"fb://event?id=%@", eventID]];
 }
 
 @end
