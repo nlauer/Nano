@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DC7A03ADA8DD4FB098C253E1"
+               BlueprintIdentifier = "45E63BBE7B3D47A5A3976860"
                BuildableName = "libPods-NanoTodayExtension-SSKeychain.a"
                BlueprintName = "Pods-NanoTodayExtension-SSKeychain"
                ReferencedContainer = "container:Pods.xcodeproj">
