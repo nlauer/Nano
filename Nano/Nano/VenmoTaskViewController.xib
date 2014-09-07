@@ -6,6 +6,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VenmoTaskViewController">
             <connections>
+                <outlet property="amountField" destination="bLL-ul-s3n" id="ygv-Jg-Usz"/>
+                <outlet property="messageField" destination="NSe-TQ-3sV" id="ITm-Mx-yLo"/>
+                <outlet property="recipientField" destination="q6q-Rm-htb" id="OZb-gb-Kqh"/>
+                <outlet property="submitButton" destination="nIO-xt-jmK" id="ZgL-qo-Xwv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,6 +24,9 @@
                     <state key="normal" title="Save" backgroundImage="add-new">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="submitButtonClicked:" destination="-1" eventType="touchUpInside" id="Ifn-D1-JYO"/>
+                    </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="selection-bar" translatesAutoresizingMaskIntoConstraints="NO" id="MEb-Cj-g5A">
                     <rect key="frame" x="0.0" y="-13" width="320" height="65"/>
@@ -27,12 +34,22 @@
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l5i-5r-x6a">
                     <rect key="frame" x="0.0" y="51" width="320" height="56"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="From" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZ0-NE-zUU">
-                            <rect key="frame" x="22" y="16" width="44" height="23"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                            <color key="textColor" red="0.61453683039999996" green="0.61453683039999996" blue="0.61453683039999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recipient" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZ0-NE-zUU">
+                            <rect key="frame" x="22" y="16" width="79" height="23"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <color key="textColor" red="0.28547512759999999" green="0.28547512759999999" blue="0.28547512759999999" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="venmo username..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q6q-Rm-htb">
+                            <rect key="frame" x="109" y="13" width="203" height="30"/>
+                            <color key="textColor" red="0.28547512759999999" green="0.28547512759999999" blue="0.28547512759999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <action selector="checkFields:" destination="-1" eventType="valueChanged" id="nsE-E9-Cfd"/>
+                                <outlet property="delegate" destination="-1" id="S79-87-Jvu"/>
+                            </connections>
+                        </textField>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
@@ -43,12 +60,27 @@
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xcQ-tU-Ewv">
                     <rect key="frame" x="0.0" y="108" width="320" height="56"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="To" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eU6-dE-Z71">
-                            <rect key="frame" x="22" y="16" width="19" height="22"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amount" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eU6-dE-Z71">
+                            <rect key="frame" x="22" y="16" width="65" height="22"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                             <color key="textColor" red="0.28469786349999998" green="0.28469786349999998" blue="0.28469786349999998" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="123.45..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bLL-ul-s3n">
+                            <rect key="frame" x="107" y="12" width="205" height="30"/>
+                            <color key="textColor" red="0.28547512759999999" green="0.28547512759999999" blue="0.28547512759999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            <connections>
+                                <action selector="checkFields:" destination="-1" eventType="valueChanged" id="5th-eP-Sup"/>
+                            </connections>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="$" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fz2-eZ-bdq">
+                            <rect key="frame" x="95" y="12" width="17" height="30"/>
+                            <color key="textColor" red="0.28547512759999999" green="0.28547512759999999" blue="0.28547512759999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
@@ -58,6 +90,17 @@
                 </view>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HTf-JT-wBc">
                     <rect key="frame" x="0.0" y="165" width="320" height="68"/>
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Write message here..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NSe-TQ-3sV">
+                            <rect key="frame" x="22" y="19" width="290" height="30"/>
+                            <color key="textColor" red="0.28547512759999999" green="0.28547512759999999" blue="0.28547512759999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <action selector="checkFields:" destination="-1" eventType="valueChanged" id="kpX-qR-Y01"/>
+                            </connections>
+                        </textField>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Make a Payment with Venmo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTo-Rt-Boi">

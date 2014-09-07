@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class CreateTaskViewController;
+
 @interface VenmoTaskViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *recipientField;
+@property (weak, nonatomic) IBOutlet UITextField *amountField;
+@property (weak, nonatomic) IBOutlet UITextField *messageField;
+@property (weak, nonatomic) IBOutlet UIButton *submitButton;
+
+@property (weak, nonatomic) CreateTaskViewController *mainVC;
 
 @end

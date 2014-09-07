@@ -59,11 +59,11 @@
         //this `if (view == nil) {...}` statement because the view will be
         //recycled and used with other index values later
         view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 75.0f, 75.0f)];
-        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:apps[index]]];
-        imageView.frame = CGRectMake(0, 0, 68.0f, 68.0f);
-        [view addSubview:imageView];
         //view.contentMode = UIViewContentModeCenter;
     }
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:apps[index]]];
+    imageView.frame = CGRectMake(0, 0, 68.0f, 68.0f);
+    [view addSubview:imageView];
     
     return view;
 }
@@ -73,7 +73,7 @@
     if (option == iCarouselOptionSpacing) {
         return value * 1.1f;
     } else if (option == iCarouselOptionWrap) {
-        return YES;
+        return NO;
     }
     return value;
 }
@@ -93,6 +93,7 @@
     } else if ([app  isEqual: @"venmo"]) {
         if (!self.venmoVC) {
             self.venmoVC = [[VenmoTaskViewController alloc] init];
+            self.venmoVC.mainVC = self;
         }
         [self addChildViewController:self.venmoVC];
         [self.containerView addSubview:self.venmoVC.view];
