@@ -21,6 +21,12 @@
 		8567007719BBADAB007DA4BB /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8567007619BBADAB007DA4BB /* MainInterface.storyboard */; };
 		8567007A19BBADAB007DA4BB /* NanoTodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8567006C19BBADAB007DA4BB /* NanoTodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		85E6F21519BBF8FE00C79EE0 /* Shortcut.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E6F21419BBF8FE00C79EE0 /* Shortcut.m */; };
+		85E6F21D19BC0E5F00C79EE0 /* fb.png in Resources */ = {isa = PBXBuildFile; fileRef = 85E6F21719BC0E5E00C79EE0 /* fb.png */; };
+		85E6F21E19BC0E5F00C79EE0 /* google.png in Resources */ = {isa = PBXBuildFile; fileRef = 85E6F21819BC0E5F00C79EE0 /* google.png */; };
+		85E6F21F19BC0E5F00C79EE0 /* imessage.png in Resources */ = {isa = PBXBuildFile; fileRef = 85E6F21919BC0E5F00C79EE0 /* imessage.png */; };
+		85E6F22019BC0E5F00C79EE0 /* screen-mock.png in Resources */ = {isa = PBXBuildFile; fileRef = 85E6F21A19BC0E5F00C79EE0 /* screen-mock.png */; };
+		85E6F22119BC0E5F00C79EE0 /* venmo.png in Resources */ = {isa = PBXBuildFile; fileRef = 85E6F21B19BC0E5F00C79EE0 /* venmo.png */; };
+		85E6F22219BC0E5F00C79EE0 /* yelp.png in Resources */ = {isa = PBXBuildFile; fileRef = 85E6F21C19BC0E5F00C79EE0 /* yelp.png */; };
 		A09294EAF2334E88AB2A6626 /* libPods-Nano.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A46FE8E9DC47DBAFB8076A /* libPods-Nano.a */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +96,12 @@
 		8567008219BBC23B007DA4BB /* NanoTodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = NanoTodayExtension.entitlements; sourceTree = "<group>"; };
 		85E6F21319BBF8FE00C79EE0 /* Shortcut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shortcut.h; sourceTree = "<group>"; };
 		85E6F21419BBF8FE00C79EE0 /* Shortcut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shortcut.m; sourceTree = "<group>"; };
+		85E6F21719BC0E5E00C79EE0 /* fb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb.png; sourceTree = "<group>"; };
+		85E6F21819BC0E5F00C79EE0 /* google.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = google.png; sourceTree = "<group>"; };
+		85E6F21919BC0E5F00C79EE0 /* imessage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imessage.png; sourceTree = "<group>"; };
+		85E6F21A19BC0E5F00C79EE0 /* screen-mock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screen-mock.png"; sourceTree = "<group>"; };
+		85E6F21B19BC0E5F00C79EE0 /* venmo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = venmo.png; sourceTree = "<group>"; };
+		85E6F21C19BC0E5F00C79EE0 /* yelp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yelp.png; sourceTree = "<group>"; };
 		C6A46FE8E9DC47DBAFB8076A /* libPods-Nano.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Nano.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFF5FDB0FC454816978E1BBB /* libPods-NanoTodayExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NanoTodayExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -203,6 +215,7 @@
 		8567007019BBADAB007DA4BB /* NanoTodayExtension */ = {
 			isa = PBXGroup;
 			children = (
+				85E6F21619BC0E4300C79EE0 /* Resources */,
 				8567008219BBC23B007DA4BB /* NanoTodayExtension.entitlements */,
 				8567007319BBADAB007DA4BB /* TodayViewController.h */,
 				8567007419BBADAB007DA4BB /* TodayViewController.m */,
@@ -220,6 +233,19 @@
 				8567007219BBADAB007DA4BB /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		85E6F21619BC0E4300C79EE0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				85E6F21719BC0E5E00C79EE0 /* fb.png */,
+				85E6F21819BC0E5F00C79EE0 /* google.png */,
+				85E6F21919BC0E5F00C79EE0 /* imessage.png */,
+				85E6F21A19BC0E5F00C79EE0 /* screen-mock.png */,
+				85E6F21B19BC0E5F00C79EE0 /* venmo.png */,
+				85E6F21C19BC0E5F00C79EE0 /* yelp.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,6 +385,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8567007719BBADAB007DA4BB /* MainInterface.storyboard in Resources */,
+				85E6F22219BC0E5F00C79EE0 /* yelp.png in Resources */,
+				85E6F22119BC0E5F00C79EE0 /* venmo.png in Resources */,
+				85E6F21F19BC0E5F00C79EE0 /* imessage.png in Resources */,
+				85E6F21E19BC0E5F00C79EE0 /* google.png in Resources */,
+				85E6F21D19BC0E5F00C79EE0 /* fb.png in Resources */,
+				85E6F22019BC0E5F00C79EE0 /* screen-mock.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,7 +12,7 @@
 #import "Shortcut.h"
 
 @interface TodayViewController () <NCWidgetProviding>
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *shortcutURLs;
 @end
 
@@ -23,17 +23,13 @@
     // Do any additional setup after loading the view from its nib.
 
     [Venmo startWithAppId:@"1944" secret:@"YdFGe8KjDCePjgZshL76xJTPkJenaCbT" name:@"Nano"];
-
-    self.preferredContentSize = CGSizeMake(0, 80);
-
-    [self.collectionView registerClass:[UICollectionViewCell class]
-                forCellWithReuseIdentifier:@"NanoCell"];
+    self.tableView.backgroundColor = [UIColor clearColor];
 
     self.shortcutURLs = [NSArray arrayWithObjects:
-                         [self googleMapsURLFrom:@"" to:@"Home" mode:@"transit"],
-                         [self facebookEventURLForGroupID:@"620819504700967"],
-                         [self smsURLForPhoneNumber:@"4159351717"],
-                         [self yelpSearchForName:@"Starbucks"],
+                         [self googleMapsShortcutFrom:@"" to:@"Home" mode:@"transit"],
+                         [self facebookEventShortcutForEventID:@"620819504700967"],
+                         [self smsShortcutForNumber:@"4159351717"],
+                         [self yelpShortcutForSearch:@"Starbucks"],
                          nil];
 }
 
@@ -44,7 +40,9 @@
 
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
     // Perform any setup necessary in order to update the view.
-    
+    self.tableView.bounds = CGRectMake(0, 0, 320, 44*[self.shortcutURLs count]);
+    self.preferredContentSize = CGSizeMake(0, 44*[self.shortcutURLs count]);
+
     // If an error is encoutered, use NCUpdateResultFailed
     // If there's no update required, use NCUpdateResultNoData
     // If there's an update, use NCUpdateResultNewData
@@ -52,31 +50,35 @@
     completionHandler(NCUpdateResultNewData);
 }
 
-#pragma mark - Collection View
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+#pragma mark - Table View
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [self.shortcutURLs count];
 }
 
-- (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView {
-    return 1;
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 0;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"NanoCell" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor whiteColor];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NanoCell" forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor clearColor];
+
+    Shortcut *shortcut = [self.shortcutURLs objectAtIndex:indexPath.row];
+    [cell.imageView setImage:[UIImage imageNamed:shortcut.icon]];
+    cell.textLabel.text = shortcut.name;
+    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.textLabel.font = [UIFont systemFontOfSize:14];
+
     return cell;
 }
 
-#pragma mark - UICollectionViewDelegate
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+#pragma mark - UITableViewViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.extensionContext openURL:[self.shortcutURLs objectAtIndex:indexPath.row] completionHandler:nil];
-
-}
-
-- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
-    // TODO: Deselect item
+    [self.extensionContext openURL:((Shortcut *)[self.shortcutURLs objectAtIndex:indexPath.row]).url completionHandler:nil];
 }
 
 #pragma mark - Custom Actions
@@ -95,19 +97,70 @@
                         }];
 }
 
+- (Shortcut *)venmoShortcutForRecipient:(NSString *)recipient amount:(NSUInteger)amount
+{
+    Shortcut *shortcut = [[Shortcut alloc] init];
+    shortcut.name = @"Venmo";
+    shortcut.amount = amount;
+    shortcut.recipient = recipient;
+    shortcut.icon = @"venmo";
+
+    return shortcut;
+}
+
+- (Shortcut *)googleMapsShortcutFrom:(NSString *)from to:(NSString *)to mode:(NSString *)mode
+{
+    Shortcut *shortcut = [[Shortcut alloc] init];
+    shortcut.name = @"Transit from here to home";
+    shortcut.icon = @"google";
+    shortcut.url = [self googleMapsURLFrom:from to:to mode:mode];
+
+    return shortcut;
+}
+
 - (NSURL *)googleMapsURLFrom:(NSString *)from to:(NSString *)to mode:(NSString *)mode
 {
     return [NSURL URLWithString:[NSString stringWithFormat:@"comgooglemaps://?saddr=%@&daddr=%@&directionsmode=%@", from, to, mode]];
 }
 
-- (NSURL *)facebookEventURLForGroupID:(NSString *)eventID
+- (Shortcut *)facebookEventShortcutForEventID:(NSString *)eventID
+{
+    Shortcut *shortcut = [[Shortcut alloc] init];
+    shortcut.name = @"Open TechCrunch Disrupt Event";
+    shortcut.icon = @"fb";
+    shortcut.url = [self facebookEventURLForEventID:eventID];
+
+    return shortcut;
+}
+
+- (NSURL *)facebookEventURLForEventID:(NSString *)eventID
 {
     return [NSURL URLWithString:[NSString stringWithFormat:@"fb://event?id=%@", eventID]];
+}
+
+- (Shortcut *)smsShortcutForNumber:(NSString *)number
+{
+    Shortcut *shortcut = [[Shortcut alloc] init];
+    shortcut.name = @"Text Message Josh";
+    shortcut.icon = @"imessage";
+    shortcut.url = [self smsURLForPhoneNumber:number];
+
+    return shortcut;
 }
 
 - (NSURL *)smsURLForPhoneNumber:(NSString *)number
 {
     return [NSURL URLWithString:[NSString stringWithFormat:@"sms:%@", number]];
+}
+
+- (Shortcut *)yelpShortcutForSearch:(NSString *)search
+{
+    Shortcut *shortcut = [[Shortcut alloc] init];
+    shortcut.name = @"Search Yelp for Starbucks";
+    shortcut.icon = @"yelp";
+    shortcut.url = [self yelpSearchForName:search];
+
+    return shortcut;
 }
 
 - (NSURL *)yelpSearchForName:(NSString *)name

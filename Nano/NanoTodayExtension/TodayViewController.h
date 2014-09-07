@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TodayViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface TodayViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end
