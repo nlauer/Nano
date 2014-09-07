@@ -10,6 +10,7 @@
 #import <NotificationCenter/NotificationCenter.h>
 #import <Venmo-iOS-SDK/Venmo.h>
 #import "Shortcut.h"
+#import "AFHTTPRequestOperationManager.h"
 
 @interface TodayViewController () <NCWidgetProviding>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -49,6 +50,32 @@
     self.tableView.backgroundColor = [UIColor clearColor];
 }
 
+- (void)updateUberPrice
+{
+    // Update the price for Uber
+    for (Shortcut *shortcut in self.shortcutURLs) {
+        if ([shortcut.icon isEqualToString:@"uber"]) {
+            AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+            
+            [manager.requestSerializer setValue:@"Token CXtp9B6xHaWj6H0-lqaejPcoz496V6V21p7c5Gxo" forHTTPHeaderField:@"Authorization"];
+            
+            [manager GET:@"https://api.uber.com/v1/estimates/price?start_latitude=37.785734&start_longitude=-122.425605&end_latitude=37.775619&end_longitude=-122.386737" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                
+                shortcut.name = [NSString stringWithFormat:@"Uber Home For $%@", [[[responseObject objectForKey:@"prices"] objectAtIndex:0] objectForKey:@"low_estimate"]];
+                
+                NSLog(@"JSON: %@", responseObject);
+                
+                [self.tableView reloadData];
+                
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                
+                NSLog(@"Error: %@", error);
+                
+            }];
+        }
+    }
+}
+
 - (void)updateShortcutURLs
 {
     NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.lauer.NanoExtension"];
@@ -57,6 +84,9 @@
     self.preferredContentSize = CGSizeMake(0, 50*[self.shortcutURLs count]);
     self.tableView.bounds = CGRectMake(0, 0, 320, 50*[self.shortcutURLs count]);
     [self.tableView reloadData];
+    
+    [self updateUberPrice];
+    
 }
 
 - (void)didReceiveMemoryWarning {
