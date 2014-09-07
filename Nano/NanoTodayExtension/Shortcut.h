@@ -10,7 +10,10 @@
 
 @interface Shortcut : NSObject
 
-@property (strong, nonatomic) NSString *url;
+@property (strong, nonatomic) NSURL *url;
+@property (strong, nonatomic) NSString *recipient;
+@property NSUInteger amount;
 @property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *icon;
 
 @end

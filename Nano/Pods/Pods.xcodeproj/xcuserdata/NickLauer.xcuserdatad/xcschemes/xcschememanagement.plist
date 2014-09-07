@@ -8,56 +8,101 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>Pods-Nano-SPGooglePlacesAutocomplete.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>12</integer>
 		</dict>
 		<key>Pods-Nano-SSKeychain.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
 		<key>Pods-Nano-VENCore.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>5</integer>
 		</dict>
 		<key>Pods-Nano-Venmo-iOS-SDK.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>6</integer>
 		</dict>
 		<key>Pods-Nano.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 		<key>Pods-NanoTodayExtension-CMDQueryStringSerialization.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>8</integer>
 		</dict>
 		<key>Pods-NanoTodayExtension-SSKeychain.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>9</integer>
 		</dict>
 		<key>Pods-NanoTodayExtension-VENCore.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>10</integer>
 		</dict>
 		<key>Pods-NanoTodayExtension-Venmo-iOS-SDK.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>11</integer>
 		</dict>
 		<key>Pods-NanoTodayExtension.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>7</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0246EB1FA3AE42ECAF169782</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2DD7545F199445AF8466FB11</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>37B79814864F43F29A742323</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>437A3E927BB34C3EA1291BAF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>487443D84EE340529EC1E98D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -68,6 +113,11 @@
 			<true/>
 		</dict>
 		<key>4FEF94EE26B542AF97ECF95D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>57D483067F4D493084C1DDD9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,7 +137,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>ADCF69FFFA474CE6AD0CF5A1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AE215D795ADE477993D2659A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B94402B8AC454E59AA8506C9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BDA09A75698A425DB0CE91F1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CC66B3F5A7E94BDD8095D0DF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -98,6 +168,16 @@
 			<true/>
 		</dict>
 		<key>DF533D11FA5D4FA49AE88188</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E8571D16852A48F2932A1C9E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E9CF149BF92F47F995AC537F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
