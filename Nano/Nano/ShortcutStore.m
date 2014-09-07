@@ -36,7 +36,7 @@
             self.shortcuts = [[NSMutableArray alloc] init];
             [self addShortcutToStore:[Shortcut facebookEventShortcutForEventID:@"620819504700967" eventName:@"TechCrunch Disrupt Hackathon"]];
             [self addShortcutToStore:[Shortcut yelpShortcutForSearch:@"Starbucks"]];
-            [self addShortcutToStore:[Shortcut rdioShortcutForArtistName:@"http://www.rdio.com/artist/The_Head_and_the_Heart"]];
+            [self addShortcutToStore:[Shortcut rdioShortcutForArtistName:@"The_Head_and_the_Heart"]];
             [self addShortcutToStore:[Shortcut yoShortcutForRecipient:@"jlauer"]];
             [self addShortcutToStore:[Shortcut uberShortcutFrom:@"" to:@"Home"]];
 //            [self addShortcutToStore:[Shortcut venmoShortcutWithRecipient:@"jlauer" amount:1 message:@"payback"]];
