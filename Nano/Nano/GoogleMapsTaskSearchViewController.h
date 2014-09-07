@@ -19,5 +19,6 @@
 
 @property BOOL isStart;
 @property (weak, nonatomic) GoogleMapsTaskViewController *parent;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end

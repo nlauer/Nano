@@ -138,7 +138,8 @@
     return boolToReturn;
 }
 
-- (IBAction)cancelButtonClicked:(id)sender {
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
