@@ -8,6 +8,7 @@
 
 #import "TodayViewController.h"
 #import <NotificationCenter/NotificationCenter.h>
+#import <Venmo-iOS-SDK/Venmo.h>
 
 @interface TodayViewController () <NCWidgetProviding>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -22,7 +23,11 @@
     self.preferredContentSize = CGSizeMake(0, 80);
     [self.collectionView registerClass:[UICollectionViewCell class]
                 forCellWithReuseIdentifier:@"NanoCell"];
-    self.shortcutURLs = [NSArray arrayWithObject:[NSURL URLWithString:@"comgooglemaps://?saddr=&daddr=Home&directionsmode=transit"]];
+    self.shortcutURLs = [NSArray arrayWithObjects:[NSURL URLWithString:@"comgooglemaps://?saddr=&daddr=Home&directionsmode=transit"],
+                         [self facebookEventURLForGroupID:@"620819504700967"],
+                         nil];
+
+    [Venmo startWithAppId:@"1944" secret:@"YdFGe8KjDCePjgZshL76xJTPkJenaCbT" name:@"Nano"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,12 +64,38 @@
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSURL *shortcutURL = [self.shortcutURLs objectAtIndex:indexPath.row];
-    [[self extensionContext] openURL:shortcutURL completionHandler:nil];
+    [self.extensionContext openURL:[self.shortcutURLs objectAtIndex:indexPath.row] completionHandler:nil];
+
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     // TODO: Deselect item
+}
+
+#pragma mark - Venmo Payment
+- (void)sendPaymentTo:(NSString *)recipient amount:(NSUInteger)amount
+{
+    [[Venmo sharedInstance] sendPaymentTo:recipient
+                                   amount:amount
+                                     note:@" "
+                        completionHandler:^(VENTransaction *transaction, BOOL success, NSError *error) {
+                            if (success) {
+                                NSLog(@"Transaction succeeded!");
+                            }
+                            else {
+                                NSLog(@"Transaction failed with error: %@", [error localizedDescription]);
+                            }
+                        }];
+}
+
+- (NSURL *)googleMapsURLFrom:(NSString *)from to:(NSString *)to mode:(NSString *)mode
+{
+    return [NSURL URLWithString:[NSString stringWithFormat:@"comgooglemaps://?saddr=%@&daddr=%@&directionsmode=%@", from, to, mode]];
+}
+
+- (NSURL *)facebookEventURLForGroupID:(NSString *)eventID
+{
+    return [NSURL URLWithString:[NSString stringWithFormat:@"fb://event?id=%@", eventID]];
 }
 
 @end

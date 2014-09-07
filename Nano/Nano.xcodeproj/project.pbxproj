@@ -13,6 +13,7 @@
 		62B9264819BBE594003A2533 /* SPGooglePlacesAutocompleteUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B9264519BBE594003A2533 /* SPGooglePlacesAutocompleteUtilities.m */; };
 		62B9264B19BBE59C003A2533 /* SPGooglePlacesPlaceDetailQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B9264A19BBE59C003A2533 /* SPGooglePlacesPlaceDetailQuery.m */; };
 		62B9265419BBEB82003A2533 /* GoogleMapsTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B9265319BBEB82003A2533 /* GoogleMapsTaskViewController.m */; };
+		5C93182BF5254FD8B508E08C /* libPods-NanoTodayExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF5FDB0FC454816978E1BBB /* libPods-NanoTodayExtension.a */; };
 		8567004819BBA98D007DA4BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8567004719BBA98D007DA4BB /* main.m */; };
 		8567004B19BBA98D007DA4BB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8567004A19BBA98D007DA4BB /* AppDelegate.m */; };
 		8567004E19BBA98D007DA4BB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8567004D19BBA98D007DA4BB /* ViewController.m */; };
@@ -23,6 +24,7 @@
 		8567007519BBADAB007DA4BB /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8567007419BBADAB007DA4BB /* TodayViewController.m */; };
 		8567007719BBADAB007DA4BB /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8567007619BBADAB007DA4BB /* MainInterface.storyboard */; };
 		8567007A19BBADAB007DA4BB /* NanoTodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8567006C19BBADAB007DA4BB /* NanoTodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A09294EAF2334E88AB2A6626 /* libPods-Nano.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A46FE8E9DC47DBAFB8076A /* libPods-Nano.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		62B9264A19BBE59C003A2533 /* SPGooglePlacesPlaceDetailQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPGooglePlacesPlaceDetailQuery.m; path = NanoTodayExtension/SPGooglePlacesPlaceDetailQuery.m; sourceTree = SOURCE_ROOT; };
 		62B9265219BBEB82003A2533 /* GoogleMapsTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleMapsTaskViewController.h; sourceTree = "<group>"; };
 		62B9265319BBEB82003A2533 /* GoogleMapsTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleMapsTaskViewController.m; sourceTree = "<group>"; };
+		3D85E6916D3443EFBBC17F81 /* Pods-NanoTodayExtension.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NanoTodayExtension.xcconfig"; path = "Pods/Pods-NanoTodayExtension.xcconfig"; sourceTree = "<group>"; };
+		70B00AEE4C8E4CA7B5E228CF /* Pods-Nano.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nano.xcconfig"; path = "Pods/Pods-Nano.xcconfig"; sourceTree = "<group>"; };
 		8567004219BBA98B007DA4BB /* Nano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nano.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8567004619BBA98D007DA4BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8567004719BBA98D007DA4BB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -95,6 +99,8 @@
 		8567007619BBADAB007DA4BB /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		8567008119BBC1DF007DA4BB /* Nano.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Nano.entitlements; sourceTree = "<group>"; };
 		8567008219BBC23B007DA4BB /* NanoTodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = NanoTodayExtension.entitlements; sourceTree = "<group>"; };
+		C6A46FE8E9DC47DBAFB8076A /* libPods-Nano.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Nano.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFF5FDB0FC454816978E1BBB /* libPods-NanoTodayExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NanoTodayExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				62B9263F19BBE543003A2533 /* CoreLocation.framework in Frameworks */,
+				A09294EAF2334E88AB2A6626 /* libPods-Nano.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +125,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8567006F19BBADAB007DA4BB /* NotificationCenter.framework in Frameworks */,
+				5C93182BF5254FD8B508E08C /* libPods-NanoTodayExtension.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +155,8 @@
 				8567007019BBADAB007DA4BB /* NanoTodayExtension */,
 				8567006D19BBADAB007DA4BB /* Frameworks */,
 				8567004319BBA98B007DA4BB /* Products */,
+				70B00AEE4C8E4CA7B5E228CF /* Pods-Nano.xcconfig */,
+				3D85E6916D3443EFBBC17F81 /* Pods-NanoTodayExtension.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -209,6 +219,8 @@
 			children = (
 				62B9262B19BBE3BB003A2533 /* CoreLocation.framework */,
 				8567006E19BBADAB007DA4BB /* NotificationCenter.framework */,
+				C6A46FE8E9DC47DBAFB8076A /* libPods-Nano.a */,
+				FFF5FDB0FC454816978E1BBB /* libPods-NanoTodayExtension.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -240,10 +252,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8567006219BBA991007DA4BB /* Build configuration list for PBXNativeTarget "Nano" */;
 			buildPhases = (
+				EFAEFD9CC14C4E5DBBD8215C /* Check Pods Manifest.lock */,
 				8567003E19BBA98A007DA4BB /* Sources */,
 				8567003F19BBA98A007DA4BB /* Frameworks */,
 				8567004019BBA98A007DA4BB /* Resources */,
 				8567008019BBADAB007DA4BB /* Embed App Extensions */,
+				2137648E2FD7475DB141CC69 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -278,9 +292,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8567007D19BBADAB007DA4BB /* Build configuration list for PBXNativeTarget "NanoTodayExtension" */;
 			buildPhases = (
+				FA62D3676ACB4FF790042E11 /* Check Pods Manifest.lock */,
 				8567006819BBADAB007DA4BB /* Sources */,
 				8567006919BBADAB007DA4BB /* Frameworks */,
 				8567006A19BBADAB007DA4BB /* Resources */,
+				3495A546AC54425E86A10D61 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -370,6 +386,69 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2137648E2FD7475DB141CC69 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-Nano-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3495A546AC54425E86A10D61 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-NanoTodayExtension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EFAEFD9CC14C4E5DBBD8215C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FA62D3676ACB4FF790042E11 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8567003E19BBA98A007DA4BB /* Sources */ = {
@@ -513,6 +592,7 @@
 		};
 		8567006319BBA991007DA4BB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70B00AEE4C8E4CA7B5E228CF /* Pods-Nano.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -532,6 +612,7 @@
 		};
 		8567006419BBA991007DA4BB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70B00AEE4C8E4CA7B5E228CF /* Pods-Nano.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -585,6 +666,7 @@
 		};
 		8567007E19BBADAB007DA4BB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D85E6916D3443EFBBC17F81 /* Pods-NanoTodayExtension.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = NanoTodayExtension/NanoTodayExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -603,6 +685,7 @@
 		};
 		8567007F19BBADAB007DA4BB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D85E6916D3443EFBBC17F81 /* Pods-NanoTodayExtension.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = NanoTodayExtension/NanoTodayExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
