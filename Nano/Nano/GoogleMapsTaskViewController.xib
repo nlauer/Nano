@@ -44,13 +44,13 @@
                     <rect key="frame" x="0.0" y="51" width="320" height="56"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="From" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxq-9T-mHZ">
-                            <rect key="frame" x="8" y="16" width="44" height="23"/>
+                            <rect key="frame" x="22" y="16" width="44" height="23"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <color key="textColor" red="0.61453683035714279" green="0.61453683035714279" blue="0.61453683035714279" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qVX-S1-o1w">
-                            <rect key="frame" x="60" y="11" width="252" height="34"/>
+                            <rect key="frame" x="74" y="11" width="238" height="34"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                             <state key="normal" title="Current Location">
                                 <color key="titleColor" red="0.60943478954081631" green="0.60943478954081631" blue="0.60943478954081631" alpha="1" colorSpace="calibratedRGB"/>
@@ -71,13 +71,13 @@
                     <rect key="frame" x="0.0" y="108" width="320" height="56"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="To" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPz-s1-SWi">
-                            <rect key="frame" x="8" y="17" width="19" height="22"/>
+                            <rect key="frame" x="22" y="16" width="19" height="22"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <color key="textColor" red="0.28469786352040816" green="0.28469786352040816" blue="0.28469786352040816" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WFd-Jx-FhV">
-                            <rect key="frame" x="35" y="13" width="277" height="30"/>
+                            <rect key="frame" x="49" y="13" width="263" height="30"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                             <state key="normal" title="Ending Location">
                                 <color key="titleColor" red="0.28547512755102045" green="0.28547512755102045" blue="0.28547512755102045" alpha="1" colorSpace="calibratedRGB"/>
