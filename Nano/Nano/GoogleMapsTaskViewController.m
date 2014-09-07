@@ -37,7 +37,7 @@
 
 - (void)viewDidLoad {
     modes = @[@"driving", @"transit", @"bicycling", @"walking"];
-    buttons = @[self.carButton, self.cycleButton, self.transButton, self.walkButton];
+    buttons = @[self.carButton, self.transButton, self.cycleButton, self.walkButton];
     mode = modes[0];
 }
 
