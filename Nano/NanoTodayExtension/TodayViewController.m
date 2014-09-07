@@ -18,6 +18,13 @@
 
 @implementation TodayViewController
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.tableView.bounds = CGRectMake(0, 0, 320, 60*[self.shortcutURLs count]);
+    self.preferredContentSize = CGSizeMake(0, 60*[self.shortcutURLs count]);
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -44,6 +51,7 @@
     // Perform any setup necessary in order to update the view.
     self.tableView.bounds = CGRectMake(0, 0, 320, 60*[self.shortcutURLs count]);
     self.preferredContentSize = CGSizeMake(0, 60*[self.shortcutURLs count]);
+    [self.tableView reloadData];
 
     // If an error is encoutered, use NCUpdateResultFailed
     // If there's no update required, use NCUpdateResultNoData
