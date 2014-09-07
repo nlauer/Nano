@@ -40,8 +40,8 @@
 
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
     // Perform any setup necessary in order to update the view.
-    self.tableView.bounds = CGRectMake(0, 0, 320, 44*[self.shortcutURLs count]);
-    self.preferredContentSize = CGSizeMake(0, 44*[self.shortcutURLs count]);
+    self.tableView.bounds = CGRectMake(0, 0, 320, 60*[self.shortcutURLs count]);
+    self.preferredContentSize = CGSizeMake(0, 60*[self.shortcutURLs count]);
 
     // If an error is encoutered, use NCUpdateResultFailed
     // If there's no update required, use NCUpdateResultNoData
@@ -61,6 +61,11 @@
     return 0;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NanoCell" forIndexPath:indexPath];
@@ -68,6 +73,14 @@
 
     Shortcut *shortcut = [self.shortcutURLs objectAtIndex:indexPath.row];
     [cell.imageView setImage:[UIImage imageNamed:shortcut.icon]];
+
+    CGSize itemSize = CGSizeMake(40, 40);
+    UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale);
+    CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
+    [cell.imageView.image drawInRect:imageRect];
+    cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+
     cell.textLabel.text = shortcut.name;
     cell.textLabel.textColor = [UIColor whiteColor];
     cell.textLabel.font = [UIFont systemFontOfSize:14];
