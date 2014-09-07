@@ -55,6 +55,21 @@
     [sharedDefaults synchronize];
 }
 
+- (void)removeShortcutFromStore:(Shortcut *)shortcut
+{
+    for (Shortcut *oldShortcut in self.shortcuts) {
+        if ([shortcut isEqual:oldShortcut]) {
+            [self.shortcuts removeObject:shortcut];
+            break;
+        }
+    }
+
+    NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:self.shortcuts];
+    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.lauer.NanoExtension"];
+    [sharedDefaults setObject:encodedObject forKey:@"shortcuts"];
+    [sharedDefaults synchronize];
+}
+
 #pragma mark - Custom Actions
 //- (void)sendPaymentTo:(NSString *)recipient amount:(NSUInteger)amount
 //{

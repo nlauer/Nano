@@ -14,5 +14,6 @@
 
 + (id)sharedStore;
 - (void)addShortcutToStore:(Shortcut *)shortcut;
+- (void)removeShortcutFromStore:(Shortcut *)shortcut;
 
 @end
