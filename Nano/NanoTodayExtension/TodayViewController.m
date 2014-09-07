@@ -64,9 +64,7 @@
     self.tableView.bounds = CGRectMake(0, 0, 320, 50*[self.shortcutURLs count]);
     [self.tableView reloadData];
 
-    [self updateUberPrice];
-    
-    [YO sendYOToIndividualUser:@"jlauer"];
+    [self updateUberPrice];    
 }
 
 - (void)updateUberPrice
@@ -156,10 +154,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Shortcut *shortcut = [self.shortcutURLs objectAtIndex:indexPath.row];
-    if (shortcut.url) {
-        [self.extensionContext openURL:shortcut.url completionHandler:nil];
-    } else {
+    if ([shortcut.icon isEqualToString:@"venmo"]) {
         [self sendPaymentTo:shortcut.recipient amount:shortcut.amount];
+    } else if ([shortcut.icon isEqualToString:@"yo"]) {
+        [YO sendYOToIndividualUser: shortcut.recipient];
+    } else {
+        [self.extensionContext openURL:shortcut.url completionHandler:nil];
     }
 }
 
