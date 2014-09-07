@@ -77,14 +77,15 @@
     [self.taskVC.view removeFromSuperview];
     NSString *app = apps[[carousel currentItemIndex]];
     if ([app  isEqual: @"gmaps"]) {
-        self.taskVC = [[GoogleMapsTaskViewController alloc] init];
-        ((GoogleMapsTaskViewController *)self.taskVC).mainVC = self;
-        [self addChildViewController:self.taskVC];
-        [self.containerView addSubview:self.taskVC.view];
+        if (!self.googleVC) {
+            self.googleVC = [[GoogleMapsTaskViewController alloc] init];
+            self.googleVC.mainVC = self;
+        }
+        [self addChildViewController:self.googleVC];
+        [self.containerView addSubview:self.googleVC.view];
+        self.taskVC = self.googleVC;
     } else if ([app  isEqual: @"venmo"]) {
-        self.taskVC = nil;
     } else {
-        self.taskVC = nil;
     }
 }
 

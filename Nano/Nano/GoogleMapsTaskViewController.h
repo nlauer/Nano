@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *transButton;
 @property (weak, nonatomic) IBOutlet UIButton *walkButton;
 @property (weak, nonatomic) IBOutlet UIView *modeOptionsBar;
+@property (weak, nonatomic) IBOutlet UIButton *submitButton;
 
 @property (nonatomic) SPGooglePlacesAutocompletePlace *startingPlace;
 @property (nonatomic) SPGooglePlacesAutocompletePlace *endingPlace;

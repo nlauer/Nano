@@ -46,6 +46,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)setEndingPlace:(SPGooglePlacesAutocompletePlace *)endingPlace
+{
+    [self.submitButton setHidden:NO];
+    _endingPlace = endingPlace;
+}
+
 - (IBAction)startButtonClicked:(id)sender {
     GoogleMapsTaskSearchViewController *searchController = [[GoogleMapsTaskSearchViewController alloc] init];
     searchController.isStart = true;

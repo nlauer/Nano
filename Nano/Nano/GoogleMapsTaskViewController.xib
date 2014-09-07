@@ -11,6 +11,7 @@
                 <outlet property="endButton" destination="WFd-Jx-FhV" id="hxS-cM-nHR"/>
                 <outlet property="modeOptionsBar" destination="j21-db-sQv" id="qg8-sp-dX8"/>
                 <outlet property="startButton" destination="qVX-S1-o1w" id="3L6-hD-qtc"/>
+                <outlet property="submitButton" destination="a9K-xU-Wi9" id="z5O-ce-X3z"/>
                 <outlet property="transButton" destination="Dyt-Qe-mYI" id="WwB-mw-J6K"/>
                 <outlet property="view" destination="iN0-l3-epB" id="7bX-fB-7bb"/>
                 <outlet property="walkButton" destination="Iqq-A3-mNz" id="tRK-bF-80O"/>
@@ -21,10 +22,10 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="442"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9K-xU-Wi9">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9K-xU-Wi9">
                     <rect key="frame" x="58" y="340" width="204" height="54"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                    <state key="normal" title="Add New" backgroundImage="add-new">
+                    <state key="normal" title="Save" backgroundImage="add-new">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
