@@ -20,7 +20,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        apps = @[@"gmaps", @"venmo", @"uber", @"yelp", @"imessage"];
+        apps = @[@"gmaps", @"venmo", @"uber", @"rdio", @"yelp", @"fb", @"imessage", @"yo"];
     }
     return self;
 }

@@ -11,6 +11,8 @@
 #import <Venmo-iOS-SDK/Venmo.h>
 #import "Shortcut.h"
 #import "AFHTTPRequestOperationManager.h"
+#import "Yop.h"
+
 
 @interface TodayViewController () <NCWidgetProviding>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -25,6 +27,9 @@
                                                  selector:@selector(userDefaultsDidChange:)
                                                      name:NSUserDefaultsDidChangeNotification
                                                    object:nil];
+        
+        NSString *APIKey = @"f2cb5b0b-cfdd-271f-a5b4-c01cbccf28ff";
+        [YO startWithAPIKey:APIKey];
         [self updateShortcutURLs];
     }
     return self;
@@ -59,7 +64,7 @@
     self.tableView.bounds = CGRectMake(0, 0, 320, 50*[self.shortcutURLs count]);
     [self.tableView reloadData];
 
-    [self updateUberPrice];
+    [self updateUberPrice];    
 }
 
 - (void)updateUberPrice
@@ -148,7 +153,30 @@
 #pragma mark - UITableViewViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.extensionContext openURL:((Shortcut *)[self.shortcutURLs objectAtIndex:indexPath.row]).url completionHandler:nil];
+    Shortcut *shortcut = [self.shortcutURLs objectAtIndex:indexPath.row];
+    if ([shortcut.icon isEqualToString:@"venmo"]) {
+        [self sendPaymentTo:shortcut.recipient amount:shortcut.amount];
+    } else if ([shortcut.icon isEqualToString:@"yo"]) {
+        [YO sendYOToIndividualUser: shortcut.recipient];
+    } else {
+        [self.extensionContext openURL:shortcut.url completionHandler:nil];
+    }
 }
+
+- (void)sendPaymentTo:(NSString *)recipient amount:(NSUInteger)amount
+{
+    [[Venmo sharedInstance] sendPaymentTo:recipient
+                                   amount:amount
+                                     note:@"Payback"
+                        completionHandler:^(VENTransaction *transaction, BOOL success, NSError *error) {
+                            if (success) {
+                                NSLog(@"Transaction succeeded!");
+                            }
+                            else {
+                                NSLog(@"Transaction failed with error: %@", [error localizedDescription]);
+                            }
+                        }];
+}
+
 
 @end

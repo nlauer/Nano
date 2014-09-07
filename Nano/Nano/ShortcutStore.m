@@ -34,11 +34,13 @@
         self.shortcuts = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
         if (self.shortcuts == nil) {
             self.shortcuts = [[NSMutableArray alloc] init];
+            [self addShortcutToStore:[self venmoShortcutForRecipient:@"jlauer" amount:1]];
             [self addShortcutToStore:[self facebookEventShortcutForEventID:@"620819504700967"]];
             [self addShortcutToStore:[self smsShortcutForNumber:@"4159351717"]];
             [self addShortcutToStore:[self yelpShortcutForSearch:@"Starbucks"]];
             [self addShortcutToStore:[self uberShortcutForDestination:@"555 W. Middlefield Road"]];
             [self addShortcutToStore:[self rdioShortcutForCodingMix]];
+            [self addShortcutToStore:[self yoShortcutForRecipient:@"jlauer"]];
         }
     }
 
@@ -70,25 +72,11 @@
 }
 
 #pragma mark - Custom Actions
-//- (void)sendPaymentTo:(NSString *)recipient amount:(NSUInteger)amount
-//{
-//    [[Venmo sharedInstance] sendPaymentTo:recipient
-//                                   amount:amount
-//                                     note:@" "
-//                        completionHandler:^(VENTransaction *transaction, BOOL success, NSError *error) {
-//                            if (success) {
-//                                NSLog(@"Transaction succeeded!");
-//                            }
-//                            else {
-//                                NSLog(@"Transaction failed with error: %@", [error localizedDescription]);
-//                            }
-//                        }];
-//}
 
 - (Shortcut *)venmoShortcutForRecipient:(NSString *)recipient amount:(NSUInteger)amount
 {
     Shortcut *shortcut = [[Shortcut alloc] init];
-    shortcut.name = @"Venmo";
+    shortcut.name = @"Pay Josh $0.01";
     shortcut.amount = amount;
     shortcut.recipient = recipient;
     shortcut.icon = @"venmo";
@@ -172,6 +160,16 @@
     shortcut.name = @"Listen to Coding Mix";
     shortcut.icon = @"rdio";
     shortcut.url = [NSURL URLWithString:[NSString stringWithFormat:@"rdio://www.rdio.com/people/dvos/playlists/1127421/Coding_Mix/"]];
+    
+    return shortcut;
+}
+
+- (Shortcut *)yoShortcutForRecipient:(NSString *)recipient
+{
+    Shortcut *shortcut = [[Shortcut alloc] init];
+    shortcut.name = @"YO Josh";
+    shortcut.recipient = recipient;
+    shortcut.icon = @"yo";
     
     return shortcut;
 }

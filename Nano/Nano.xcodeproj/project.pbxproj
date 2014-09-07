@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0028C3EF19BC6CD200DBD230 /* Yop.m in Sources */ = {isa = PBXBuildFile; fileRef = 0028C3EE19BC6CD200DBD230 /* Yop.m */; };
+		0028C3F319BC733C00DBD230 /* yo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0028C3F219BC733C00DBD230 /* yo.png */; };
 		5C93182BF5254FD8B508E08C /* libPods-NanoTodayExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF5FDB0FC454816978E1BBB /* libPods-NanoTodayExtension.a */; };
 		620B23E119BC25B4004B4804 /* CreateTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 620B23DF19BC25B4004B4804 /* CreateTaskViewController.m */; };
 		620B23E219BC25B4004B4804 /* CreateTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 620B23E019BC25B4004B4804 /* CreateTaskViewController.xib */; };
@@ -84,6 +86,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0028C3ED19BC6CB100DBD230 /* Yop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Yop.h; sourceTree = "<group>"; };
+		0028C3EE19BC6CD200DBD230 /* Yop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Yop.m; sourceTree = "<group>"; };
+		0028C3F219BC733C00DBD230 /* yo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = yo.png; path = ../../../../../Dropbox/widgIT/yo.png; sourceTree = "<group>"; };
 		3D85E6916D3443EFBBC17F81 /* Pods-NanoTodayExtension.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NanoTodayExtension.xcconfig"; path = "Pods/Pods-NanoTodayExtension.xcconfig"; sourceTree = "<group>"; };
 		620B23DE19BC25B4004B4804 /* CreateTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateTaskViewController.h; sourceTree = "<group>"; };
 		620B23DF19BC25B4004B4804 /* CreateTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateTaskViewController.m; sourceTree = "<group>"; };
@@ -342,6 +347,8 @@
 				8567007419BBADAB007DA4BB /* TodayViewController.m */,
 				8567007619BBADAB007DA4BB /* MainInterface.storyboard */,
 				8567007119BBADAB007DA4BB /* Supporting Files */,
+				0028C3ED19BC6CB100DBD230 /* Yop.h */,
+				0028C3EE19BC6CD200DBD230 /* Yop.m */,
 			);
 			path = NanoTodayExtension;
 			sourceTree = "<group>";
@@ -357,6 +364,7 @@
 		85E6F21619BC0E4300C79EE0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0028C3F219BC733C00DBD230 /* yo.png */,
 				85E6F22519BC2FF800C79EE0 /* rdio.png */,
 				85E6F22319BC274D00C79EE0 /* uber.png */,
 				85E6F21719BC0E5E00C79EE0 /* fb.png */,
@@ -518,6 +526,7 @@
 				85E6F22119BC0E5F00C79EE0 /* venmo.png in Resources */,
 				85E6F21F19BC0E5F00C79EE0 /* imessage.png in Resources */,
 				85E6F21E19BC0E5F00C79EE0 /* google.png in Resources */,
+				0028C3F319BC733C00DBD230 /* yo.png in Resources */,
 				85E6F21D19BC0E5F00C79EE0 /* fb.png in Resources */,
 				85E6F22019BC0E5F00C79EE0 /* screen-mock.png in Resources */,
 			);
@@ -619,6 +628,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0028C3EF19BC6CD200DBD230 /* Yop.m in Sources */,
 				8567007519BBADAB007DA4BB /* TodayViewController.m in Sources */,
 				85E6F21519BBF8FE00C79EE0 /* Shortcut.m in Sources */,
 			);
