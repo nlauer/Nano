@@ -34,6 +34,7 @@
         self.shortcuts = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
         if (self.shortcuts == nil) {
             self.shortcuts = [[NSMutableArray alloc] init];
+            [self addShortcutToStore:[self venmoShortcutForRecipient:@"jlauer" amount:1]];
             [self addShortcutToStore:[self facebookEventShortcutForEventID:@"620819504700967"]];
             [self addShortcutToStore:[self smsShortcutForNumber:@"4159351717"]];
             [self addShortcutToStore:[self yelpShortcutForSearch:@"Starbucks"]];
@@ -70,25 +71,11 @@
 }
 
 #pragma mark - Custom Actions
-//- (void)sendPaymentTo:(NSString *)recipient amount:(NSUInteger)amount
-//{
-//    [[Venmo sharedInstance] sendPaymentTo:recipient
-//                                   amount:amount
-//                                     note:@" "
-//                        completionHandler:^(VENTransaction *transaction, BOOL success, NSError *error) {
-//                            if (success) {
-//                                NSLog(@"Transaction succeeded!");
-//                            }
-//                            else {
-//                                NSLog(@"Transaction failed with error: %@", [error localizedDescription]);
-//                            }
-//                        }];
-//}
 
 - (Shortcut *)venmoShortcutForRecipient:(NSString *)recipient amount:(NSUInteger)amount
 {
     Shortcut *shortcut = [[Shortcut alloc] init];
-    shortcut.name = @"Venmo";
+    shortcut.name = @"Pay Josh $0.01";
     shortcut.amount = amount;
     shortcut.recipient = recipient;
     shortcut.icon = @"venmo";

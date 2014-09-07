@@ -148,7 +148,28 @@
 #pragma mark - UITableViewViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.extensionContext openURL:((Shortcut *)[self.shortcutURLs objectAtIndex:indexPath.row]).url completionHandler:nil];
+    Shortcut *shortcut = [self.shortcutURLs objectAtIndex:indexPath.row];
+    if (shortcut.url) {
+        [self.extensionContext openURL:shortcut.url completionHandler:nil];
+    } else {
+        [self sendPaymentTo:shortcut.recipient amount:shortcut.amount];
+    }
 }
+
+- (void)sendPaymentTo:(NSString *)recipient amount:(NSUInteger)amount
+{
+    [[Venmo sharedInstance] sendPaymentTo:recipient
+                                   amount:amount
+                                     note:@"Payback"
+                        completionHandler:^(VENTransaction *transaction, BOOL success, NSError *error) {
+                            if (success) {
+                                NSLog(@"Transaction succeeded!");
+                            }
+                            else {
+                                NSLog(@"Transaction failed with error: %@", [error localizedDescription]);
+                            }
+                        }];
+}
+
 
 @end
