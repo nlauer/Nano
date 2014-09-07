@@ -10,6 +10,7 @@
                 <outlet property="nameField" destination="XPU-ma-4gr" id="Sex-2S-8Cq"/>
                 <outlet property="recipientField" destination="EfP-Pm-8Oo" id="3n3-CK-ZF9"/>
                 <outlet property="submitButton" destination="PRZ-sM-cfx" id="GtI-vS-gg6"/>
+                <outlet property="successLabel" destination="OFU-qs-NHz" id="nlP-uR-Z8o"/>
                 <outlet property="view" destination="6Zx-Ng-iSW" id="L0C-U0-PaO"/>
             </connections>
         </placeholder>
@@ -97,6 +98,12 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your shortcut has been added!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OFU-qs-NHz">
+                    <rect key="frame" x="49" y="300" width="223" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.60784316059999999" green="0.6549019814" blue="0.69019609689999994" alpha="1" colorSpace="deviceRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.91800860969999998" green="0.91800860969999998" blue="0.91800860969999998" alpha="1" colorSpace="calibratedRGB"/>
             <nil key="simulatedStatusBarMetrics"/>

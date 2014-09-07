@@ -16,7 +16,9 @@
 
 @end
 
-@implementation UberTaskViewController
+@implementation UberTaskViewController {
+    BOOL saved;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -52,23 +54,29 @@
 }
 
 - (IBAction)submitButtonClicked:(id)sender {
-    NSString *start = @"my_location";
-    NSString *end;
-    
-    if (self.startingPlace) {
-        start = self.startingPlace.name;
-    }
-    
-    if (self.endingPlace) {
-        end = self.endingPlace.name;
+    if (saved) {
+        [self.mainVC refreshCurrentTaskForApp:@"uber"];
     } else {
-        // TODO throw an error
-        NSLog(@"NEED ENDING PLACE");
+        NSString *start = @"my_location";
+        NSString *end;
+        
+        if (self.startingPlace) {
+            start = self.startingPlace.name;
+        }
+        
+        if (self.endingPlace) {
+            end = self.endingPlace.name;
+        } else {
+            // TODO throw an error
+            NSLog(@"NEED ENDING PLACE");
+        }
+        
+        Shortcut *shortcut = [Shortcut uberShortcutFrom:start to:end];
+        [[ShortcutStore sharedStore] addShortcutToStore:shortcut];
+        [self.submitButton setTitle:@"Create New" forState:UIControlStateNormal];
+        [self.successLabel setHidden:NO];
+        saved = true;
     }
-    
-    Shortcut *shortcut = [Shortcut uberShortcutFrom:start to:end];
-    [[ShortcutStore sharedStore] addShortcutToStore:shortcut];
-    [self.submitButton setEnabled:NO];
 }
 
 

@@ -9,12 +9,15 @@
 #import "YoTaskViewController.h"
 #import "Shortcut.h"
 #import "ShortcutStore.h"
+#import "CreateTaskViewController.h"
 
 @interface YoTaskViewController ()
 
 @end
 
-@implementation YoTaskViewController
+@implementation YoTaskViewController {
+    BOOL saved;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,6 +26,7 @@
                                    action:@selector(dismissKeyboard)];
     
     [self.view addGestureRecognizer:tap];
+    self.nameField.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,13 +43,25 @@
 }
 
 - (IBAction)submitButtonPressed:(id)sender {
-    Shortcut *shortcut = [Shortcut yoShortcutForRecipient:self.nameField.text];
-    [[ShortcutStore sharedStore] addShortcutToStore:shortcut];
-    [self.submitButton setEnabled:NO];
+    if (saved) {
+        [self.mainVC refreshCurrentTaskForApp:@"yo"];
+    } else {
+        Shortcut *shortcut = [Shortcut yoShortcutForRecipient:self.nameField.text];
+        [[ShortcutStore sharedStore] addShortcutToStore:shortcut];
+        [self.submitButton setTitle:@"Create New" forState:UIControlStateNormal];
+        [self.successLabel setHidden:NO];
+        saved = true;
+    }
 }
 
 -(void)dismissKeyboard {
     [self.nameField resignFirstResponder];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 @end

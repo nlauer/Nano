@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RdioTaskViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UITextField *playlistField;
+@class CreateTaskViewController;
+
+@interface RdioTaskViewController : UIViewController <UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *artistField;
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
+@property (weak, nonatomic) IBOutlet UILabel *successLabel;
+
+@property (weak, nonatomic) CreateTaskViewController *mainVC;
 
 @end

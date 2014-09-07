@@ -109,6 +109,7 @@
     } else if ([app  isEqual: @"rdio"]) {
         if (!self.rdioVC) {
             self.rdioVC = [[RdioTaskViewController alloc] init];
+            self.rdioVC.mainVC = self;
         }
         [self addChildViewController:self.rdioVC];
         [self.containerView addSubview:self.rdioVC.view];
@@ -124,6 +125,7 @@
     } else if ([app  isEqual: @"fb"]) {
         if (!self.fbVC) {
             self.fbVC = [[FBTaskViewController alloc] init];
+            self.fbVC.mainVC = self;
         }
         [self addChildViewController:self.fbVC];
         [self.containerView addSubview:self.fbVC.view];
@@ -131,6 +133,7 @@
     } else if ([app  isEqual: @"imessage"]) {
         if (!self.imessageVC) {
             self.imessageVC = [[IMessageTaskViewController alloc] init];
+            self.imessageVC.mainVC = self;
         }
         [self addChildViewController:self.imessageVC];
         [self.containerView addSubview:self.imessageVC.view];
@@ -138,7 +141,62 @@
     } else if ([app  isEqual: @"yo"]) {
         if (!self.yoVC) {
             self.yoVC = [[YoTaskViewController alloc] init];
+            self.yoVC.mainVC = self;
         }
+        [self addChildViewController:self.yoVC];
+        [self.containerView addSubview:self.yoVC.view];
+        self.taskVC = self.yoVC;
+    }
+}
+
+-(void)refreshCurrentTaskForApp:(NSString *)app
+{
+    [self.taskVC.view removeFromSuperview];
+    if ([app  isEqual: @"gmaps"]) {
+        self.googleVC = [[GoogleMapsTaskViewController alloc] init];
+        self.googleVC.mainVC = self;
+        [self addChildViewController:self.googleVC];
+        [self.containerView addSubview:self.googleVC.view];
+        self.taskVC = self.googleVC;
+    } else if ([app  isEqual: @"venmo"]) {
+        self.venmoVC = [[VenmoTaskViewController alloc] init];
+        self.venmoVC.mainVC = self;
+        [self addChildViewController:self.venmoVC];
+        [self.containerView addSubview:self.venmoVC.view];
+        self.taskVC = self.venmoVC;
+    } else if ([app  isEqual: @"uber"]) {
+        self.uberVC = [[UberTaskViewController alloc] init];
+        self.uberVC.mainVC = self;
+        [self addChildViewController:self.uberVC];
+        [self.containerView addSubview:self.uberVC.view];
+        self.taskVC = self.uberVC;
+    } else if ([app  isEqual: @"rdio"]) {
+        self.rdioVC = [[RdioTaskViewController alloc] init];
+        self.rdioVC.mainVC = self;
+        [self addChildViewController:self.rdioVC];
+        [self.containerView addSubview:self.rdioVC.view];
+        self.taskVC = self.rdioVC;
+    } else if ([app  isEqual: @"yelp"]) {
+        self.yelpVC = [[YelpTaskViewController alloc] init];
+        self.yelpVC.mainVC = self;
+        [self addChildViewController:self.yelpVC];
+        [self.containerView addSubview:self.yelpVC.view];
+        self.taskVC = self.yelpVC;
+    } else if ([app  isEqual: @"fb"]) {
+        self.fbVC = [[FBTaskViewController alloc] init];
+        self.fbVC.mainVC = self;
+        [self addChildViewController:self.fbVC];
+        [self.containerView addSubview:self.fbVC.view];
+        self.taskVC = self.fbVC;
+    } else if ([app  isEqual: @"imessage"]) {
+        self.imessageVC = [[IMessageTaskViewController alloc] init];
+        self.imessageVC.mainVC = self;
+        [self addChildViewController:self.imessageVC];
+        [self.containerView addSubview:self.imessageVC.view];
+        self.taskVC = self.imessageVC;
+    } else if ([app  isEqual: @"yo"]) {
+        self.yoVC = [[YoTaskViewController alloc] init];
+        self.yoVC.mainVC = self;
         [self addChildViewController:self.yoVC];
         [self.containerView addSubview:self.yoVC.view];
         self.taskVC = self.yoVC;

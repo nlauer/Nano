@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UIButton *endButton;
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
+@property (weak, nonatomic) IBOutlet UILabel *successLabel;
 
 @property (nonatomic) SPGooglePlacesAutocompletePlace *startingPlace;
 @property (nonatomic) SPGooglePlacesAutocompletePlace *endingPlace;

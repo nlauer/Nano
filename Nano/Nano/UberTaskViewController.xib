@@ -9,6 +9,7 @@
                 <outlet property="endButton" destination="4kk-08-tMr" id="YaW-aj-lov"/>
                 <outlet property="startButton" destination="ERs-sB-tqw" id="3xj-OU-0Jx"/>
                 <outlet property="submitButton" destination="Rbe-Xe-h7K" id="NOi-IF-D1w"/>
+                <outlet property="successLabel" destination="EaZ-eE-ycz" id="vio-mH-45o"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -89,6 +90,12 @@
                     <rect key="frame" x="101" y="14" width="119" height="21"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your shortcut has been added!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EaZ-eE-ycz">
+                    <rect key="frame" x="49" y="300" width="223" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.60784316059999999" green="0.6549019814" blue="0.69019609689999994" alpha="1" colorSpace="deviceRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>

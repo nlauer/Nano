@@ -9,12 +9,15 @@
 #import "IMessageTaskViewController.h"
 #import "Shortcut.h"
 #import "ShortcutStore.h"
+#import "CreateTaskViewController.h"
 
 @interface IMessageTaskViewController ()
 
 @end
 
-@implementation IMessageTaskViewController
+@implementation IMessageTaskViewController {
+    BOOL saved;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,6 +26,9 @@
                                    action:@selector(dismissKeyboard)];
     
     [self.view addGestureRecognizer:tap];
+    self.recipientField.delegate = self;
+    self.nameField.delegate = self;
+    self.messageField.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,15 +46,27 @@
 }
 
 - (IBAction)submitButtonPressed:(id)sender {
-    Shortcut *shortcut = [Shortcut smsShortcutForNumber:self.recipientField.text name:self.nameField.text];
-    [[ShortcutStore sharedStore] addShortcutToStore:shortcut];
-    [self.submitButton setEnabled:NO];
+    if (saved) {
+        [self.mainVC refreshCurrentTaskForApp:@"imessage"];
+    } else {
+        Shortcut *shortcut = [Shortcut smsShortcutForNumber:self.recipientField.text name:self.nameField.text];
+        [[ShortcutStore sharedStore] addShortcutToStore:shortcut];
+        [self.submitButton setTitle:@"Create New" forState:UIControlStateNormal];
+        [self.successLabel setHidden:NO];
+        saved = true;
+    }
 }
 
 -(void)dismissKeyboard {
     [self.recipientField resignFirstResponder];
     [self.nameField resignFirstResponder];
     [self.messageField resignFirstResponder];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 @end

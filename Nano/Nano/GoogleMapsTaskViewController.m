@@ -20,6 +20,7 @@
     NSArray *modes;
     NSArray *buttons;
     NSString *mode;
+    BOOL saved;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -67,23 +68,29 @@
 }
 
 - (IBAction)submitButtonClicked:(id)sender {
-    NSString *start = @"";
-    NSString *end;
-    
-    if (self.startingPlace) {
-        start = self.startingPlace.name;
-    }
-    
-    if (self.endingPlace) {
-        end = self.endingPlace.name;
+    if (saved) {
+        [self.mainVC refreshCurrentTaskForApp:@"gmaps"];
     } else {
-        // TODO throw an error
-        NSLog(@"NEED ENDING PLACE");
-    }
+        NSString *start = @"";
+        NSString *end;
+        
+        if (self.startingPlace) {
+            start = self.startingPlace.name;
+        }
+        
+        if (self.endingPlace) {
+            end = self.endingPlace.name;
+        } else {
+            // TODO throw an error
+            NSLog(@"NEED ENDING PLACE");
+        }
 
-    Shortcut *shortcut = [Shortcut googleMapsShortcutFrom:start to:end mode:mode];
-    [[ShortcutStore sharedStore] addShortcutToStore:shortcut];
-    [self.submitButton setEnabled:NO];
+        Shortcut *shortcut = [Shortcut googleMapsShortcutFrom:start to:end mode:mode];
+        [[ShortcutStore sharedStore] addShortcutToStore:shortcut];
+        [self.submitButton setTitle:@"Create New" forState:UIControlStateNormal];
+        [self.successLabel setHidden:NO];
+        saved = true;
+    }
 }
 
 - (IBAction)modeButtonPressed:(id)sender {
