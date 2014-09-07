@@ -24,6 +24,7 @@
                                                  selector:@selector(userDefaultsDidChange:)
                                                      name:NSUserDefaultsDidChangeNotification
                                                    object:nil];
+        [self updateShortcutURLs];
     }
     return self;
 }
@@ -35,8 +36,9 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.tableView.bounds = CGRectMake(0, 0, 320, 60*[self.shortcutURLs count]);
-    self.preferredContentSize = CGSizeMake(0, 60*[self.shortcutURLs count]);
+    [self updateShortcutURLs];
+    self.preferredContentSize = CGSizeMake(0, 50*[self.shortcutURLs count]);
+    self.tableView.bounds = CGRectMake(0, 0, 320, 50*[self.shortcutURLs count]);
 }
 
 - (void)viewDidLoad {
@@ -52,6 +54,8 @@
     NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.lauer.NanoExtension"];
     NSData *encodedObject = [sharedDefaults objectForKey:@"shortcuts"];
     self.shortcutURLs = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
+    self.preferredContentSize = CGSizeMake(0, 50*[self.shortcutURLs count]);
+    self.tableView.bounds = CGRectMake(0, 0, 320, 50*[self.shortcutURLs count]);
     [self.tableView reloadData];
 }
 
@@ -62,8 +66,8 @@
 
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
     // Perform any setup necessary in order to update the view.
-    self.tableView.bounds = CGRectMake(0, 0, 320, 60*[self.shortcutURLs count]);
-    self.preferredContentSize = CGSizeMake(0, 60*[self.shortcutURLs count]);
+    self.tableView.bounds = CGRectMake(0, 0, 320, 50*[self.shortcutURLs count]);
+    self.preferredContentSize = CGSizeMake(0, 50*[self.shortcutURLs count]);
     [self updateShortcutURLs];
 
     // If an error is encoutered, use NCUpdateResultFailed
@@ -86,7 +90,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 60;
+    return 50;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

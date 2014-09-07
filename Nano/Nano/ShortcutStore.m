@@ -34,7 +34,6 @@
         self.shortcuts = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
         if (self.shortcuts == nil) {
             self.shortcuts = [[NSMutableArray alloc] init];
-            [self addShortcutToStore:[self googleMapsShortcutFrom:@"" to:@"Home" mode:@"transit"]];
             [self addShortcutToStore:[self facebookEventShortcutForEventID:@"620819504700967"]];
             [self addShortcutToStore:[self smsShortcutForNumber:@"4159351717"]];
             [self addShortcutToStore:[self yelpShortcutForSearch:@"Starbucks"]];
