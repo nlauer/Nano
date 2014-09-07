@@ -34,7 +34,7 @@
 
 + (NSURL *)googleMapsURLFrom:(NSString *)from to:(NSString *)to mode:(NSString *)mode
 {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"comgooglemaps://?saddr=%@&daddr=%@&directionsmode=%@", from, to, mode]];
+    return [NSURL URLWithString:[[NSString stringWithFormat:@"comgooglemaps://?saddr=%@&daddr=%@&directionsmode=%@", from, to, mode] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 }
 
 + (Shortcut *)uberShortcutFrom:(NSString *)from to:(NSString *)to
