@@ -7,6 +7,8 @@
 //
 
 #import "VenmoTaskViewController.h"
+#import "Shortcut.h"
+#import "ShortcutStore.h"
 
 @interface VenmoTaskViewController ()
 
@@ -34,7 +36,6 @@
 }
 
 - (IBAction)checkFields:(id)sender {
-    NSLog(@"%lu %lu %lu", (unsigned long)self.recipientField.text.length, (unsigned long)self.amountField.text.length, (unsigned long)self.messageField.text.length);
     if (self.recipientField.text.length > 0 &&
         self.amountField.text.length > 0 &&
         self.messageField.text.length > 0) {
@@ -45,7 +46,10 @@
 }
 
 - (IBAction)submitButtonClicked:(id)sender {
-    // TODO send url for venmo
+    NSUInteger amount = (NSUInteger)(int)roundf((CGFloat)[self.amountField.text floatValue] * 100);
+    Shortcut *shortcut = [Shortcut venmoShortcutWithRecipient:self.recipientField.text amount:amount message:self.messageField.text];
+    [[ShortcutStore sharedStore] addShortcutToStore:shortcut];
+    [self.submitButton setEnabled:NO];
 }
 
 -(void)dismissKeyboard {

@@ -51,14 +51,9 @@
         NSLog(@"NEED ENDING PLACE");
     }
     
-    //TODO
-    //    NSURL *url = ;
-    //    Shortcut *shortcut = [[Shortcut alloc] init];
-    //    shortcut.url = url;
-    //    shortcut.name = [NSString stringWithFormat:@"Map to %@", self.endingPlace.name];
-    //    shortcut.icon = @"google";
-    //    [[ShortcutStore sharedStore] addShortcutToStore:shortcut];
-    //    NSLog(@"%@", url);
+    Shortcut *shortcut = [Shortcut yelpShortcutForSearch:self.endingPlace.name];
+    [[ShortcutStore sharedStore] addShortcutToStore:shortcut];
+    [self.submitButton setEnabled:NO];
 }
 
 @end

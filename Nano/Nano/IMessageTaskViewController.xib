@@ -6,6 +6,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IMessageTaskViewController">
             <connections>
+                <outlet property="messageField" destination="hNq-4e-njp" id="dla-ZW-Kgy"/>
+                <outlet property="nameField" destination="XPU-ma-4gr" id="Sex-2S-8Cq"/>
+                <outlet property="recipientField" destination="EfP-Pm-8Oo" id="3n3-CK-ZF9"/>
+                <outlet property="submitButton" destination="PRZ-sM-cfx" id="GtI-vS-gg6"/>
                 <outlet property="view" destination="6Zx-Ng-iSW" id="L0C-U0-PaO"/>
             </connections>
         </placeholder>
@@ -21,6 +25,9 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <state key="disabled" title=" " backgroundImage="checkmark"/>
+                    <connections>
+                        <action selector="submitButtonPressed:" destination="-1" eventType="touchUpInside" id="N8f-H3-gxH"/>
+                    </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="selection-bar" translatesAutoresizingMaskIntoConstraints="NO" id="hoM-jD-A3e">
                     <rect key="frame" x="0.0" y="-13" width="320" height="65"/>
@@ -28,12 +35,21 @@
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E3s-mC-LQc">
                     <rect key="frame" x="0.0" y="51" width="320" height="56"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="From" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDy-AS-e5z">
-                            <rect key="frame" x="22" y="16" width="44" height="23"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="To" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDy-AS-e5z">
+                            <rect key="frame" x="22" y="16" width="21" height="23"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <color key="textColor" red="0.61453683039999996" green="0.61453683039999996" blue="0.61453683039999996" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="phone number..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EfP-Pm-8Oo">
+                            <rect key="frame" x="51" y="13" width="261" height="30"/>
+                            <color key="textColor" red="0.28547512759999999" green="0.28547512759999999" blue="0.28547512759999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad"/>
+                            <connections>
+                                <action selector="checkFields:" destination="-1" eventType="editingDidEnd" id="GZv-bK-61x"/>
+                            </connections>
+                        </textField>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
@@ -41,32 +57,46 @@
                     <rect key="frame" x="0.0" y="107" width="320" height="1"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EUF-kb-eTI">
-                    <rect key="frame" x="0.0" y="108" width="320" height="56"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="To" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QTL-9e-peW">
-                            <rect key="frame" x="22" y="16" width="19" height="22"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                            <color key="textColor" red="0.28469786349999998" green="0.28469786349999998" blue="0.28469786349999998" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ecB-Ah-y6I">
-                    <rect key="frame" x="0.0" y="164" width="320" height="1"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5vD-Rh-gFG">
-                    <rect key="frame" x="0.0" y="165" width="320" height="68"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Send an iMessage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tS1-Ie-QWQ">
                     <rect key="frame" x="96" y="14" width="129" height="21"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bdC-6S-FoH">
+                    <rect key="frame" x="0.0" y="108" width="320" height="56"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q2V-cB-UUl">
+                            <rect key="frame" x="22" y="16" width="49" height="22"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" red="0.60784316059999999" green="0.6549019814" blue="0.69019609689999994" alpha="1" colorSpace="deviceRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="John Smith..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XPU-ma-4gr">
+                            <rect key="frame" x="79" y="13" width="233" height="30"/>
+                            <color key="textColor" red="0.28547512759999999" green="0.28547512759999999" blue="0.28547512759999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TS9-BP-1Bg">
+                    <rect key="frame" x="0.0" y="164" width="320" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XHk-B9-DM0">
+                    <rect key="frame" x="0.0" y="165" width="320" height="68"/>
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Write message here..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hNq-4e-njp">
+                            <rect key="frame" x="22" y="19" width="290" height="30"/>
+                            <color key="textColor" red="0.28547512759999999" green="0.28547512759999999" blue="0.28547512759999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.91800860969999998" green="0.91800860969999998" blue="0.91800860969999998" alpha="1" colorSpace="calibratedRGB"/>
             <nil key="simulatedStatusBarMetrics"/>

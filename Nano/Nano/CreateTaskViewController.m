@@ -106,6 +106,13 @@
         [self addChildViewController:self.uberVC];
         [self.containerView addSubview:self.uberVC.view];
         self.taskVC = self.uberVC;
+    } else if ([app  isEqual: @"rdio"]) {
+        if (!self.rdioVC) {
+            self.rdioVC = [[RdioTaskViewController alloc] init];
+        }
+        [self addChildViewController:self.rdioVC];
+        [self.containerView addSubview:self.rdioVC.view];
+        self.taskVC = self.rdioVC;
     } else if ([app  isEqual: @"yelp"]) {
         if (!self.yelpVC) {
             self.yelpVC = [[YelpTaskViewController alloc] init];
@@ -114,6 +121,13 @@
         [self addChildViewController:self.yelpVC];
         [self.containerView addSubview:self.yelpVC.view];
         self.taskVC = self.yelpVC;
+    } else if ([app  isEqual: @"fb"]) {
+        if (!self.fbVC) {
+            self.fbVC = [[FBTaskViewController alloc] init];
+        }
+        [self addChildViewController:self.fbVC];
+        [self.containerView addSubview:self.fbVC.view];
+        self.taskVC = self.fbVC;
     } else if ([app  isEqual: @"imessage"]) {
         if (!self.imessageVC) {
             self.imessageVC = [[IMessageTaskViewController alloc] init];
@@ -121,6 +135,13 @@
         [self addChildViewController:self.imessageVC];
         [self.containerView addSubview:self.imessageVC.view];
         self.taskVC = self.imessageVC;
+    } else if ([app  isEqual: @"yo"]) {
+        if (!self.yoVC) {
+            self.yoVC = [[YoTaskViewController alloc] init];
+        }
+        [self addChildViewController:self.yoVC];
+        [self.containerView addSubview:self.yoVC.view];
+        self.taskVC = self.yoVC;
     }
 }
 

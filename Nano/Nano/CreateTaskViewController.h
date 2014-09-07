@@ -13,6 +13,9 @@
 #import "VenmoTaskViewController.h"
 #import "YelpTaskViewController.h"
 #import "IMessageTaskViewController.h"
+#import "RdioTaskViewController.h"
+#import "FBTaskViewController.h"
+#import "YoTaskViewController.h"
 
 @interface CreateTaskViewController : UIViewController <iCarouselDataSource, iCarouselDelegate>
 @property (weak, nonatomic) IBOutlet iCarousel *carousel;
@@ -22,6 +25,9 @@
 @property (strong, nonatomic) VenmoTaskViewController *venmoVC;
 @property (strong, nonatomic) YelpTaskViewController *yelpVC;
 @property (strong, nonatomic) IMessageTaskViewController *imessageVC;
+@property (strong, nonatomic) RdioTaskViewController *rdioVC;
+@property (strong, nonatomic) FBTaskViewController *fbVC;
+@property (strong, nonatomic) YoTaskViewController *yoVC;
 @property (strong, nonatomic) UIViewController *taskVC;
 
 @end

@@ -52,7 +52,7 @@
 }
 
 - (IBAction)submitButtonClicked:(id)sender {
-    NSString *start = @"";
+    NSString *start = @"my_location";
     NSString *end;
     
     if (self.startingPlace) {
@@ -66,14 +66,9 @@
         NSLog(@"NEED ENDING PLACE");
     }
     
-    //TODO
-//    NSURL *url = ;
-//    Shortcut *shortcut = [[Shortcut alloc] init];
-//    shortcut.url = url;
-//    shortcut.name = [NSString stringWithFormat:@"Map to %@", self.endingPlace.name];
-//    shortcut.icon = @"google";
-//    [[ShortcutStore sharedStore] addShortcutToStore:shortcut];
-//    NSLog(@"%@", url);
+    Shortcut *shortcut = [Shortcut uberShortcutFrom:start to:end];
+    [[ShortcutStore sharedStore] addShortcutToStore:shortcut];
+    [self.submitButton setEnabled:NO];
 }
 
 
