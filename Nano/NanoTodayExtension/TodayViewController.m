@@ -155,7 +155,7 @@
 {
     Shortcut *shortcut = [self.shortcutURLs objectAtIndex:indexPath.row];
     if ([shortcut.icon isEqualToString:@"venmo"]) {
-        [self sendPaymentTo:shortcut.recipient amount:shortcut.amount];
+        [self sendPaymentTo:shortcut.recipient amount:shortcut.amount message:shortcut.message];
     } else if ([shortcut.icon isEqualToString:@"yo"]) {
         [YO sendYOToIndividualUser: shortcut.recipient];
     } else {
@@ -163,11 +163,11 @@
     }
 }
 
-- (void)sendPaymentTo:(NSString *)recipient amount:(NSUInteger)amount
+- (void)sendPaymentTo:(NSString *)recipient amount:(NSUInteger)amount message:(NSString *)message
 {
     [[Venmo sharedInstance] sendPaymentTo:recipient
                                    amount:amount
-                                     note:@"Payback"
+                                     note:message
                         completionHandler:^(VENTransaction *transaction, BOOL success, NSError *error) {
                             if (success) {
                                 NSLog(@"Transaction succeeded!");

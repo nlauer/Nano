@@ -13,7 +13,32 @@
 @property (strong, nonatomic) NSURL *url;
 @property (strong, nonatomic) NSString *recipient;
 @property NSUInteger amount;
+@property (strong, nonatomic) NSString *message;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *icon;
+
++ (Shortcut *)venmoShortcutWithRecipient:(NSString *)recipient
+                                  amount:(NSUInteger)amount
+                                 message:(NSString *)message;
+
++ (Shortcut *)googleMapsShortcutFrom:(NSString *)from
+                                  to:(NSString *)to
+                                mode:(NSString *)mode;
+
++ (Shortcut *)uberShortcutFrom:(NSString *)from
+                            to:(NSString *)to;
+
++ (Shortcut *)smsShortcutForNumber:(NSString *)number
+                              name:(NSString *)name;
+
++ (Shortcut *)yelpShortcutForSearch:(NSString *)search;
+
++ (Shortcut *)yoShortcutForRecipient:(NSString *)recipient;
+
++ (Shortcut *)facebookEventShortcutForEventID:(NSString *)eventID
+                                    eventName:(NSString *)eventName;
+
++ (Shortcut *)rdioShortcutForWebURLString:(NSString *)urlString
+                                     name:(NSString *)name;
 
 @end

@@ -81,24 +81,14 @@
         NSLog(@"NEED ENDING PLACE");
     }
 
-    NSURL *url = [self googleMapsURLFrom:start to:end mode:mode];
-    Shortcut *shortcut = [[Shortcut alloc] init];
-    shortcut.url = url;
-    shortcut.name = [NSString stringWithFormat:@"Map to %@", self.endingPlace.name];
-    shortcut.icon = @"google";
+    Shortcut *shortcut = [Shortcut googleMapsShortcutFrom:start to:end mode:mode];
     [[ShortcutStore sharedStore] addShortcutToStore:shortcut];
-    NSLog(@"%@", url);
 }
 
 - (IBAction)modeButtonPressed:(id)sender {
     [buttons setValue:[NSNumber numberWithBool:NO] forKey:@"selected"];
     [(UIButton *)sender setSelected:YES];
     mode = modes[[buttons indexOfObject:sender]];
-}
-
-- (NSURL *)googleMapsURLFrom:(NSString *)from to:(NSString *)to mode:(NSString *)mode
-{
-    return [NSURL URLWithString:[[NSString stringWithFormat:@"comgooglemaps://?saddr=%@&daddr=%@&directionsmode=%@", from, to, mode] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 }
 
 @end

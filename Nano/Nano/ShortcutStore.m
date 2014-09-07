@@ -34,13 +34,14 @@
         self.shortcuts = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
         if (self.shortcuts == nil) {
             self.shortcuts = [[NSMutableArray alloc] init];
-            [self addShortcutToStore:[self venmoShortcutForRecipient:@"jlauer" amount:1]];
-            [self addShortcutToStore:[self facebookEventShortcutForEventID:@"620819504700967"]];
-            [self addShortcutToStore:[self smsShortcutForNumber:@"4159351717"]];
-            [self addShortcutToStore:[self yelpShortcutForSearch:@"Starbucks"]];
-            [self addShortcutToStore:[self uberShortcutForDestination:@"555 W. Middlefield Road"]];
-            [self addShortcutToStore:[self rdioShortcutForCodingMix]];
-            [self addShortcutToStore:[self yoShortcutForRecipient:@"jlauer"]];
+            [self addShortcutToStore:[Shortcut facebookEventShortcutForEventID:@"620819504700967" eventName:@"TechCrunch Disrupt Hackathon"]];
+            [self addShortcutToStore:[Shortcut yelpShortcutForSearch:@"Starbucks"]];
+            [self addShortcutToStore:[Shortcut rdioShortcutForWebURLString:@"http://www.rdio.com/people/dvos/playlists/1127421/Coding_Mix/" name:@"Coding Mix"]];
+            [self addShortcutToStore:[Shortcut yoShortcutForRecipient:@"jlauer"]];
+            [self addShortcutToStore:[Shortcut googleMapsShortcutFrom:@"" to:@"Home" mode:@"transit"]];
+            [self addShortcutToStore:[Shortcut uberShortcutFrom:@"" to:@"555 W. Middlefield Road"]];
+            [self addShortcutToStore:[Shortcut venmoShortcutWithRecipient:@"jlauer" amount:1 message:@"payback"]];
+            [self addShortcutToStore:[Shortcut smsShortcutForNumber:@"4159351717" name:@"Josh Lauer"]];
         }
     }
 
@@ -70,109 +71,5 @@
     [sharedDefaults setObject:encodedObject forKey:@"shortcuts"];
     [sharedDefaults synchronize];
 }
-
-#pragma mark - Custom Actions
-
-- (Shortcut *)venmoShortcutForRecipient:(NSString *)recipient amount:(NSUInteger)amount
-{
-    Shortcut *shortcut = [[Shortcut alloc] init];
-    shortcut.name = @"Pay Josh $0.01";
-    shortcut.amount = amount;
-    shortcut.recipient = recipient;
-    shortcut.icon = @"venmo";
-
-    return shortcut;
-}
-
-- (Shortcut *)googleMapsShortcutFrom:(NSString *)from to:(NSString *)to mode:(NSString *)mode
-{
-    Shortcut *shortcut = [[Shortcut alloc] init];
-    shortcut.name = @"Transit Home";
-    shortcut.icon = @"google";
-    shortcut.url = [self googleMapsURLFrom:from to:to mode:mode];
-
-    return shortcut;
-}
-
-- (NSURL *)googleMapsURLFrom:(NSString *)from to:(NSString *)to mode:(NSString *)mode
-{
-    return [NSURL URLWithString:[NSString stringWithFormat:@"comgooglemaps://?saddr=%@&daddr=%@&directionsmode=%@", from, to, mode]];
-}
-
-- (Shortcut *)facebookEventShortcutForEventID:(NSString *)eventID
-{
-    Shortcut *shortcut = [[Shortcut alloc] init];
-    shortcut.name = @"TechCrunch Disrupt Event";
-    shortcut.icon = @"fb";
-    shortcut.url = [self facebookEventURLForEventID:eventID];
-
-    return shortcut;
-}
-
-- (NSURL *)facebookEventURLForEventID:(NSString *)eventID
-{
-    return [NSURL URLWithString:[NSString stringWithFormat:@"fb://event?id=%@", eventID]];
-}
-
-- (Shortcut *)smsShortcutForNumber:(NSString *)number
-{
-    Shortcut *shortcut = [[Shortcut alloc] init];
-    shortcut.name = @"Text Message Josh";
-    shortcut.icon = @"imessage";
-    shortcut.url = [self smsURLForPhoneNumber:number];
-
-    return shortcut;
-}
-
-- (NSURL *)smsURLForPhoneNumber:(NSString *)number
-{
-    return [NSURL URLWithString:[NSString stringWithFormat:@"sms:%@", number]];
-}
-
-- (Shortcut *)yelpShortcutForSearch:(NSString *)search
-{
-    Shortcut *shortcut = [[Shortcut alloc] init];
-    shortcut.name = @"Search Yelp for Starbucks";
-    shortcut.icon = @"yelp";
-    shortcut.url = [self yelpSearchForName:search];
-
-    return shortcut;
-}
-
-- (NSURL *)yelpSearchForName:(NSString *)name
-{
-    return [NSURL URLWithString:[NSString stringWithFormat:@"yelp:///search?terms=%@", name]];
-}
-
-- (Shortcut *)uberShortcutForDestination:(NSString *)search
-{
-    Shortcut *shortcut = [[Shortcut alloc] init];
-    shortcut.name = @"Uber Home";
-    shortcut.icon = @"uber";
-    shortcut.url = [NSURL URLWithString:[NSString stringWithFormat:@"uber://"]];
-
-    return shortcut;
-}
-
-- (Shortcut *)rdioShortcutForCodingMix
-{
-    Shortcut *shortcut = [[Shortcut alloc] init];
-    shortcut.name = @"Listen to Coding Mix";
-    shortcut.icon = @"rdio";
-    shortcut.url = [NSURL URLWithString:[NSString stringWithFormat:@"rdio://www.rdio.com/people/dvos/playlists/1127421/Coding_Mix/"]];
-    
-    return shortcut;
-}
-
-- (Shortcut *)yoShortcutForRecipient:(NSString *)recipient
-{
-    Shortcut *shortcut = [[Shortcut alloc] init];
-    shortcut.name = @"YO Josh";
-    shortcut.recipient = recipient;
-    shortcut.icon = @"yo";
-    
-    return shortcut;
-}
-
 
 @end
