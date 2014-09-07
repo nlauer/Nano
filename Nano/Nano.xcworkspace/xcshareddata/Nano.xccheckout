@@ -12,6 +12,8 @@
 	<dict>
 		<key>0D218AF4030DEBB0BAF7755F17EB41420C82E54A</key>
 		<string>github.com:nlauer/Nano.git</string>
+		<key>39646C55C63874F62DB12324983FDA3839C9FCE3</key>
+		<string>https://github.com/yiqin/YO-iOS-SDK.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Nano/Nano.xcworkspace</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>0D218AF4030DEBB0BAF7755F17EB41420C82E54A</key>
 		<string>../..</string>
+		<key>39646C55C63874F62DB12324983FDA3839C9FCE3</key>
+		<string>../../../YO-iOS-SDK</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>github.com:nlauer/Nano.git</string>
@@ -35,6 +39,14 @@
 			<string>0D218AF4030DEBB0BAF7755F17EB41420C82E54A</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Nano</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>39646C55C63874F62DB12324983FDA3839C9FCE3</string>
+			<key>IDESourceControlWCCName</key>
+			<string>YO-iOS-SDK</string>
 		</dict>
 	</array>
 </dict>

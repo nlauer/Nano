@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0028C3EF19BC6CD200DBD230 /* Yop.m in Sources */ = {isa = PBXBuildFile; fileRef = 0028C3EE19BC6CD200DBD230 /* Yop.m */; };
 		5C93182BF5254FD8B508E08C /* libPods-NanoTodayExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF5FDB0FC454816978E1BBB /* libPods-NanoTodayExtension.a */; };
 		620B23E119BC25B4004B4804 /* CreateTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 620B23DF19BC25B4004B4804 /* CreateTaskViewController.m */; };
 		620B23E219BC25B4004B4804 /* CreateTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 620B23E019BC25B4004B4804 /* CreateTaskViewController.xib */; };
@@ -77,6 +78,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0028C3ED19BC6CB100DBD230 /* Yop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Yop.h; sourceTree = "<group>"; };
+		0028C3EE19BC6CD200DBD230 /* Yop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Yop.m; sourceTree = "<group>"; };
 		3D85E6916D3443EFBBC17F81 /* Pods-NanoTodayExtension.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NanoTodayExtension.xcconfig"; path = "Pods/Pods-NanoTodayExtension.xcconfig"; sourceTree = "<group>"; };
 		620B23DE19BC25B4004B4804 /* CreateTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateTaskViewController.h; sourceTree = "<group>"; };
 		620B23DF19BC25B4004B4804 /* CreateTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateTaskViewController.m; sourceTree = "<group>"; };
@@ -181,8 +184,6 @@
 			children = (
 				8567004919BBA98D007DA4BB /* AppDelegate.h */,
 				8567004A19BBA98D007DA4BB /* AppDelegate.m */,
-				8567004C19BBA98D007DA4BB /* ViewController.h */,
-				8567004D19BBA98D007DA4BB /* ViewController.m */,
 				620B23DE19BC25B4004B4804 /* CreateTaskViewController.h */,
 				620B23DF19BC25B4004B4804 /* CreateTaskViewController.m */,
 				620B23E019BC25B4004B4804 /* CreateTaskViewController.xib */,
@@ -251,6 +252,8 @@
 				8567007419BBADAB007DA4BB /* TodayViewController.m */,
 				8567007619BBADAB007DA4BB /* MainInterface.storyboard */,
 				8567007119BBADAB007DA4BB /* Supporting Files */,
+				0028C3ED19BC6CB100DBD230 /* Yop.h */,
+				0028C3EE19BC6CD200DBD230 /* Yop.m */,
 			);
 			path = NanoTodayExtension;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0028C3EF19BC6CD200DBD230 /* Yop.m in Sources */,
 				8567007519BBADAB007DA4BB /* TodayViewController.m in Sources */,
 				85E6F21519BBF8FE00C79EE0 /* Shortcut.m in Sources */,
 			);
