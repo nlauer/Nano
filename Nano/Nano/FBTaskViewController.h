@@ -7,14 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TaskViewControllerProtocol.h"
 
 @class CreateTaskViewController;
 
-@interface FBTaskViewController : UIViewController <UITextFieldDelegate>
-@property (weak, nonatomic) IBOutlet UITextField *eventField;
-@property (weak, nonatomic) IBOutlet UIButton *submitButton;
-@property (weak, nonatomic) IBOutlet UILabel *successLabel;
+@interface FBTaskViewController : UIViewController <UITextFieldDelegate, TaskViewControllerProtocol>
 
-@property (weak, nonatomic) CreateTaskViewController *mainVC;
+@property (strong, nonatomic) CreateTaskViewController *mainVC;
+@property (nonatomic) BOOL saved;
+
+@property (weak, nonatomic) IBOutlet UITextField *eventField;
 
 @end

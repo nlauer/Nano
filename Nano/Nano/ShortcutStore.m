@@ -49,6 +49,7 @@
 
 - (void)addShortcutToStore:(Shortcut *)shortcut
 {
+    NSLog(@"Added shortcut with URL %@", shortcut.url);
     [self.shortcuts insertObject:shortcut atIndex:0];
     if (self.shortcuts.count > 8) {
         [self.shortcuts removeLastObject];

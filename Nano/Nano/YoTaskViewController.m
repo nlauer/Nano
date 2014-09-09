@@ -7,17 +7,13 @@
 //
 
 #import "YoTaskViewController.h"
-#import "Shortcut.h"
-#import "ShortcutStore.h"
 #import "CreateTaskViewController.h"
 
 @interface YoTaskViewController ()
 
 @end
 
-@implementation YoTaskViewController {
-    BOOL saved;
-}
+@implementation YoTaskViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,29 +25,16 @@
     self.nameField.delegate = self;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (IBAction)checkFields:(id)sender {
-    if (self.nameField.text.length > 0) {
-        [self.submitButton setHidden:NO];
-    } else {
-        [self.submitButton setHidden:YES];
-    }
+    [self.mainVC rerenderButtons];
 }
 
-- (IBAction)submitButtonPressed:(id)sender {
-    if (saved) {
-        [self.mainVC refreshCurrentTaskForApp:@"yo"];
-    } else {
-        Shortcut *shortcut = [Shortcut yoShortcutForRecipient:self.nameField.text];
-        [[ShortcutStore sharedStore] addShortcutToStore:shortcut];
-        [self.submitButton setTitle:@"Create New" forState:UIControlStateNormal];
-        [self.successLabel setHidden:NO];
-        saved = true;
-    }
+-(BOOL)shouldShowSubmit {
+    return (self.nameField.text.length > 0);
+}
+
+-(Shortcut *)formShortcut {
+    return [Shortcut yoShortcutForRecipient:self.nameField.text];
 }
 
 -(void)dismissKeyboard {

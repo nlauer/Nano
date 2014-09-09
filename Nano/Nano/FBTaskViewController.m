@@ -7,17 +7,13 @@
 //
 
 #import "FBTaskViewController.h"
-#import "Shortcut.h"
-#import "ShortcutStore.h"
 #import "CreateTaskViewController.h"
 
 @interface FBTaskViewController ()
 
 @end
 
-@implementation FBTaskViewController {
-    BOOL saved;
-}
+@implementation FBTaskViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,29 +25,16 @@
     self.eventField.delegate = self;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (IBAction)checkFields:(id)sender {
-    if (self.eventField.text.length > 0) {
-        [self.submitButton setHidden:NO];
-    } else {
-        [self.submitButton setHidden:YES];
-    }
+    [self.mainVC rerenderButtons];
 }
 
-- (IBAction)submitButtonPressed:(id)sender {
-    if (saved) {
-        [self.mainVC refreshCurrentTaskForApp:@"fb"];
-    } else {
-        Shortcut *shortcut = [Shortcut facebookEventShortcutForEventID:@"" eventName:self.eventField.text];
-        [[ShortcutStore sharedStore] addShortcutToStore:shortcut];
-        [self.submitButton setTitle:@"Create New" forState:UIControlStateNormal];
-        [self.successLabel setHidden:NO];
-        saved = true;
-    }
+-(BOOL)shouldShowSubmit {
+    return (self.eventField.text.length > 0);
+}
+
+-(Shortcut *)formShortcut {
+    return [Shortcut facebookEventShortcutForEventID:@"" eventName:self.eventField.text];
 }
 
 -(void)dismissKeyboard {

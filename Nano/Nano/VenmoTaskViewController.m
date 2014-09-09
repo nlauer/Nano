@@ -7,22 +7,13 @@
 //
 
 #import "VenmoTaskViewController.h"
-#import "Shortcut.h"
-#import "ShortcutStore.h"
 #import "CreateTaskViewController.h"
 
 @interface VenmoTaskViewController ()
 
 @end
 
-@implementation VenmoTaskViewController {
-    BOOL saved;
-}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    return self;
-}
+@implementation VenmoTaskViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,32 +27,19 @@
     self.messageField.delegate = self;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (IBAction)checkFields:(id)sender {
-    if (self.recipientField.text.length > 0 &&
-        self.amountField.text.length > 0 &&
-        self.messageField.text.length > 0) {
-        [self.submitButton setHidden:NO];
-    } else {
-        [self.submitButton setHidden:YES];
-    }
+    [self.mainVC rerenderButtons];
 }
 
-- (IBAction)submitButtonClicked:(id)sender {
-    if (saved) {
-        [self.mainVC refreshCurrentTaskForApp:@"venmo"];
-    } else {
-        NSUInteger amount = (NSUInteger)(int)roundf((CGFloat)[self.amountField.text floatValue] * 100);
-        Shortcut *shortcut = [Shortcut venmoShortcutWithRecipient:self.recipientField.text amount:amount message:self.messageField.text];
-        [[ShortcutStore sharedStore] addShortcutToStore:shortcut];
-        [self.submitButton setTitle:@"Create New" forState:UIControlStateNormal];
-        [self.successLabel setHidden:NO];
-        saved = true;
-    }
+-(BOOL)shouldShowSubmit {
+    return (self.recipientField.text.length > 0 &&
+            self.amountField.text.length > 0 &&
+            self.messageField.text.length > 0);
+}
+
+-(Shortcut *)formShortcut {
+    NSUInteger amount = (NSUInteger)(int)roundf((CGFloat)[self.amountField.text floatValue] * 100);
+    return [Shortcut venmoShortcutWithRecipient:self.recipientField.text amount:amount message:self.messageField.text];
 }
 
 -(void)dismissKeyboard {

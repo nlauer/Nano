@@ -7,46 +7,16 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YelpTaskViewController">
             <connections>
                 <outlet property="endButton" destination="yai-bx-dnS" id="bTP-pi-yLA"/>
-                <outlet property="submitButton" destination="Pbg-kw-thD" id="KRn-zi-mdp"/>
-                <outlet property="successLabel" destination="7rS-JN-fXL" id="c3K-el-t5l"/>
                 <outlet property="view" destination="KSv-UU-rLv" id="LCd-Kg-NjB"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="KSv-UU-rLv">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="442"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="230"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pbg-kw-thD">
-                    <rect key="frame" x="58" y="340" width="204" height="54"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                    <state key="normal" title="Save" backgroundImage="add-new">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="disabled" title=" " backgroundImage="checkmark"/>
-                    <connections>
-                        <action selector="submitButtonClicked:" destination="-1" eventType="touchUpInside" id="sDJ-GX-Gnb"/>
-                    </connections>
-                </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="selection-bar" translatesAutoresizingMaskIntoConstraints="NO" id="FHS-Rt-OWK">
-                    <rect key="frame" x="0.0" y="-13" width="320" height="65"/>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Yelp Search" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyK-F5-i8k">
-                    <rect key="frame" x="118" y="14" width="85" height="21"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dSm-Ck-dET">
-                    <rect key="frame" x="0.0" y="51" width="320" height="1"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ThR-vA-8Ws">
-                    <rect key="frame" x="0.0" y="108" width="320" height="1"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="54x-c7-heA">
-                    <rect key="frame" x="0.0" y="51" width="320" height="56"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJ4-QI-d83">
                             <rect key="frame" x="22" y="16" width="57" height="22"/>
@@ -68,14 +38,11 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
-                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your shortcut has been added!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rS-JN-fXL">
-                    <rect key="frame" x="49" y="300" width="223" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <color key="textColor" red="0.60784316059999999" green="0.6549019814" blue="0.69019609689999994" alpha="1" colorSpace="deviceRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="grey shadow" translatesAutoresizingMaskIntoConstraints="NO" id="m9K-hi-7NR">
+                    <rect key="frame" x="0.0" y="53" width="320" height="3"/>
+                </imageView>
             </subviews>
-            <color key="backgroundColor" red="0.91800860969999998" green="0.91800860969999998" blue="0.91800860969999998" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.93333333330000001" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -83,8 +50,6 @@
         </view>
     </objects>
     <resources>
-        <image name="add-new" width="408" height="108"/>
-        <image name="checkmark" width="408" height="108"/>
-        <image name="selection-bar" width="640" height="131"/>
+        <image name="grey shadow" width="640" height="6"/>
     </resources>
 </document>

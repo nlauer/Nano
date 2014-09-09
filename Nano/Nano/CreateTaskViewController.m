@@ -8,19 +8,35 @@
 
 #import "CreateTaskViewController.h"
 #import "GoogleMapsTaskViewController.h"
+#import "AppInfo.h"
+#import "ShortcutStore.h"
 
 @interface CreateTaskViewController ()
 
 @end
 
-@implementation CreateTaskViewController {
-    NSArray *apps;
-}
+@implementation CreateTaskViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        apps = @[@"gmaps", @"venmo", @"uber", @"rdio", @"yelp", @"fb", @"imessage", @"yo"];
+        self.appNames = @[@"Google Maps",
+                          @"Venmo",
+                          @"Uber",
+                          @"Rdio",
+                          @"Yelp",
+                          @"Facebook",
+                          @"iMessage",
+                          @"Yo"];
+        self.appInfos = @{@"Google Maps": [[AppInfo alloc] initWithAppName:@"Google Maps"],
+                     @"Venmo": [[AppInfo alloc] initWithAppName:@"Venmo"],
+                     @"Uber": [[AppInfo alloc] initWithAppName:@"Uber"],
+                     @"Rdio": [[AppInfo alloc] initWithAppName:@"Rdio"],
+                     @"Yelp": [[AppInfo alloc] initWithAppName:@"Yelp"],
+                     @"Facebook": [[AppInfo alloc] initWithAppName:@"Facebook"],
+                     @"iMessage": [[AppInfo alloc] initWithAppName:@"iMessage"],
+                     @"Yo": [[AppInfo alloc] initWithAppName:@"Yo"]};
+        self.appVCs = [[NSMutableDictionary alloc]initWithCapacity:self.appInfos.count];
     }
     return self;
 }
@@ -29,11 +45,8 @@
     [super viewDidLoad];
     self.carousel.type = iCarouselTypeLinear;
     
-    self.googleVC = [[GoogleMapsTaskViewController alloc] init];
-    self.googleVC.mainVC = self;
-    [self addChildViewController:self.googleVC];
-    [self.containerView addSubview:self.googleVC.view];
-    self.taskVC = self.googleVC;
+    NSString *startingAppName = @"Google Maps";
+    [self loadTaskVCForApp:startingAppName WithRefresh:NO];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,7 +60,7 @@
 - (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel
 {
     //return the total number of items in the carousel
-    return [apps count];
+    return [self.appInfos count];
 }
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view
@@ -61,7 +74,7 @@
         view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 75.0f, 75.0f)];
         //view.contentMode = UIViewContentModeCenter;
     }
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:apps[index]]];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:((AppInfo *)self.appInfos[self.appNames[index]]).appImage];
     imageView.frame = CGRectMake(0, 0, 68.0f, 68.0f);
     [view addSubview:imageView];
     
@@ -81,125 +94,57 @@
 - (void)carouselCurrentItemIndexDidChange:(iCarousel *)carousel
 {
     [self.taskVC.view removeFromSuperview];
-    NSString *app = apps[[carousel currentItemIndex]];
-    if ([app  isEqual: @"gmaps"]) {
-        if (!self.googleVC) {
-            self.googleVC = [[GoogleMapsTaskViewController alloc] init];
-            self.googleVC.mainVC = self;
-        }
-        [self addChildViewController:self.googleVC];
-        [self.containerView addSubview:self.googleVC.view];
-        self.taskVC = self.googleVC;
-    } else if ([app  isEqual: @"venmo"]) {
-        if (!self.venmoVC) {
-            self.venmoVC = [[VenmoTaskViewController alloc] init];
-            self.venmoVC.mainVC = self;
-        }
-        [self addChildViewController:self.venmoVC];
-        [self.containerView addSubview:self.venmoVC.view];
-        self.taskVC = self.venmoVC;
-    } else if ([app  isEqual: @"uber"]) {
-        if (!self.uberVC) {
-            self.uberVC = [[UberTaskViewController alloc] init];
-            self.uberVC.mainVC = self;
-        }
-        [self addChildViewController:self.uberVC];
-        [self.containerView addSubview:self.uberVC.view];
-        self.taskVC = self.uberVC;
-    } else if ([app  isEqual: @"rdio"]) {
-        if (!self.rdioVC) {
-            self.rdioVC = [[RdioTaskViewController alloc] init];
-            self.rdioVC.mainVC = self;
-        }
-        [self addChildViewController:self.rdioVC];
-        [self.containerView addSubview:self.rdioVC.view];
-        self.taskVC = self.rdioVC;
-    } else if ([app  isEqual: @"yelp"]) {
-        if (!self.yelpVC) {
-            self.yelpVC = [[YelpTaskViewController alloc] init];
-            self.yelpVC.mainVC = self;
-        }
-        [self addChildViewController:self.yelpVC];
-        [self.containerView addSubview:self.yelpVC.view];
-        self.taskVC = self.yelpVC;
-    } else if ([app  isEqual: @"fb"]) {
-        if (!self.fbVC) {
-            self.fbVC = [[FBTaskViewController alloc] init];
-            self.fbVC.mainVC = self;
-        }
-        [self addChildViewController:self.fbVC];
-        [self.containerView addSubview:self.fbVC.view];
-        self.taskVC = self.fbVC;
-    } else if ([app  isEqual: @"imessage"]) {
-        if (!self.imessageVC) {
-            self.imessageVC = [[IMessageTaskViewController alloc] init];
-            self.imessageVC.mainVC = self;
-        }
-        [self addChildViewController:self.imessageVC];
-        [self.containerView addSubview:self.imessageVC.view];
-        self.taskVC = self.imessageVC;
-    } else if ([app  isEqual: @"yo"]) {
-        if (!self.yoVC) {
-            self.yoVC = [[YoTaskViewController alloc] init];
-            self.yoVC.mainVC = self;
-        }
-        [self addChildViewController:self.yoVC];
-        [self.containerView addSubview:self.yoVC.view];
-        self.taskVC = self.yoVC;
-    }
+    NSString *appName = self.appNames[[carousel currentItemIndex]];
+    [self loadTaskVCForApp:appName WithRefresh:NO];
 }
 
--(void)refreshCurrentTaskForApp:(NSString *)app
+-(void)refreshCurrentTask
 {
     [self.taskVC.view removeFromSuperview];
-    if ([app  isEqual: @"gmaps"]) {
-        self.googleVC = [[GoogleMapsTaskViewController alloc] init];
-        self.googleVC.mainVC = self;
-        [self addChildViewController:self.googleVC];
-        [self.containerView addSubview:self.googleVC.view];
-        self.taskVC = self.googleVC;
-    } else if ([app  isEqual: @"venmo"]) {
-        self.venmoVC = [[VenmoTaskViewController alloc] init];
-        self.venmoVC.mainVC = self;
-        [self addChildViewController:self.venmoVC];
-        [self.containerView addSubview:self.venmoVC.view];
-        self.taskVC = self.venmoVC;
-    } else if ([app  isEqual: @"uber"]) {
-        self.uberVC = [[UberTaskViewController alloc] init];
-        self.uberVC.mainVC = self;
-        [self addChildViewController:self.uberVC];
-        [self.containerView addSubview:self.uberVC.view];
-        self.taskVC = self.uberVC;
-    } else if ([app  isEqual: @"rdio"]) {
-        self.rdioVC = [[RdioTaskViewController alloc] init];
-        self.rdioVC.mainVC = self;
-        [self addChildViewController:self.rdioVC];
-        [self.containerView addSubview:self.rdioVC.view];
-        self.taskVC = self.rdioVC;
-    } else if ([app  isEqual: @"yelp"]) {
-        self.yelpVC = [[YelpTaskViewController alloc] init];
-        self.yelpVC.mainVC = self;
-        [self addChildViewController:self.yelpVC];
-        [self.containerView addSubview:self.yelpVC.view];
-        self.taskVC = self.yelpVC;
-    } else if ([app  isEqual: @"fb"]) {
-        self.fbVC = [[FBTaskViewController alloc] init];
-        self.fbVC.mainVC = self;
-        [self addChildViewController:self.fbVC];
-        [self.containerView addSubview:self.fbVC.view];
-        self.taskVC = self.fbVC;
-    } else if ([app  isEqual: @"imessage"]) {
-        self.imessageVC = [[IMessageTaskViewController alloc] init];
-        self.imessageVC.mainVC = self;
-        [self addChildViewController:self.imessageVC];
-        [self.containerView addSubview:self.imessageVC.view];
-        self.taskVC = self.imessageVC;
-    } else if ([app  isEqual: @"yo"]) {
-        self.yoVC = [[YoTaskViewController alloc] init];
-        self.yoVC.mainVC = self;
-        [self addChildViewController:self.yoVC];
-        [self.containerView addSubview:self.yoVC.view];
-        self.taskVC = self.yoVC;
+    NSString *appName = self.appNames[[self.carousel currentItemIndex]];
+    [self loadTaskVCForApp:appName WithRefresh:YES];
+}
+
+-(void)loadTaskVCForApp:(NSString *)appName WithRefresh:(BOOL)refresh
+{
+    UIViewController<TaskViewControllerProtocol> *taskVC = self.appVCs[appName];
+    AppInfo *appInfo = self.appInfos[appName];
+    if (refresh || !taskVC) {
+        taskVC = [appInfo initializeTaskViewControllerWithMainController:self];
+        self.appVCs[appName] = taskVC;
+    }
+    self.taskLabel.text = appInfo.appAction;
+    [self addChildViewController:taskVC];
+    [self.containerView addSubview:taskVC.view];
+    self.taskVC = taskVC;
+    [self rerenderButtons];
+}
+
+- (IBAction)submitButtonClicked:(id)sender {
+    Shortcut *shortcut = [self.taskVC formShortcut];
+    [[ShortcutStore sharedStore] addShortcutToStore:shortcut];
+    [self.submitButton setHidden:YES];
+    [self.successLabel setHidden:NO];
+    [self.createNewButton setHidden:NO];
+    self.taskVC.saved = YES;
+}
+
+- (IBAction)createNewButtonClicked:(id)sender {
+    [self refreshCurrentTask];
+    [self.successLabel setHidden:YES];
+    [self.createNewButton setHidden:YES];
+}
+
+-(void)rerenderButtons{
+    NSLog(@"saved ? %@", self.taskVC);
+    if (self.taskVC.saved) {
+        [self.submitButton setHidden:YES];
+        [self.successLabel setHidden:NO];
+        [self.createNewButton setHidden:NO];
+    } else {
+        [self.submitButton setHidden:![self.taskVC shouldShowSubmit]];
+        [self.successLabel setHidden:YES];
+        [self.createNewButton setHidden:YES];
     }
 }
 

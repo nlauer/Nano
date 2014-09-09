@@ -7,17 +7,13 @@
 //
 
 #import "IMessageTaskViewController.h"
-#import "Shortcut.h"
-#import "ShortcutStore.h"
 #import "CreateTaskViewController.h"
 
 @interface IMessageTaskViewController ()
 
 @end
 
-@implementation IMessageTaskViewController {
-    BOOL saved;
-}
+@implementation IMessageTaskViewController 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,30 +27,18 @@
     self.messageField.delegate = self;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 - (IBAction)checkFields:(id)sender {
-    if (self.recipientField.text.length > 0 &&
-        self.nameField.text.length > 0 &&
-        self.messageField.text.length > 0) {
-        [self.submitButton setHidden:NO];
-    } else {
-        [self.submitButton setHidden:YES];
-    }
+    [self.mainVC rerenderButtons];
 }
 
-- (IBAction)submitButtonPressed:(id)sender {
-    if (saved) {
-        [self.mainVC refreshCurrentTaskForApp:@"imessage"];
-    } else {
-        Shortcut *shortcut = [Shortcut smsShortcutForNumber:self.recipientField.text name:self.nameField.text];
-        [[ShortcutStore sharedStore] addShortcutToStore:shortcut];
-        [self.submitButton setTitle:@"Create New" forState:UIControlStateNormal];
-        [self.successLabel setHidden:NO];
-        saved = true;
-    }
+-(BOOL)shouldShowSubmit {
+    return (self.recipientField.text.length > 0 &&
+            self.nameField.text.length > 0 &&
+            self.messageField.text.length > 0);
+}
+
+-(Shortcut *)formShortcut {
+    return [Shortcut smsShortcutForNumber:self.recipientField.text name:self.nameField.text];
 }
 
 -(void)dismissKeyboard {

@@ -8,28 +8,23 @@
 
 #import <UIKit/UIKit.h>
 #import "iCarousel.h"
-#import "GoogleMapsTaskViewController.h"
-#import "UberTaskViewController.h"
-#import "VenmoTaskViewController.h"
-#import "YelpTaskViewController.h"
-#import "IMessageTaskViewController.h"
-#import "RdioTaskViewController.h"
-#import "FBTaskViewController.h"
-#import "YoTaskViewController.h"
+#import "TaskViewControllerProtocol.h"
 
 @interface CreateTaskViewController : UIViewController <iCarouselDataSource, iCarouselDelegate>
 @property (weak, nonatomic) IBOutlet iCarousel *carousel;
+@property (weak, nonatomic) IBOutlet UILabel *taskLabel;
 @property (weak, nonatomic) IBOutlet UIView *containerView;
-@property (strong, nonatomic) GoogleMapsTaskViewController *googleVC;
-@property (strong, nonatomic) UberTaskViewController *uberVC;
-@property (strong, nonatomic) VenmoTaskViewController *venmoVC;
-@property (strong, nonatomic) YelpTaskViewController *yelpVC;
-@property (strong, nonatomic) IMessageTaskViewController *imessageVC;
-@property (strong, nonatomic) RdioTaskViewController *rdioVC;
-@property (strong, nonatomic) FBTaskViewController *fbVC;
-@property (strong, nonatomic) YoTaskViewController *yoVC;
-@property (strong, nonatomic) UIViewController *taskVC;
+@property (weak, nonatomic) IBOutlet UIView *submitView;
+@property (weak, nonatomic) IBOutlet UIButton *submitButton;
+@property (weak, nonatomic) IBOutlet UIButton *createNewButton;
+@property (weak, nonatomic) IBOutlet UILabel *successLabel;
 
--(void)refreshCurrentTaskForApp:(NSString *)app;
+@property (strong, nonatomic) UIViewController<TaskViewControllerProtocol> *taskVC;
+
+@property (strong, nonatomic) NSArray *appNames;
+@property (strong, nonatomic) NSDictionary *appInfos;
+@property (strong, nonatomic) NSMutableDictionary *appVCs;
+
+-(void)rerenderButtons;
 
 @end
