@@ -30,6 +30,16 @@
 				<string>venmo1944</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>blitz</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>blitz</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>

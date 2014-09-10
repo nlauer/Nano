@@ -153,6 +153,8 @@
 #pragma mark - UITableViewViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
+
     Shortcut *shortcut = [self.shortcutURLs objectAtIndex:indexPath.row];
     if ([shortcut.icon isEqualToString:@"venmo"]) {
         [self sendPaymentTo:shortcut.recipient amount:shortcut.amount message:shortcut.message];
