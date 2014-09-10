@@ -9,6 +9,7 @@
                 <outlet property="carousel" destination="U3w-zP-iUV" id="JHa-Hd-qCA"/>
                 <outlet property="containerView" destination="b9E-E3-6TR" id="1CF-w3-iay"/>
                 <outlet property="createNewButton" destination="zaU-5T-m7m" id="1uj-Qr-Uuc"/>
+                <outlet property="downloadAppButton" destination="1UL-wa-Ef9" id="d37-cd-Wge"/>
                 <outlet property="submitButton" destination="auZ-zn-Qyz" id="U3G-Zc-8dS"/>
                 <outlet property="submitView" destination="uRf-R9-Yqv" id="dRx-3v-8eo"/>
                 <outlet property="successLabel" destination="yU4-LV-lQy" id="fe3-0I-ReN"/>
@@ -82,6 +83,15 @@
                     </subviews>
                     <color key="backgroundColor" red="0.93333333333333335" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1UL-wa-Ef9">
+                    <rect key="frame" x="243" y="152" width="69" height="30"/>
+                    <state key="normal" title="Download">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="downloadAppButtonClicked:" destination="-1" eventType="touchUpInside" id="YzZ-Mg-In3"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>

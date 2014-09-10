@@ -20,6 +20,7 @@
     NSDictionary *appImages;
     NSDictionary *appActions;
     NSDictionary *appTaskVCs;
+    NSDictionary *appStoreLinks;
 }
 
 -(id)initWithAppName:(NSString *)app
@@ -54,6 +55,14 @@
                    @"iMessage": [IMessageTaskViewController class],
                    @"Yo": [YoTaskViewController class]};
     
+    appStoreLinks = @{@"Google Maps": @"https://itunes.apple.com/us/app/google-maps/id585027354?mt=8",
+                      @"Venmo": @"https://itunes.apple.com/us/app/venmo/id351727428?mt=8",
+                      @"Uber": @"https://itunes.apple.com/us/app/uber/id368677368?mt=8",
+                      @"Rdio": @"https://itunes.apple.com/us/app/rdio-music/id335060889?mt=8",
+                      @"Yelp": @"https://itunes.apple.com/us/app/yelp/id284910350?mt=8",
+                      @"Facebook": @"https://itunes.apple.com/us/app/facebook/id284882215?mt=8",
+                      @"Yo": @"https://itunes.apple.com/us/app/yo./id834335592?mt=8"};
+    
     self.appName = app;
     self.appImage = [UIImage imageNamed:appImages[app]];
     self.appAction = appActions[app];
@@ -67,6 +76,16 @@
     taskVC.mainVC = mainVC;
     taskVC.saved = NO;
     return taskVC;
+}
+
+-(BOOL)deviceHasApp {
+    //TODO return whether the device has the app with self.appName
+    return !appStoreLinks[self.appName];
+}
+
+-(void)openInAppStore {
+    NSLog(@"should open %@", appStoreLinks[self.appName]);
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:appStoreLinks[self.appName]]];
 }
 
 @end

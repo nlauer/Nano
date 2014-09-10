@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "CreateTaskViewController.h"
 #import "TaskViewControllerProtocol.h"
+
+@class CreateTaskViewController;
 
 @interface AppInfo : NSObject
 
@@ -19,5 +20,7 @@
 
 -(id)initWithAppName:(NSString *)app;
 -(UIViewController<TaskViewControllerProtocol> *)initializeTaskViewControllerWithMainController:(CreateTaskViewController *)mainVC;
+-(BOOL)deviceHasApp;
+-(void)openInAppStore;
 
 @end

@@ -8,7 +8,6 @@
 
 #import "CreateTaskViewController.h"
 #import "GoogleMapsTaskViewController.h"
-#import "AppInfo.h"
 #import "ShortcutStore.h"
 
 @interface CreateTaskViewController ()
@@ -93,14 +92,14 @@
 
 - (void)carouselCurrentItemIndexDidChange:(iCarousel *)carousel
 {
-    [self.taskVC.view removeFromSuperview];
+    [self.currentTaskVC.view removeFromSuperview];
     NSString *appName = self.appNames[[carousel currentItemIndex]];
     [self loadTaskVCForApp:appName WithRefresh:NO];
 }
 
 -(void)refreshCurrentTask
 {
-    [self.taskVC.view removeFromSuperview];
+    [self.currentTaskVC.view removeFromSuperview];
     NSString *appName = self.appNames[[self.carousel currentItemIndex]];
     [self loadTaskVCForApp:appName WithRefresh:YES];
 }
@@ -108,25 +107,25 @@
 -(void)loadTaskVCForApp:(NSString *)appName WithRefresh:(BOOL)refresh
 {
     UIViewController<TaskViewControllerProtocol> *taskVC = self.appVCs[appName];
-    AppInfo *appInfo = self.appInfos[appName];
+    self.currentAppInfo = self.appInfos[appName];
     if (refresh || !taskVC) {
-        taskVC = [appInfo initializeTaskViewControllerWithMainController:self];
+        taskVC = [self.currentAppInfo initializeTaskViewControllerWithMainController:self];
         self.appVCs[appName] = taskVC;
     }
-    self.taskLabel.text = appInfo.appAction;
+    self.taskLabel.text = self.currentAppInfo.appAction;
     [self addChildViewController:taskVC];
     [self.containerView addSubview:taskVC.view];
-    self.taskVC = taskVC;
+    self.currentTaskVC = taskVC;
     [self rerenderButtons];
 }
 
 - (IBAction)submitButtonClicked:(id)sender {
-    Shortcut *shortcut = [self.taskVC formShortcut];
+    Shortcut *shortcut = [self.currentTaskVC formShortcut];
     [[ShortcutStore sharedStore] addShortcutToStore:shortcut];
     [self.submitButton setHidden:YES];
     [self.successLabel setHidden:NO];
     [self.createNewButton setHidden:NO];
-    self.taskVC.saved = YES;
+    self.currentTaskVC.saved = YES;
 }
 
 - (IBAction)createNewButtonClicked:(id)sender {
@@ -135,16 +134,25 @@
     [self.createNewButton setHidden:YES];
 }
 
+- (IBAction)downloadAppButtonClicked:(id)sender {
+    [self.currentAppInfo openInAppStore];
+}
+
 -(void)rerenderButtons{
-    NSLog(@"saved ? %@", self.taskVC);
-    if (self.taskVC.saved) {
+    if (self.currentTaskVC.saved) {
         [self.submitButton setHidden:YES];
         [self.successLabel setHidden:NO];
         [self.createNewButton setHidden:NO];
     } else {
-        [self.submitButton setHidden:![self.taskVC shouldShowSubmit]];
+        [self.submitButton setHidden:![self.currentTaskVC shouldShowSubmit]];
         [self.successLabel setHidden:YES];
         [self.createNewButton setHidden:YES];
+    }
+    
+    if (self.currentAppInfo.deviceHasApp) {
+        [self.downloadAppButton setHidden:YES];
+    } else {
+        [self.downloadAppButton setHidden:NO];
     }
 }
 

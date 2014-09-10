@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "iCarousel.h"
 #import "TaskViewControllerProtocol.h"
+#import "AppInfo.h"
 
 @interface CreateTaskViewController : UIViewController <iCarouselDataSource, iCarouselDelegate>
 @property (weak, nonatomic) IBOutlet iCarousel *carousel;
@@ -18,8 +19,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
 @property (weak, nonatomic) IBOutlet UIButton *createNewButton;
 @property (weak, nonatomic) IBOutlet UILabel *successLabel;
+@property (weak, nonatomic) IBOutlet UIButton *downloadAppButton;
 
-@property (strong, nonatomic) UIViewController<TaskViewControllerProtocol> *taskVC;
+@property (strong, nonatomic) UIViewController<TaskViewControllerProtocol> *currentTaskVC;
+@property (nonatomic) AppInfo *currentAppInfo;
 
 @property (strong, nonatomic) NSArray *appNames;
 @property (strong, nonatomic) NSDictionary *appInfos;

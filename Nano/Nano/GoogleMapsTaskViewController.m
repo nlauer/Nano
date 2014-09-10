@@ -66,7 +66,6 @@
 
 -(void)setEndingPlace:(SPGooglePlacesAutocompletePlace *)endingPlace
 {
-    NSLog(@"set ending place");
     _endingPlace = endingPlace;
     [self.mainVC rerenderButtons];
 }
