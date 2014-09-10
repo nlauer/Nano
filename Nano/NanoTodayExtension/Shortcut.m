@@ -112,7 +112,7 @@
     Shortcut *shortcut = [[Shortcut alloc] init];
     shortcut.name = [NSString stringWithFormat:@"Listen to %@", name];
     shortcut.icon = @"rdio";
-    shortcut.url = [NSURL URLWithString:[NSString stringWithFormat:@"rdio://www.rdio.com/artist/%@", [name stringByReplacingOccurrencesOfString:@" " withString:@"+"]]];
+    shortcut.url = [NSURL URLWithString:[NSString stringWithFormat:@"rdio://www.rdio.com/artist/%@", [name stringByReplacingOccurrencesOfString:@" " withString:@"_"]]];
 
     return shortcut;
 }
