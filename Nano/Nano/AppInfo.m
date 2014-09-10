@@ -21,6 +21,7 @@
     NSDictionary *appActions;
     NSDictionary *appTaskVCs;
     NSDictionary *appStoreLinks;
+    NSDictionary *appURLSchemes;
 }
 
 -(id)initWithAppName:(NSString *)app
@@ -62,6 +63,15 @@
                       @"Yelp": @"https://itunes.apple.com/us/app/yelp/id284910350?mt=8",
                       @"Facebook": @"https://itunes.apple.com/us/app/facebook/id284882215?mt=8",
                       @"Yo": @"https://itunes.apple.com/us/app/yo./id834335592?mt=8"};
+
+    appURLSchemes = @{@"Google Maps": @"comgooglemaps://",
+                      @"Venmo": @"venmo://",
+                      @"Uber": @"uber://",
+                      @"Rdio": @"rdio://",
+                      @"Yelp": @"yelp://",
+                      @"Facebook": @"fb://",
+                      @"iMessage": @"sms:",
+                      @"Yo": @"yo://"};
     
     self.appName = app;
     self.appImage = [UIImage imageNamed:appImages[app]];
@@ -84,7 +94,8 @@
 
 -(BOOL)deviceHasApp {
     //TODO return whether the device has the app with self.appName
-    return !appStoreLinks[self.appName];
+    NSString *appURLScheme = appURLSchemes[self.appName];
+    return [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:appURLScheme]];
 }
 
 -(void)openInAppStore {
