@@ -93,7 +93,6 @@
 }
 
 -(BOOL)deviceHasApp {
-    //TODO return whether the device has the app with self.appName
     NSString *appURLScheme = appURLSchemes[self.appName];
     return [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:appURLScheme]];
 }
