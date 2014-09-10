@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6206.9" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateTaskViewController">
@@ -9,7 +9,7 @@
                 <outlet property="carousel" destination="U3w-zP-iUV" id="JHa-Hd-qCA"/>
                 <outlet property="containerView" destination="b9E-E3-6TR" id="1CF-w3-iay"/>
                 <outlet property="createNewButton" destination="zaU-5T-m7m" id="1uj-Qr-Uuc"/>
-                <outlet property="downloadAppButton" destination="1UL-wa-Ef9" id="d37-cd-Wge"/>
+                <outlet property="downloadAppButton" destination="MHf-MX-HOM" id="sjv-CG-5nN"/>
                 <outlet property="submitButton" destination="auZ-zn-Qyz" id="U3G-Zc-8dS"/>
                 <outlet property="submitView" destination="uRf-R9-Yqv" id="dRx-3v-8eo"/>
                 <outlet property="successLabel" destination="yU4-LV-lQy" id="fe3-0I-ReN"/>
@@ -74,6 +74,18 @@
                                 <action selector="createNewButtonClicked:" destination="-1" eventType="touchUpInside" id="jYP-h1-vQL"/>
                             </connections>
                         </button>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHf-MX-HOM">
+                            <rect key="frame" x="58" y="48" width="204" height="54"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <state key="normal" title="Download" backgroundImage="add-new">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="disabled" backgroundImage="checkmark"/>
+                            <connections>
+                                <action selector="createNewButtonClicked:" destination="-1" eventType="touchUpInside" id="zQx-Ym-5jx"/>
+                                <action selector="downloadAppButtonClicked:" destination="-1" eventType="touchUpInside" id="M9E-4T-hsZ"/>
+                            </connections>
+                        </button>
                         <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your shortcut has been added!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yU4-LV-lQy">
                             <rect key="frame" x="48" y="8" width="223" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -83,22 +95,10 @@
                     </subviews>
                     <color key="backgroundColor" red="0.93333333333333335" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
-                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1UL-wa-Ef9">
-                    <rect key="frame" x="243" y="152" width="69" height="30"/>
-                    <state key="normal" title="Download">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="downloadAppButtonClicked:" destination="-1" eventType="touchUpInside" id="YzZ-Mg-In3"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4">
-                <size key="portraitSize" width="320" height="568"/>
-                <size key="landscapeSize" width="568" height="320"/>
-            </simulatedScreenMetrics>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
     <resources>

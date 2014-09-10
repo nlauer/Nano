@@ -75,6 +75,10 @@
     UIViewController<TaskViewControllerProtocol> *taskVC = [[appTaskVCs[self.appName] alloc] init];
     taskVC.mainVC = mainVC;
     taskVC.saved = NO;
+    if (![self deviceHasApp]) {
+        [self disableAllButtonsInView:taskVC.view];
+        [self setSubviewsForView:taskVC.view toAlpha:0.5f];
+    }
     return taskVC;
 }
 
@@ -86,6 +90,21 @@
 -(void)openInAppStore {
     NSLog(@"should open %@", appStoreLinks[self.appName]);
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:appStoreLinks[self.appName]]];
+}
+
+-(void)disableAllButtonsInView:(UIView *)view {
+    for (UIView *subview in [view subviews]) {
+        if ([subview isMemberOfClass:[UIButton class]]) {
+            [(UIButton *)subview setEnabled:NO];
+        }
+        [self disableAllButtonsInView:subview];
+    }
+}
+
+-(void)setSubviewsForView:(UIView *)view toAlpha:(CGFloat)alpha {
+    for (UIView *subview in [view subviews]) {
+        [subview setAlpha:alpha];
+    }
 }
 
 @end

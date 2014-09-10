@@ -73,9 +73,16 @@
         view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 75.0f, 75.0f)];
         //view.contentMode = UIViewContentModeCenter;
     }
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:((AppInfo *)self.appInfos[self.appNames[index]]).appImage];
+    AppInfo *appInfo = self.appInfos[self.appNames[index]];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:appInfo.appImage];
     imageView.frame = CGRectMake(0, 0, 68.0f, 68.0f);
     [view addSubview:imageView];
+    
+    if (appInfo.deviceHasApp) {
+        [view setAlpha:1.0f];
+    } else {
+        [view setAlpha:0.5f];
+    }
     
     return view;
 }
