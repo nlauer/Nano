@@ -12,10 +12,10 @@
 
 @protocol MapTaskProtocol <NSObject>
 
-@property UIButton *startButton;
-@property UIButton *endButton;
-@property SPGooglePlacesAutocompletePlace *startingPlace;
-@property SPGooglePlacesAutocompletePlace *endingPlace;
+@property (weak, nonatomic) UIButton *startButton;
+@property (weak, nonatomic) UIButton *endButton;
+@property (strong, nonatomic) SPGooglePlacesAutocompletePlace *startingPlace;
+@property (strong, nonatomic) SPGooglePlacesAutocompletePlace *endingPlace;
 
 @end
 

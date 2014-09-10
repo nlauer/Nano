@@ -25,7 +25,8 @@
 + (Shortcut *)googleMapsShortcutFrom:(NSString *)from to:(NSString *)to mode:(NSString *)mode
 {
     Shortcut *shortcut = [[Shortcut alloc] init];
-    shortcut.name = [NSString stringWithFormat:@"%@ to %@", [mode capitalizedString], to];
+    NSRange firstComma = [to rangeOfString:@","];
+    shortcut.name = [NSString stringWithFormat:@"%@ to %@", [mode capitalizedString], [to stringByReplacingCharactersInRange:NSMakeRange(firstComma.location, to.length - firstComma.location) withString:@""]];
     shortcut.icon = @"google";
     shortcut.url = [self googleMapsURLFrom:from to:to mode:mode];
 
@@ -40,7 +41,7 @@
 + (Shortcut *)uberShortcutFrom:(NSString *)from to:(NSString *)to
 {
     Shortcut *shortcut = [[Shortcut alloc] init];
-    shortcut.name = [NSString stringWithFormat:@"Uber Home"];
+    shortcut.name = [NSString stringWithFormat:@"Uber Home for $10"];
     shortcut.icon = @"uber";
     shortcut.url = [self uberURLForFrom:from to:to];
 
@@ -124,7 +125,7 @@
     [encoder encodeObject:self.icon forKey:@"icon"];
     [encoder encodeObject:self.name forKey:@"name"];
     [encoder encodeObject:self.message forKey:@"message"];
-    [encoder encodeObject:[NSNumber numberWithInt:self.amount] forKey:@"amount"];
+    [encoder encodeObject:[NSNumber numberWithUnsignedInteger:self.amount] forKey:@"amount"];
 }
 
 - (id)initWithCoder:(NSCoder *)decoder {
@@ -135,7 +136,7 @@
         self.icon = [decoder decodeObjectForKey:@"icon"];
         self.name = [decoder decodeObjectForKey:@"name"];
         self.message = [decoder decodeObjectForKey:@"message"];
-        self.amount = [[decoder decodeObjectForKey:@"amount"] integerValue];
+        self.amount = [[decoder decodeObjectForKey:@"amount"] unsignedIntegerValue];
     }
     return self;
 }

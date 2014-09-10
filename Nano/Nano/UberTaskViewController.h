@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "SPGooglePlacesAutocompletePlace.h"
 #import "TaskViewControllerProtocol.h"
+#import "MapTaskProtocol.h"
 
 @class CreateTaskViewController;
 
-@interface UberTaskViewController : UIViewController<TaskViewControllerProtocol>
+@interface UberTaskViewController : UIViewController<TaskViewControllerProtocol, MapTaskProtocol>
 
 @property (strong, nonatomic) CreateTaskViewController *mainVC;
 @property (nonatomic) BOOL saved;
@@ -20,7 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UIButton *endButton;
 
-@property (nonatomic) SPGooglePlacesAutocompletePlace *startingPlace;
-@property (nonatomic) SPGooglePlacesAutocompletePlace *endingPlace;
+@property (strong, nonatomic) SPGooglePlacesAutocompletePlace *startingPlace;
+@property (strong, nonatomic) SPGooglePlacesAutocompletePlace *endingPlace;
 
 @end

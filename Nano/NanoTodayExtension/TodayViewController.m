@@ -64,7 +64,7 @@
     self.tableView.bounds = CGRectMake(0, 0, 320, 50*[self.shortcutURLs count]);
     [self.tableView reloadData];
 
-    [self updateUberPrice];    
+//    [self updateUberPrice];    
 }
 
 - (void)updateUberPrice
