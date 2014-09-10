@@ -7,32 +7,16 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YoTaskViewController">
             <connections>
                 <outlet property="nameField" destination="EIN-RD-QOj" id="GW9-9q-ssV"/>
-                <outlet property="submitButton" destination="LIq-01-xCw" id="a3K-w7-HnG"/>
-                <outlet property="successLabel" destination="Ahs-wu-aHy" id="xBH-ym-pq2"/>
                 <outlet property="view" destination="ZCm-ya-zzv" id="dRX-Y2-PTz"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ZCm-ya-zzv">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="442"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="230"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIq-01-xCw">
-                    <rect key="frame" x="58" y="340" width="204" height="54"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                    <state key="normal" title="Save" backgroundImage="add-new">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="disabled" title=" " backgroundImage="checkmark"/>
-                    <connections>
-                        <action selector="submitButtonPressed:" destination="-1" eventType="touchUpInside" id="UU5-ld-jSA"/>
-                    </connections>
-                </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="selection-bar" translatesAutoresizingMaskIntoConstraints="NO" id="Z5g-mB-5f9">
-                    <rect key="frame" x="0.0" y="-13" width="320" height="65"/>
-                </imageView>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9LQ-L4-46t">
-                    <rect key="frame" x="0.0" y="51" width="320" height="56"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Yo handle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BiS-cv-nmc">
                             <rect key="frame" x="22" y="16" width="80" height="23"/>
@@ -52,32 +36,17 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rU0-IY-Klb">
-                    <rect key="frame" x="0.0" y="107" width="320" height="1"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Send a Yo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTW-VL-pN2">
-                    <rect key="frame" x="124" y="14" width="73" height="21"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your shortcut has been added!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ahs-wu-aHy">
-                    <rect key="frame" x="49" y="300" width="223" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <color key="textColor" red="0.60784316059999999" green="0.6549019814" blue="0.69019609689999994" alpha="1" colorSpace="deviceRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="grey shadow" translatesAutoresizingMaskIntoConstraints="NO" id="23M-ih-0nk">
+                    <rect key="frame" x="0.0" y="53" width="320" height="3"/>
+                </imageView>
             </subviews>
-            <color key="backgroundColor" red="0.91800860969999998" green="0.91800860969999998" blue="0.91800860969999998" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.93333333330000001" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
     <resources>
-        <image name="add-new" width="408" height="108"/>
-        <image name="checkmark" width="408" height="108"/>
-        <image name="selection-bar" width="640" height="131"/>
+        <image name="grey shadow" width="640" height="6"/>
     </resources>
 </document>

@@ -7,16 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TaskViewControllerProtocol.h"
 
 @class CreateTaskViewController;
 
-@interface VenmoTaskViewController : UIViewController <UITextFieldDelegate>
+@interface VenmoTaskViewController : UIViewController <UITextFieldDelegate, TaskViewControllerProtocol>
+
+@property (strong, nonatomic) CreateTaskViewController *mainVC;
+@property (nonatomic) BOOL saved;
+
 @property (weak, nonatomic) IBOutlet UITextField *recipientField;
 @property (weak, nonatomic) IBOutlet UITextField *amountField;
 @property (weak, nonatomic) IBOutlet UITextField *messageField;
-@property (weak, nonatomic) IBOutlet UIButton *submitButton;
-@property (weak, nonatomic) IBOutlet UILabel *successLabel;
-
-@property (weak, nonatomic) CreateTaskViewController *mainVC;
 
 @end

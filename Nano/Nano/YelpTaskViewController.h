@@ -8,16 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "SPGooglePlacesAutocompletePlace.h"
+#import "TaskViewControllerProtocol.h"
 
 @class CreateTaskViewController;
 
-@interface YelpTaskViewController : UIViewController
+@interface YelpTaskViewController : UIViewController<TaskViewControllerProtocol>
+
+@property (strong, nonatomic) CreateTaskViewController *mainVC;
+@property (nonatomic) BOOL saved;
 
 @property (weak, nonatomic) IBOutlet UIButton *endButton;
-@property (weak, nonatomic) IBOutlet UIButton *submitButton;
-@property (weak, nonatomic) IBOutlet UILabel *successLabel;
 
 @property (nonatomic) SPGooglePlacesAutocompletePlace *endingPlace;
-@property (weak, nonatomic) CreateTaskViewController *mainVC;
 
 @end

@@ -7,17 +7,13 @@
 //
 
 #import "RdioTaskViewController.h"
-#import "Shortcut.h"
-#import "ShortcutStore.h"
 #import "CreateTaskViewController.h"
 
 @interface RdioTaskViewController ()
 
 @end
 
-@implementation RdioTaskViewController {
-    BOOL saved;
-}
+@implementation RdioTaskViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,29 +25,16 @@
     self.artistField.delegate = self;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (IBAction)checkFields:(id)sender {
-    if (self.artistField.text.length > 0) {
-        [self.submitButton setHidden:NO];
-    } else {
-        [self.submitButton setHidden:YES];
-    }
+    [self.mainVC rerenderButtons];
 }
 
-- (IBAction)submitButtonPressed:(id)sender {
-    if (saved) {
-        [self.mainVC refreshCurrentTaskForApp:@"rdio"];
-    } else {
-        Shortcut *shortcut = [Shortcut rdioShortcutForArtistName:self.artistField.text];
-        [[ShortcutStore sharedStore] addShortcutToStore:shortcut];
-        [self.submitButton setTitle:@"Create New" forState:UIControlStateNormal];
-        [self.successLabel setHidden:NO];
-        saved = true;
-    }
+-(BOOL)shouldShowSubmit {
+    return (self.artistField.text.length > 0);
+}
+
+-(Shortcut *)formShortcut {
+    return [Shortcut rdioShortcutForArtistName:self.artistField.text];
 }
 
 -(void)dismissKeyboard {

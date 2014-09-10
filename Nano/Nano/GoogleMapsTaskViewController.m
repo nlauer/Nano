@@ -9,8 +9,6 @@
 #import "GoogleMapsTaskViewController.h"
 #import "GoogleMapsTaskSearchViewController.h"
 #import "CreateTaskViewController.h"
-#import "Shortcut.h"
-#import "ShortcutStore.h"
 
 @interface GoogleMapsTaskViewController ()
 
@@ -20,37 +18,12 @@
     NSArray *modes;
     NSArray *buttons;
     NSString *mode;
-    BOOL saved;
-}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:self.modeOptionsBar.bounds];
-        self.modeOptionsBar.layer.masksToBounds = NO;
-        self.modeOptionsBar.layer.shadowColor = [UIColor blackColor].CGColor;
-        self.modeOptionsBar.layer.shadowOffset = CGSizeMake(0.0f, 5.0f);
-        self.modeOptionsBar.layer.shadowOpacity = 0.5f;
-        self.modeOptionsBar.layer.shadowPath = shadowPath.CGPath;
-    }
-    return self;
 }
 
 - (void)viewDidLoad {
     modes = @[@"driving", @"transit", @"bicycling", @"walking"];
     buttons = @[self.carButton, self.transButton, self.cycleButton, self.walkButton];
     mode = modes[0];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void)setEndingPlace:(SPGooglePlacesAutocompletePlace *)endingPlace
-{
-    [self.submitButton setHidden:NO];
-    _endingPlace = endingPlace;
 }
 
 - (IBAction)startButtonClicked:(id)sender {
@@ -64,39 +37,42 @@
     GoogleMapsTaskSearchViewController *searchController = [[GoogleMapsTaskSearchViewController alloc] init];
     searchController.isStart = false;
     searchController.parent = self;
-    [self.mainVC presentViewController:searchController animated:YES completion:nil];
+    [self presentViewController:searchController animated:YES completion:nil];
 }
 
-- (IBAction)submitButtonClicked:(id)sender {
-    if (saved) {
-        [self.mainVC refreshCurrentTaskForApp:@"gmaps"];
-    } else {
-        NSString *start = @"";
-        NSString *end;
-        
-        if (self.startingPlace) {
-            start = self.startingPlace.name;
-        }
-        
-        if (self.endingPlace) {
-            end = self.endingPlace.name;
-        } else {
-            // TODO throw an error
-            NSLog(@"NEED ENDING PLACE");
-        }
-
-        Shortcut *shortcut = [Shortcut googleMapsShortcutFrom:start to:end mode:mode];
-        [[ShortcutStore sharedStore] addShortcutToStore:shortcut];
-        [self.submitButton setTitle:@"Create New" forState:UIControlStateNormal];
-        [self.successLabel setHidden:NO];
-        saved = true;
+-(Shortcut *)formShortcut {
+    NSString *start = @"";
+    NSString *end;
+    
+    if (self.startingPlace) {
+        start = self.startingPlace.name;
     }
+    
+    if (self.endingPlace) {
+        end = self.endingPlace.name;
+    } else {
+        // TODO throw an error
+        NSLog(@"NEED ENDING PLACE");
+    }
+
+    return [Shortcut googleMapsShortcutFrom:start to:end mode:mode];
 }
 
 - (IBAction)modeButtonPressed:(id)sender {
     [buttons setValue:[NSNumber numberWithBool:NO] forKey:@"selected"];
     [(UIButton *)sender setSelected:YES];
     mode = modes[[buttons indexOfObject:sender]];
+}
+
+-(void)setEndingPlace:(SPGooglePlacesAutocompletePlace *)endingPlace
+{
+    _endingPlace = endingPlace;
+    [self.mainVC rerenderButtons];
+}
+
+-(BOOL)shouldShowSubmit{
+    
+    return !!self.endingPlace;
 }
 
 @end

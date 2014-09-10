@@ -31,6 +31,7 @@
 		62C3C5E319BC9BF200469CF9 /* FBTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62C3C5E119BC9BF200469CF9 /* FBTaskViewController.xib */; };
 		62C3C5E819BC9C0D00469CF9 /* YoTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C3C5E619BC9C0D00469CF9 /* YoTaskViewController.m */; };
 		62C3C5E919BC9C0D00469CF9 /* YoTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62C3C5E719BC9C0D00469CF9 /* YoTaskViewController.xib */; };
+		62C3C5ED19BEADC000469CF9 /* AppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C3C5EC19BEADC000469CF9 /* AppInfo.m */; };
 		8567004819BBA98D007DA4BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8567004719BBA98D007DA4BB /* main.m */; };
 		8567004B19BBA98D007DA4BB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8567004A19BBA98D007DA4BB /* AppDelegate.m */; };
 		8567005319BBA98D007DA4BB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8567005219BBA98D007DA4BB /* Images.xcassets */; };
@@ -128,6 +129,9 @@
 		62C3C5E519BC9C0D00469CF9 /* YoTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YoTaskViewController.h; sourceTree = "<group>"; };
 		62C3C5E619BC9C0D00469CF9 /* YoTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YoTaskViewController.m; sourceTree = "<group>"; };
 		62C3C5E719BC9C0D00469CF9 /* YoTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YoTaskViewController.xib; sourceTree = "<group>"; };
+		62C3C5EB19BEADC000469CF9 /* AppInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInfo.h; sourceTree = "<group>"; };
+		62C3C5EC19BEADC000469CF9 /* AppInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfo.m; sourceTree = "<group>"; };
+		62C3C5F019BF674600469CF9 /* TaskViewControllerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskViewControllerProtocol.h; sourceTree = "<group>"; };
 		70B00AEE4C8E4CA7B5E228CF /* Pods-Nano.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nano.xcconfig"; path = "Pods/Pods-Nano.xcconfig"; sourceTree = "<group>"; };
 		8567004219BBA98B007DA4BB /* Nano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nano.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8567004619BBA98D007DA4BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -303,6 +307,31 @@
 			name = Yo;
 			sourceTree = "<group>";
 		};
+		62C3C5EE19BEADC800469CF9 /* AppInfo */ = {
+			isa = PBXGroup;
+			children = (
+				62C3C5EB19BEADC000469CF9 /* AppInfo.h */,
+				62C3C5EC19BEADC000469CF9 /* AppInfo.m */,
+			);
+			name = AppInfo;
+			sourceTree = "<group>";
+		};
+		62C3C5EF19BEADE600469CF9 /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				62C3C5F019BF674600469CF9 /* TaskViewControllerProtocol.h */,
+				6295D6FD19BC6FC900254B0E /* Google */,
+				6295D6FC19BC6FC100254B0E /* Uber */,
+				6295D70519BC705700254B0E /* Venmo */,
+				6295D70B19BC719000254B0E /* Yelp */,
+				6295D71119BC727B00254B0E /* iMessage */,
+				62C3C5DE19BC9BDC00469CF9 /* Rdio */,
+				62C3C5E419BC9BF600469CF9 /* FB */,
+				62C3C5EA19BC9C1000469CF9 /* Yo */,
+			);
+			name = Tasks;
+			sourceTree = "<group>";
+		};
 		8567003919BBA988007DA4BB = {
 			isa = PBXGroup;
 			children = (
@@ -330,16 +359,10 @@
 			isa = PBXGroup;
 			children = (
 				6295D6FE19BC6FDC00254B0E /* Create Task */,
-				6295D6FD19BC6FC900254B0E /* Google */,
-				6295D6FC19BC6FC100254B0E /* Uber */,
-				6295D70519BC705700254B0E /* Venmo */,
-				6295D70B19BC719000254B0E /* Yelp */,
-				6295D71119BC727B00254B0E /* iMessage */,
-				62C3C5DE19BC9BDC00469CF9 /* Rdio */,
-				62C3C5E419BC9BF600469CF9 /* FB */,
-				62C3C5EA19BC9C1000469CF9 /* Yo */,
+				62C3C5EF19BEADE600469CF9 /* Tasks */,
 				6295D6FB19BC6FA700254B0E /* Map Search */,
 				6295D6FF19BC6FF800254B0E /* Shortcut */,
+				62C3C5EE19BEADC800469CF9 /* AppInfo */,
 				8567004519BBA98C007DA4BB /* Supporting Files */,
 			);
 			path = Nano;
@@ -653,6 +676,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62C3C5ED19BEADC000469CF9 /* AppInfo.m in Sources */,
 				620B23E119BC25B4004B4804 /* CreateTaskViewController.m in Sources */,
 				62B9265419BBEB82003A2533 /* GoogleMapsTaskViewController.m in Sources */,
 				6295D6F919BC6C0B00254B0E /* UberTaskViewController.m in Sources */,
@@ -792,8 +816,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = Nano/Nano.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: James Karraker (MH53SHS82G)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: James Karraker (MH53SHS82G)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -801,7 +825,7 @@
 				INFOPLIST_FILE = Nano/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "bd72a035-0ea1-4d85-bb91-a8663d24af6f";
 			};
 			name = Debug;
 		};
@@ -812,8 +836,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = Nano/Nano.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: James Karraker (MH53SHS82G)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: James Karraker (MH53SHS82G)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -821,7 +845,7 @@
 				INFOPLIST_FILE = Nano/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "bd72a035-0ea1-4d85-bb91-a8663d24af6f";
 			};
 			name = Release;
 		};
