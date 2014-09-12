@@ -13,7 +13,12 @@
 
 @end
 
-@implementation GoogleMapsTaskSearchViewController
+@implementation GoogleMapsTaskSearchViewController {
+    NSArray *searchResultPlaces;
+    SPGooglePlacesAutocompleteQuery *searchQuery;
+    
+    BOOL shouldBeginEditing;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -26,11 +31,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if (self.isStart) {
-        self.searchDisplayController.searchBar.placeholder = @"Starting Address";
-    } else {
-        self.searchDisplayController.searchBar.placeholder = @"Ending Address";
-    }
+    self.searchDisplayController.searchBar.placeholder = self.placeholder;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -39,12 +40,6 @@
     [self.searchBar becomeFirstResponder];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-#pragma mark -
 #pragma mark UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -84,13 +79,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     SPGooglePlacesAutocompletePlace *place = [self placeAtIndexPath:indexPath];
-    if (self.isStart) {
-        self.parent.startingPlace = place;
-        [self.parent.startButton setTitle:place.name forState:UIControlStateNormal];
-    } else {
-        self.parent.endingPlace = place;
-        [self.parent.endButton setTitle:place.name forState:UIControlStateNormal];
-    }
+    self.parent.place = place;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

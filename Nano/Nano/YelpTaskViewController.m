@@ -18,7 +18,7 @@
 
 - (IBAction)endButtonClicked:(id)sender {
     GoogleMapsTaskSearchViewController *searchController = [[GoogleMapsTaskSearchViewController alloc] init];
-    searchController.isStart = false;
+    //searchController.isStart = false;
     searchController.parent = self;
     [self presentViewController:searchController animated:YES completion:nil];
 }

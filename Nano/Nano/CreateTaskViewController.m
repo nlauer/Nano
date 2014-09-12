@@ -19,23 +19,8 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.appNames = @[@"Google Maps",
-                          @"Venmo",
-                          @"Uber",
-                          @"Rdio",
-                          @"Yelp",
-                          @"Facebook",
-                          @"iMessage",
-                          @"Yo"];
-        self.appInfos = @{@"Google Maps": [[AppInfo alloc] initWithAppName:@"Google Maps"],
-                     @"Venmo": [[AppInfo alloc] initWithAppName:@"Venmo"],
-                     @"Uber": [[AppInfo alloc] initWithAppName:@"Uber"],
-                     @"Rdio": [[AppInfo alloc] initWithAppName:@"Rdio"],
-                     @"Yelp": [[AppInfo alloc] initWithAppName:@"Yelp"],
-                     @"Facebook": [[AppInfo alloc] initWithAppName:@"Facebook"],
-                     @"iMessage": [[AppInfo alloc] initWithAppName:@"iMessage"],
-                     @"Yo": [[AppInfo alloc] initWithAppName:@"Yo"]};
-        self.appVCs = [[NSMutableDictionary alloc]initWithCapacity:self.appInfos.count];
+        self.appData = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Tasks" ofType:@"plist"]];
+        self.appVCs = [[NSMutableArray alloc] initWithCapacity:self.appData.count];
     }
     return self;
 }
@@ -43,14 +28,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.carousel.type = iCarouselTypeLinear;
-    
-    NSString *startingAppName = @"Google Maps";
-    [self loadTaskVCForApp:startingAppName WithRefresh:NO];
-}
+    for (NSDictionary *data in self.appData) {
+        TaskViewController *vc = [[TaskViewController alloc] initWithPlistData:data WithMainController:self];
+        [self.appVCs addObject:vc];
+    }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self loadTaskVCForAppAtIndex:0 WithRefresh:NO];
 }
 
 #pragma mark -
@@ -59,7 +42,7 @@
 - (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel
 {
     //return the total number of items in the carousel
-    return [self.appInfos count];
+    return [self.appData count];
 }
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view
@@ -73,12 +56,12 @@
         view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 75.0f, 75.0f)];
         //view.contentMode = UIViewContentModeCenter;
     }
-    AppInfo *appInfo = self.appInfos[self.appNames[index]];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:appInfo.appImage];
+    TaskViewController *taskVC = self.appVCs[index];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:taskVC.appImage];
     imageView.frame = CGRectMake(0, 0, 68.0f, 68.0f);
     [view addSubview:imageView];
     
-    if (appInfo.deviceHasApp) {
+    if ([taskVC deviceHasApp]) {
         [view setAlpha:1.0f];
     } else {
         [view setAlpha:0.5f];
@@ -100,26 +83,23 @@
 - (void)carouselCurrentItemIndexDidChange:(iCarousel *)carousel
 {
     [self.currentTaskVC.view removeFromSuperview];
-    NSString *appName = self.appNames[[carousel currentItemIndex]];
-    [self loadTaskVCForApp:appName WithRefresh:NO];
+    [self loadTaskVCForAppAtIndex:[carousel currentItemIndex] WithRefresh:NO];
 }
 
 -(void)refreshCurrentTask
 {
     [self.currentTaskVC.view removeFromSuperview];
-    NSString *appName = self.appNames[[self.carousel currentItemIndex]];
-    [self loadTaskVCForApp:appName WithRefresh:YES];
+    [self loadTaskVCForAppAtIndex:[self.carousel currentItemIndex] WithRefresh:YES];
 }
 
--(void)loadTaskVCForApp:(NSString *)appName WithRefresh:(BOOL)refresh
+-(void)loadTaskVCForAppAtIndex:(int)index WithRefresh:(BOOL)refresh
 {
-    UIViewController<TaskViewControllerProtocol> *taskVC = self.appVCs[appName];
-    self.currentAppInfo = self.appInfos[appName];
+    TaskViewController *taskVC = self.appVCs[index];
     if (refresh || !taskVC) {
-        taskVC = [self.currentAppInfo initializeTaskViewControllerWithMainController:self];
-        self.appVCs[appName] = taskVC;
+        taskVC = [[TaskViewController alloc] initWithPlistData:self.appData[index] WithMainController:self];
+        self.appVCs[index] = taskVC;
     }
-    self.taskLabel.text = self.currentAppInfo.appAction;
+    self.taskLabel.text = taskVC.action;
     [self addChildViewController:taskVC];
     [self.containerView addSubview:taskVC.view];
     self.currentTaskVC = taskVC;
@@ -142,7 +122,7 @@
 }
 
 - (IBAction)downloadAppButtonClicked:(id)sender {
-    [self.currentAppInfo openInAppStore];
+    [self.currentTaskVC openInAppStore];
 }
 
 -(void)rerenderButtons{
@@ -156,7 +136,7 @@
         [self.createNewButton setHidden:YES];
     }
     
-    if (self.currentAppInfo.deviceHasApp) {
+    if (self.currentTaskVC.deviceHasApp) {
         [self.downloadAppButton setHidden:YES];
     } else {
         [self.downloadAppButton setHidden:NO];

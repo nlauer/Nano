@@ -10,6 +10,24 @@
 
 @implementation Shortcut
 
++ (Shortcut *)shortcutForSelectorString:(NSString *)string
+                               WithArgs:(NSArray *)args {
+    SEL sel = NSSelectorFromString(string);
+    NSMethodSignature *sig = [Shortcut methodSignatureForSelector:sel];
+    NSInvocation *inv = [NSInvocation invocationWithMethodSignature:sig];
+    [inv setTarget:[Shortcut class]];
+    [inv setSelector:sel];
+    for (int i = 0; i < args.count; i++) {
+        NSString *arg = args[i];
+        [inv setArgument:&arg atIndex:2+i];
+    }
+    
+    Shortcut *shortcut;
+    [inv invoke];
+    [inv getReturnValue:&shortcut];
+    return shortcut;
+}
+
 + (Shortcut *)venmoShortcutWithRecipient:(NSString *)recipient amount:(NSUInteger)amount message:(NSString *)message
 {
     Shortcut *shortcut = [[Shortcut alloc] init];
@@ -26,10 +44,11 @@
 {
     Shortcut *shortcut = [[Shortcut alloc] init];
     NSRange firstComma = [to rangeOfString:@","];
+    // TODO there is a bug here if theres no comma
     shortcut.name = [NSString stringWithFormat:@"%@ to %@", [mode capitalizedString], [to stringByReplacingCharactersInRange:NSMakeRange(firstComma.location, to.length - firstComma.location) withString:@""]];
     shortcut.icon = @"google";
     shortcut.url = [self googleMapsURLFrom:from to:to mode:mode];
-
+    NSLog(@"%@", shortcut.url);
     return shortcut;
 }
 

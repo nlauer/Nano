@@ -53,4 +53,45 @@
     return YES;
 }
 
+- (IBAction)showContactsPicker:(id)sender {
+    ABPeoplePickerNavigationController *picker = [[ABPeoplePickerNavigationController alloc] init];
+    picker.peoplePickerDelegate = self;
+    
+    [self presentViewController:picker animated:YES completion:nil];
+}
+
+#pragma mark ABPeoplePickerNavigationControllerDelegate
+
+- (void)peoplePickerNavigationControllerDidCancel:
+(ABPeoplePickerNavigationController *)peoplePicker
+{
+    NSLog(@"cancel");
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+- (void)peoplePickerNavigationController:
+(ABPeoplePickerNavigationController *)peoplePicker didSelectPerson:(ABRecordRef)person {
+    NSString* firstName = (__bridge NSString*)ABRecordCopyValue(person, kABPersonFirstNameProperty);
+    NSString* lastName = (__bridge NSString*)ABRecordCopyValue(person, kABPersonLastNameProperty);
+    NSString* phone = nil;
+    ABMultiValueRef phoneNumbers = ABRecordCopyValue(person, kABPersonPhoneProperty);
+    if (ABMultiValueGetCount(phoneNumbers) > 0) {
+        phone = (__bridge_transfer NSString*)
+        ABMultiValueCopyValueAtIndex(phoneNumbers, 0);
+    } else {
+        phone = @"[None]";
+    }
+    CFRelease(phoneNumbers);
+    NSLog(@"Picked person %@ %@, %@", firstName, lastName, phone);
+}
+
+- (void)peoplePickerNavigationController:
+(ABPeoplePickerNavigationController *)peoplePicker
+      didSelectPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier
+{
+    NSLog(@"Picked person %@ with property %d and identifier %d", person, property, identifier);
+}
+
+
 @end

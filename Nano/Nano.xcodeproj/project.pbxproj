@@ -12,6 +12,17 @@
 		5C93182BF5254FD8B508E08C /* libPods-NanoTodayExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF5FDB0FC454816978E1BBB /* libPods-NanoTodayExtension.a */; };
 		620B23E119BC25B4004B4804 /* CreateTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 620B23DF19BC25B4004B4804 /* CreateTaskViewController.m */; };
 		620B23E219BC25B4004B4804 /* CreateTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 620B23E019BC25B4004B4804 /* CreateTaskViewController.xib */; };
+		627FF49719C2378800984C60 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 627FF49619C2378800984C60 /* AddressBook.framework */; };
+		627FF49919C2378E00984C60 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 627FF49819C2378E00984C60 /* AddressBookUI.framework */; };
+		627FF49D19C2468A00984C60 /* ContactTaskComponentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 627FF49B19C2468A00984C60 /* ContactTaskComponentViewController.m */; };
+		627FF49E19C2468A00984C60 /* ContactTaskComponentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 627FF49C19C2468A00984C60 /* ContactTaskComponentViewController.xib */; };
+		627FF4AA19C25F9D00984C60 /* MapOptionsTaskComponentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 627FF4A819C25F9D00984C60 /* MapOptionsTaskComponentViewController.m */; };
+		627FF4AB19C25F9D00984C60 /* MapOptionsTaskComponentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 627FF4A919C25F9D00984C60 /* MapOptionsTaskComponentViewController.xib */; };
+		627FF4B019C262F700984C60 /* TaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 627FF4AE19C262F700984C60 /* TaskViewController.m */; };
+		627FF4B119C262F700984C60 /* TaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 627FF4AF19C262F700984C60 /* TaskViewController.xib */; };
+		627FF4B319C3435C00984C60 /* Tasks.plist in Resources */ = {isa = PBXBuildFile; fileRef = 627FF4B219C3435C00984C60 /* Tasks.plist */; };
+		627FF4BA19C36DD600984C60 /* MapSearchTaskComponentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 627FF4B819C36DD600984C60 /* MapSearchTaskComponentViewController.m */; };
+		627FF4BB19C36DD600984C60 /* MapSearchTaskComponentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 627FF4B919C36DD600984C60 /* MapSearchTaskComponentViewController.xib */; };
 		6295D6F919BC6C0B00254B0E /* UberTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6295D6F719BC6C0B00254B0E /* UberTaskViewController.m */; };
 		6295D6FA19BC6C0B00254B0E /* UberTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6295D6F819BC6C0B00254B0E /* UberTaskViewController.xib */; };
 		6295D70319BC705300254B0E /* VenmoTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6295D70119BC705300254B0E /* VenmoTaskViewController.m */; };
@@ -31,7 +42,6 @@
 		62C3C5E319BC9BF200469CF9 /* FBTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62C3C5E119BC9BF200469CF9 /* FBTaskViewController.xib */; };
 		62C3C5E819BC9C0D00469CF9 /* YoTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C3C5E619BC9C0D00469CF9 /* YoTaskViewController.m */; };
 		62C3C5E919BC9C0D00469CF9 /* YoTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62C3C5E719BC9C0D00469CF9 /* YoTaskViewController.xib */; };
-		62C3C5ED19BEADC000469CF9 /* AppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C3C5EC19BEADC000469CF9 /* AppInfo.m */; };
 		8567004819BBA98D007DA4BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8567004719BBA98D007DA4BB /* main.m */; };
 		8567004B19BBA98D007DA4BB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8567004A19BBA98D007DA4BB /* AppDelegate.m */; };
 		8567005319BBA98D007DA4BB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8567005219BBA98D007DA4BB /* Images.xcassets */; };
@@ -100,6 +110,22 @@
 		620B23DE19BC25B4004B4804 /* CreateTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateTaskViewController.h; sourceTree = "<group>"; };
 		620B23DF19BC25B4004B4804 /* CreateTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateTaskViewController.m; sourceTree = "<group>"; };
 		620B23E019BC25B4004B4804 /* CreateTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateTaskViewController.xib; sourceTree = "<group>"; };
+		627FF49619C2378800984C60 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		627FF49819C2378E00984C60 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		627FF49A19C2468A00984C60 /* ContactTaskComponentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactTaskComponentViewController.h; sourceTree = "<group>"; };
+		627FF49B19C2468A00984C60 /* ContactTaskComponentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactTaskComponentViewController.m; sourceTree = "<group>"; };
+		627FF49C19C2468A00984C60 /* ContactTaskComponentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactTaskComponentViewController.xib; sourceTree = "<group>"; };
+		627FF4A719C25F9D00984C60 /* MapOptionsTaskComponentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapOptionsTaskComponentViewController.h; sourceTree = "<group>"; };
+		627FF4A819C25F9D00984C60 /* MapOptionsTaskComponentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapOptionsTaskComponentViewController.m; sourceTree = "<group>"; };
+		627FF4A919C25F9D00984C60 /* MapOptionsTaskComponentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapOptionsTaskComponentViewController.xib; sourceTree = "<group>"; };
+		627FF4AD19C262F700984C60 /* TaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskViewController.h; sourceTree = "<group>"; };
+		627FF4AE19C262F700984C60 /* TaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskViewController.m; sourceTree = "<group>"; };
+		627FF4AF19C262F700984C60 /* TaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskViewController.xib; sourceTree = "<group>"; };
+		627FF4B219C3435C00984C60 /* Tasks.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Tasks.plist; sourceTree = "<group>"; };
+		627FF4B419C352A100984C60 /* TaskComponentViewControllerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskComponentViewControllerProtocol.h; sourceTree = "<group>"; };
+		627FF4B719C36DD600984C60 /* MapSearchTaskComponentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapSearchTaskComponentViewController.h; sourceTree = "<group>"; };
+		627FF4B819C36DD600984C60 /* MapSearchTaskComponentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapSearchTaskComponentViewController.m; sourceTree = "<group>"; };
+		627FF4B919C36DD600984C60 /* MapSearchTaskComponentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapSearchTaskComponentViewController.xib; sourceTree = "<group>"; };
 		6295D6F519BC6AB500254B0E /* MapTaskProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapTaskProtocol.h; sourceTree = "<group>"; };
 		6295D6F619BC6C0B00254B0E /* UberTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UberTaskViewController.h; sourceTree = "<group>"; };
 		6295D6F719BC6C0B00254B0E /* UberTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UberTaskViewController.m; sourceTree = "<group>"; };
@@ -129,8 +155,6 @@
 		62C3C5E519BC9C0D00469CF9 /* YoTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YoTaskViewController.h; sourceTree = "<group>"; };
 		62C3C5E619BC9C0D00469CF9 /* YoTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YoTaskViewController.m; sourceTree = "<group>"; };
 		62C3C5E719BC9C0D00469CF9 /* YoTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YoTaskViewController.xib; sourceTree = "<group>"; };
-		62C3C5EB19BEADC000469CF9 /* AppInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInfo.h; sourceTree = "<group>"; };
-		62C3C5EC19BEADC000469CF9 /* AppInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfo.m; sourceTree = "<group>"; };
 		62C3C5F019BF674600469CF9 /* TaskViewControllerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskViewControllerProtocol.h; sourceTree = "<group>"; };
 		70B00AEE4C8E4CA7B5E228CF /* Pods-Nano.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nano.xcconfig"; path = "Pods/Pods-Nano.xcconfig"; sourceTree = "<group>"; };
 		8567004219BBA98B007DA4BB /* Nano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nano.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +195,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				627FF49919C2378E00984C60 /* AddressBookUI.framework in Frameworks */,
+				627FF49719C2378800984C60 /* AddressBook.framework in Frameworks */,
 				62B9263F19BBE543003A2533 /* CoreLocation.framework in Frameworks */,
 				A09294EAF2334E88AB2A6626 /* libPods-Nano.a in Frameworks */,
 			);
@@ -195,6 +221,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		627FF49F19C2469200984C60 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				627FF49A19C2468A00984C60 /* ContactTaskComponentViewController.h */,
+				627FF49B19C2468A00984C60 /* ContactTaskComponentViewController.m */,
+				627FF49C19C2468A00984C60 /* ContactTaskComponentViewController.xib */,
+			);
+			name = Contact;
+			sourceTree = "<group>";
+		};
+		627FF4A019C2475100984C60 /* Task Components */ = {
+			isa = PBXGroup;
+			children = (
+				627FF4B419C352A100984C60 /* TaskComponentViewControllerProtocol.h */,
+				627FF49F19C2469200984C60 /* Contact */,
+				627FF4A619C24F8F00984C60 /* Map Search */,
+				627FF4AC19C25FA100984C60 /* Map Options */,
+			);
+			name = "Task Components";
+			sourceTree = "<group>";
+		};
+		627FF4A619C24F8F00984C60 /* Map Search */ = {
+			isa = PBXGroup;
+			children = (
+				627FF4B719C36DD600984C60 /* MapSearchTaskComponentViewController.h */,
+				627FF4B819C36DD600984C60 /* MapSearchTaskComponentViewController.m */,
+				627FF4B919C36DD600984C60 /* MapSearchTaskComponentViewController.xib */,
+			);
+			name = "Map Search";
+			sourceTree = "<group>";
+		};
+		627FF4AC19C25FA100984C60 /* Map Options */ = {
+			isa = PBXGroup;
+			children = (
+				627FF4A719C25F9D00984C60 /* MapOptionsTaskComponentViewController.h */,
+				627FF4A819C25F9D00984C60 /* MapOptionsTaskComponentViewController.m */,
+				627FF4A919C25F9D00984C60 /* MapOptionsTaskComponentViewController.xib */,
+			);
+			name = "Map Options";
+			sourceTree = "<group>";
+		};
+		627FF4B619C35CC100984C60 /* Old files */ = {
+			isa = PBXGroup;
+			children = (
+				62C3C5F019BF674600469CF9 /* TaskViewControllerProtocol.h */,
+				6295D6FD19BC6FC900254B0E /* Google */,
+				62B9265219BBEB82003A2533 /* GoogleMapsTaskViewController.h */,
+				62B9265319BBEB82003A2533 /* GoogleMapsTaskViewController.m */,
+				62B1349319BC0258009C784F /* GoogleMapsTaskViewController.xib */,
+				6295D6FC19BC6FC100254B0E /* Uber */,
+				6295D70519BC705700254B0E /* Venmo */,
+				6295D70B19BC719000254B0E /* Yelp */,
+				6295D70619BC718C00254B0E /* YelpTaskViewController.h */,
+				6295D70719BC718C00254B0E /* YelpTaskViewController.m */,
+				6295D70819BC718C00254B0E /* YelpTaskViewController.xib */,
+				6295D71119BC727B00254B0E /* iMessage */,
+				6295D70C19BC727500254B0E /* IMessageTaskViewController.h */,
+				6295D70D19BC727500254B0E /* IMessageTaskViewController.m */,
+				6295D70E19BC727500254B0E /* IMessageTaskViewController.xib */,
+				62C3C5DE19BC9BDC00469CF9 /* Rdio */,
+				62C3C5E419BC9BF600469CF9 /* FB */,
+				62C3C5EA19BC9C1000469CF9 /* Yo */,
+			);
+			name = "Old files";
+			sourceTree = "<group>";
+		};
 		6295D6FB19BC6FA700254B0E /* Map Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,9 +311,6 @@
 		6295D6FD19BC6FC900254B0E /* Google */ = {
 			isa = PBXGroup;
 			children = (
-				62B9265219BBEB82003A2533 /* GoogleMapsTaskViewController.h */,
-				62B9265319BBEB82003A2533 /* GoogleMapsTaskViewController.m */,
-				62B1349319BC0258009C784F /* GoogleMapsTaskViewController.xib */,
 			);
 			name = Google;
 			sourceTree = "<group>";
@@ -260,9 +349,6 @@
 		6295D70B19BC719000254B0E /* Yelp */ = {
 			isa = PBXGroup;
 			children = (
-				6295D70619BC718C00254B0E /* YelpTaskViewController.h */,
-				6295D70719BC718C00254B0E /* YelpTaskViewController.m */,
-				6295D70819BC718C00254B0E /* YelpTaskViewController.xib */,
 			);
 			name = Yelp;
 			sourceTree = "<group>";
@@ -270,9 +356,6 @@
 		6295D71119BC727B00254B0E /* iMessage */ = {
 			isa = PBXGroup;
 			children = (
-				6295D70C19BC727500254B0E /* IMessageTaskViewController.h */,
-				6295D70D19BC727500254B0E /* IMessageTaskViewController.m */,
-				6295D70E19BC727500254B0E /* IMessageTaskViewController.xib */,
 			);
 			name = iMessage;
 			sourceTree = "<group>";
@@ -307,27 +390,14 @@
 			name = Yo;
 			sourceTree = "<group>";
 		};
-		62C3C5EE19BEADC800469CF9 /* AppInfo */ = {
-			isa = PBXGroup;
-			children = (
-				62C3C5EB19BEADC000469CF9 /* AppInfo.h */,
-				62C3C5EC19BEADC000469CF9 /* AppInfo.m */,
-			);
-			name = AppInfo;
-			sourceTree = "<group>";
-		};
 		62C3C5EF19BEADE600469CF9 /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
-				62C3C5F019BF674600469CF9 /* TaskViewControllerProtocol.h */,
-				6295D6FD19BC6FC900254B0E /* Google */,
-				6295D6FC19BC6FC100254B0E /* Uber */,
-				6295D70519BC705700254B0E /* Venmo */,
-				6295D70B19BC719000254B0E /* Yelp */,
-				6295D71119BC727B00254B0E /* iMessage */,
-				62C3C5DE19BC9BDC00469CF9 /* Rdio */,
-				62C3C5E419BC9BF600469CF9 /* FB */,
-				62C3C5EA19BC9C1000469CF9 /* Yo */,
+				627FF4AD19C262F700984C60 /* TaskViewController.h */,
+				627FF4AE19C262F700984C60 /* TaskViewController.m */,
+				627FF4AF19C262F700984C60 /* TaskViewController.xib */,
+				627FF4B219C3435C00984C60 /* Tasks.plist */,
+				627FF4A019C2475100984C60 /* Task Components */,
 			);
 			name = Tasks;
 			sourceTree = "<group>";
@@ -360,9 +430,9 @@
 			children = (
 				6295D6FE19BC6FDC00254B0E /* Create Task */,
 				62C3C5EF19BEADE600469CF9 /* Tasks */,
-				6295D6FB19BC6FA700254B0E /* Map Search */,
 				6295D6FF19BC6FF800254B0E /* Shortcut */,
-				62C3C5EE19BEADC800469CF9 /* AppInfo */,
+				6295D6FB19BC6FA700254B0E /* Map Search */,
+				627FF4B619C35CC100984C60 /* Old files */,
 				8567004519BBA98C007DA4BB /* Supporting Files */,
 			);
 			path = Nano;
@@ -401,6 +471,8 @@
 		8567006D19BBADAB007DA4BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				627FF49819C2378E00984C60 /* AddressBookUI.framework */,
+				627FF49619C2378800984C60 /* AddressBook.framework */,
 				62B9262B19BBE3BB003A2533 /* CoreLocation.framework */,
 				8567006E19BBADAB007DA4BB /* NotificationCenter.framework */,
 				C6A46FE8E9DC47DBAFB8076A /* libPods-Nano.a */,
@@ -568,16 +640,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				627FF4B119C262F700984C60 /* TaskViewController.xib in Resources */,
 				62B1349419BC0258009C784F /* GoogleMapsTaskViewController.xib in Resources */,
 				8567005319BBA98D007DA4BB /* Images.xcassets in Resources */,
+				627FF4BB19C36DD600984C60 /* MapSearchTaskComponentViewController.xib in Resources */,
 				6295D6FA19BC6C0B00254B0E /* UberTaskViewController.xib in Resources */,
 				6295D70A19BC718C00254B0E /* YelpTaskViewController.xib in Resources */,
 				6295D70419BC705300254B0E /* VenmoTaskViewController.xib in Resources */,
+				627FF4AB19C25F9D00984C60 /* MapOptionsTaskComponentViewController.xib in Resources */,
 				62B1349919BC0B49009C784F /* GoogleMapsTaskSearchViewController.xib in Resources */,
 				620B23E219BC25B4004B4804 /* CreateTaskViewController.xib in Resources */,
 				62C3C5DD19BC9BD800469CF9 /* RdioTaskViewController.xib in Resources */,
 				6295D71019BC727500254B0E /* IMessageTaskViewController.xib in Resources */,
+				627FF4B319C3435C00984C60 /* Tasks.plist in Resources */,
 				62C3C5E919BC9C0D00469CF9 /* YoTaskViewController.xib in Resources */,
+				627FF49E19C2468A00984C60 /* ContactTaskComponentViewController.xib in Resources */,
 				62C3C5E319BC9BF200469CF9 /* FBTaskViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -676,8 +753,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62C3C5ED19BEADC000469CF9 /* AppInfo.m in Sources */,
+				627FF4BA19C36DD600984C60 /* MapSearchTaskComponentViewController.m in Sources */,
 				620B23E119BC25B4004B4804 /* CreateTaskViewController.m in Sources */,
+				627FF49D19C2468A00984C60 /* ContactTaskComponentViewController.m in Sources */,
+				627FF4AA19C25F9D00984C60 /* MapOptionsTaskComponentViewController.m in Sources */,
 				62B9265419BBEB82003A2533 /* GoogleMapsTaskViewController.m in Sources */,
 				6295D6F919BC6C0B00254B0E /* UberTaskViewController.m in Sources */,
 				62C3C5E819BC9C0D00469CF9 /* YoTaskViewController.m in Sources */,
@@ -689,6 +768,7 @@
 				8567004B19BBA98D007DA4BB /* AppDelegate.m in Sources */,
 				62C3C5E219BC9BF200469CF9 /* FBTaskViewController.m in Sources */,
 				6295D70319BC705300254B0E /* VenmoTaskViewController.m in Sources */,
+				627FF4B019C262F700984C60 /* TaskViewController.m in Sources */,
 				85E6F22A19BC367400C79EE0 /* Shortcut.m in Sources */,
 				8567004819BBA98D007DA4BB /* main.m in Sources */,
 			);

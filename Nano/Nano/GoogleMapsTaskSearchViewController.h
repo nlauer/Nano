@@ -8,17 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "SPGooglePlacesAutocompleteQuery.h"
-#import "MapTaskProtocol.h"
+#import "MapSearchTaskComponentViewController.h"
 
-@interface GoogleMapsTaskSearchViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate, UISearchBarDelegate> {
-    NSArray *searchResultPlaces;
-    SPGooglePlacesAutocompleteQuery *searchQuery;
-    
-    BOOL shouldBeginEditing;
-}
+@interface GoogleMapsTaskSearchViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate, UISearchBarDelegate>
 
-@property BOOL isStart;
-@property (weak, nonatomic) UIViewController<MapTaskProtocol> *parent;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+
+@property (strong, nonatomic) MapSearchTaskComponentViewController *parent;
+@property (strong, nonatomic) NSString *placeholder;
 
 @end

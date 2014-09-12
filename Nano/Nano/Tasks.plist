@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>appName</key>
+		<string>Google Maps</string>
+		<key>action</key>
+		<string>Google Maps Directions</string>
+		<key>components</key>
+		<array>
+			<dict>
+				<key>type</key>
+				<string>MapSearchTaskComponentViewController</string>
+				<key>leftTitle</key>
+				<string>From</string>
+				<key>defaultAddress</key>
+				<string>Current Location</string>
+				<key>placeholder</key>
+				<string>Starting Address...</string>
+				<key>required</key>
+				<false/>
+				<key>value</key>
+				<string>placeName</string>
+			</dict>
+			<dict>
+				<key>type</key>
+				<string>MapSearchTaskComponentViewController</string>
+				<key>leftTitle</key>
+				<string>To</string>
+				<key>defaultAddress</key>
+				<string>Ending Location</string>
+				<key>placeholder</key>
+				<string>Ending Address...</string>
+				<key>required</key>
+				<true/>
+				<key>value</key>
+				<string>placeName</string>
+			</dict>
+			<dict>
+				<key>type</key>
+				<string>MapOptionsTaskComponentViewController</string>
+				<key>options</key>
+				<array>
+					<string>driving</string>
+					<string>bicycling</string>
+					<string>transit</string>
+					<string>walking</string>
+				</array>
+				<key>defaultOption</key>
+				<string>driving</string>
+				<key>required</key>
+				<true/>
+				<key>value</key>
+				<string>mode</string>
+			</dict>
+		</array>
+		<key>shortcutSelector</key>
+		<string>googleMapsShortcutFrom:to:mode:</string>
+		<key>urlScheme</key>
+		<string>comgooglemaps://</string>
+		<key>appStoreLink</key>
+		<string>https://itunes.apple.com/us/app/google-maps/id585027354?mt=8</string>
+		<key>appImage</key>
+		<string>gmaps</string>
+	</dict>
+</array>
+</plist>

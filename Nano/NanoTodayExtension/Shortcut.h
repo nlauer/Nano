@@ -17,6 +17,9 @@
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *icon;
 
++ (Shortcut *)shortcutForSelectorString:(NSString *)string
+                               WithArgs:(NSArray *)args;
+
 + (Shortcut *)venmoShortcutWithRecipient:(NSString *)recipient
                                   amount:(NSUInteger)amount
                                  message:(NSString *)message;

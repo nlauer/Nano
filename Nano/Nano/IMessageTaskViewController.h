@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "TaskViewControllerProtocol.h"
+#import <AddressBookUI/AddressBookUI.h>
 
 @class CreateTaskViewController;
 
-@interface IMessageTaskViewController : UIViewController <UITextFieldDelegate, TaskViewControllerProtocol>
+@interface IMessageTaskViewController : UIViewController <UITextFieldDelegate, TaskViewControllerProtocol, ABPeoplePickerNavigationControllerDelegate>
 
 @property (strong, nonatomic) CreateTaskViewController *mainVC;
 @property (nonatomic) BOOL saved;

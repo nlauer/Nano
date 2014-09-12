@@ -55,6 +55,7 @@
     if (self.shortcuts.count > 8) {
         [self.shortcuts removeLastObject];
     }
+    // TODO I get a bug here in the simulator whenever I try to add 2 shortcuts from the same VC
     NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:self.shortcuts];
     NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.lauer.NanoExtension"];
     [sharedDefaults setObject:encodedObject forKey:@"shortcuts"];
