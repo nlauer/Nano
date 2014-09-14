@@ -28,11 +28,11 @@
     return shortcut;
 }
 
-+ (Shortcut *)venmoShortcutWithRecipient:(NSString *)recipient amount:(NSUInteger)amount message:(NSString *)message
++ (Shortcut *)venmoShortcutWithRecipient:(NSString *)recipient amount:(NSString *)amount message:(NSString *)message
 {
     Shortcut *shortcut = [[Shortcut alloc] init];
     shortcut.recipient = recipient;
-    shortcut.amount = amount;
+    shortcut.amount = [amount integerValue];
     shortcut.message = message;
     shortcut.name = [NSString stringWithFormat:@"Pay %@", recipient];
     shortcut.icon = @"venmo";

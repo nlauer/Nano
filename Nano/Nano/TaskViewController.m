@@ -7,7 +7,7 @@
 //
 
 #import "TaskViewController.h"
-#import "TaskComponentViewControllerProtocol.h"
+#import "TaskComponentViewController.h"
 #import "CreateTaskViewController.h"
 
 @interface TaskViewController ()
@@ -38,10 +38,10 @@
     [super viewDidLoad];
     int height = 0;
     for (NSDictionary *component in self.components) {
-        NSString *classname = component[@"type"];
+        NSString *classname = [component[@"type"] stringByAppendingString:@"TaskComponentViewController"];
         Class compClass = NSClassFromString(classname);
         UIViewController *componentVC = [[compClass alloc] initWithComponentData:component];
-        ((UIViewController<TaskComponentViewControllerProtocol> *)componentVC).parent = self;
+        ((TaskComponentViewController *)componentVC).parent = self;
 
         componentVC.view.frame = CGRectMake(0, height, componentVC.view.frame.size.width, componentVC.view.frame.size.height);
         height += componentVC.view.frame.size.height;
@@ -50,6 +50,11 @@
         [self addChildViewController:componentVC];
         [self.view addSubview:componentVC.view];
     }
+    
+    // set shadow on last component
+    TaskComponentViewController *lastComponentVC = [self.componentVCs lastObject];
+    [lastComponentVC.bottomBorder setHidden:YES];
+    [lastComponentVC.bottomShadow setHidden:NO];
     
     if (![self deviceHasApp]) {
         [self disableAllButtonsInView:self.view];
@@ -70,7 +75,7 @@
 
 - (BOOL)shouldShowSubmit {
     BOOL shouldShow = YES;
-    for (UIViewController<TaskComponentViewControllerProtocol> *component in [self childViewControllers]) {
+    for (TaskComponentViewController *component in [self childViewControllers]) {
         shouldShow = shouldShow && [component isCompleted];
     }
     return shouldShow;

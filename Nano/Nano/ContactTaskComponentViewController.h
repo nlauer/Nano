@@ -8,19 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import <AddressBookUI/AddressBookUI.h>
-#import "TaskComponentViewControllerProtocol.h"
+#import "TaskComponentViewController.h"
 
-@interface ContactTaskComponentViewController : UIViewController <TaskComponentViewControllerProtocol, ABPeoplePickerNavigationControllerDelegate>
+@interface ContactTaskComponentViewController : TaskComponentViewController <ABPeoplePickerNavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *contactLabel;
 @property (weak, nonatomic) IBOutlet UIView *bottomBorder;
 @property (weak, nonatomic) IBOutlet UIImageView *bottomShadow;
 
-@property TaskViewController *parent;
-@property (strong, nonatomic) NSDictionary *data;
 @property (strong, nonatomic) NSString *leftTitle;
-@property (strong, nonatomic) NSString *contactName;
-@property (nonatomic) ABRecordRef person;
+
+@property (strong, nonatomic) NSString *firstName;
+@property (strong, nonatomic) NSString *lastName;
+@property (strong, nonatomic) NSString *phone;
+@property (strong, nonatomic) NSString *email;
 
 @end

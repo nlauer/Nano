@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TaskComponentViewControllerProtocol.h"
+#import "TaskComponentViewController.h"
 
-@interface MapOptionsTaskComponentViewController : UIViewController<TaskComponentViewControllerProtocol>
+@interface MapOptionsTaskComponentViewController : TaskComponentViewController
 
 @property (weak, nonatomic) IBOutlet UIView *bottomBorder;
 @property (weak, nonatomic) IBOutlet UIImageView *bottomShadow;
@@ -18,8 +18,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *transButton;
 @property (weak, nonatomic) IBOutlet UIButton *walkButton;
 
-@property TaskViewController *parent;
-@property (strong, nonatomic) NSDictionary *data;
 @property (strong, nonatomic) NSArray *modes;
 @property (strong, nonatomic) NSArray *buttons;
 @property (strong, nonatomic) NSString *mode;

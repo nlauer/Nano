@@ -39,7 +39,7 @@
 
 -(Shortcut *)formShortcut {
     NSUInteger amount = (NSUInteger)(int)roundf((CGFloat)[self.amountField.text floatValue] * 100);
-    return [Shortcut venmoShortcutWithRecipient:self.recipientField.text amount:amount message:self.messageField.text];
+    return [Shortcut venmoShortcutWithRecipient:self.recipientField.text amount:self.amountField.text message:self.messageField.text];
 }
 
 -(void)dismissKeyboard {

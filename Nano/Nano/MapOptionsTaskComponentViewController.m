@@ -35,14 +35,6 @@
     _mode = mode;
 }
 
-- (BOOL)isCompleted {
-    return self.data[@"required"] || self.mode;
-}
-
-- (NSString *)shortcutValue {
-    return [self performSelector:NSSelectorFromString(self.data[@"value"])];
-}
-
 - (IBAction)modeButtonPressed:(id)sender {
     [self.buttons setValue:[NSNumber numberWithBool:NO] forKey:@"selected"];
     [(UIButton *)sender setSelected:YES];

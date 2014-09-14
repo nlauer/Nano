@@ -29,52 +29,11 @@
     self.titleLabel.text = self.leftTitle;
 }
 
-- (void) setPerson:(ABRecordRef)person {
-    self.contactLabel.text = [self fullNameForPerson:person];
-    _person = person;
-    [self.parent rerenderButtons];
-}
-
-- (BOOL)isCompleted {
-    return self.data[@"required"] || self.person;
-}
-
-- (NSString *)shortcutValue {
-    return [self performSelector:NSSelectorFromString(self.data[@"value"])];
-}
-
 - (IBAction)buttonPressed:(id)sender {
     ABPeoplePickerNavigationController *picker = [[ABPeoplePickerNavigationController alloc] init];
     picker.peoplePickerDelegate = self;
     
     [self presentViewController:picker animated:YES completion:nil];
-}
-
-- (NSString *)phoneNumberForPerson:(ABRecordRef)person {
-    NSString* phone = nil;
-    ABMultiValueRef phoneNumbers = ABRecordCopyValue(person, kABPersonPhoneProperty);
-    if (ABMultiValueGetCount(phoneNumbers) > 0) {
-        phone = (__bridge_transfer NSString*)
-        ABMultiValueCopyValueAtIndex(phoneNumbers, 0);
-    } else {
-        NSLog(@"No Phone number!");
-    }
-    CFRelease(phoneNumbers);
-    return phone;
-}
-
-- (NSString *)fullNameForPerson:(ABRecordRef)person {
-    NSString* firstName = (__bridge NSString*)ABRecordCopyValue(person, kABPersonFirstNameProperty);
-    NSString* lastName = (__bridge NSString*)ABRecordCopyValue(person, kABPersonLastNameProperty);
-    return [NSString stringWithFormat:@"%@ %@", firstName, lastName];
-}
-
-- (NSString *)fullName {
-    return [self fullNameForPerson:self.person];
-}
-
-- (NSString *)phoneNumber {
-    return [self phoneNumberForPerson:self.person];
 }
 
 #pragma mark ABPeoplePickerNavigationControllerDelegate
@@ -87,7 +46,34 @@
 
 - (void)peoplePickerNavigationController:
 (ABPeoplePickerNavigationController *)peoplePicker didSelectPerson:(ABRecordRef)person {
-    self.person = person;
+    self.firstName = (__bridge NSString*)ABRecordCopyValue(person, kABPersonFirstNameProperty);
+    self.lastName = (__bridge NSString*)ABRecordCopyValue(person, kABPersonLastNameProperty);
+    
+    ABMultiValueRef phoneNumbers = ABRecordCopyValue(person, kABPersonPhoneProperty);
+    if (ABMultiValueGetCount(phoneNumbers) > 0) {
+        self.phone = (__bridge_transfer NSString*)
+        ABMultiValueCopyValueAtIndex(phoneNumbers, 0);
+    }
+    CFRelease(phoneNumbers);
+    
+    ABMultiValueRef emails = ABRecordCopyValue(person, kABPersonEmailProperty);
+    if (ABMultiValueGetCount(emails) > 0) {
+        self.email = (__bridge_transfer NSString*)
+        ABMultiValueCopyValueAtIndex(emails, 0);
+    }
+    CFRelease(emails);
+    
+    self.contactLabel.text = [self fullName];
+    [self.parent rerenderButtons];
+}
+
+// VALUES
+- (NSString *)fullName {
+    if (self.firstName && self.lastName) {
+        return [NSString stringWithFormat:@"%@ %@", self.firstName, self.lastName];
+    } else {
+        return nil;
+    }
 }
 
 @end

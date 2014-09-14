@@ -8,17 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "SPGooglePlacesAutocompletePlace.h"
-#import "TaskComponentViewControllerProtocol.h"
+#import "TaskComponentViewController.h"
 
-@interface MapSearchTaskComponentViewController : UIViewController<TaskComponentViewControllerProtocol>
+@interface MapSearchTaskComponentViewController : TaskComponentViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 @property (weak, nonatomic) IBOutlet UIView *bottomBorder;
 @property (weak, nonatomic) IBOutlet UIImageView *bottomShadow;
 
-@property TaskViewController *parent;
-@property (strong, nonatomic) NSDictionary *data;
 @property (strong, nonatomic) NSString *leftTitle;
 @property (strong, nonatomic) NSString *address;
 @property (strong, nonatomic) NSString *searchPlaceholder;

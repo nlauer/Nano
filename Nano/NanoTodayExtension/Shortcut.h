@@ -21,7 +21,7 @@
                                WithArgs:(NSArray *)args;
 
 + (Shortcut *)venmoShortcutWithRecipient:(NSString *)recipient
-                                  amount:(NSUInteger)amount
+                                  amount:(NSString *)amount
                                  message:(NSString *)message;
 
 + (Shortcut *)googleMapsShortcutFrom:(NSString *)from

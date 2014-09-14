@@ -27,6 +27,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
+
     self.carousel.type = iCarouselTypeLinear;
     for (NSDictionary *data in self.appData) {
         TaskViewController *vc = [[TaskViewController alloc] initWithPlistData:data WithMainController:self];
@@ -140,6 +147,21 @@
         [self.downloadAppButton setHidden:YES];
     } else {
         [self.downloadAppButton setHidden:NO];
+    }
+}
+
+-(void)dismissKeyboard {
+    [self dismissAllKeyboardsInView:self.view];
+}
+
+- (void)dismissAllKeyboardsInView:(UIView *)view {
+    for (UIView *subview in [view subviews]) {
+        if ([subview isMemberOfClass:[UITextField class]]) {
+            [(UITextField *)subview resignFirstResponder];
+        } else if ([subview isMemberOfClass:[UITextView class]]) {
+            [(UITextView *)subview resignFirstResponder];
+        }
+        [self dismissAllKeyboardsInView:subview];
     }
 }
 

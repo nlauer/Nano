@@ -11,7 +11,7 @@
 		<array>
 			<dict>
 				<key>type</key>
-				<string>MapSearchTaskComponentViewController</string>
+				<string>MapSearch</string>
 				<key>leftTitle</key>
 				<string>From</string>
 				<key>defaultAddress</key>
@@ -25,7 +25,7 @@
 			</dict>
 			<dict>
 				<key>type</key>
-				<string>MapSearchTaskComponentViewController</string>
+				<string>MapSearch</string>
 				<key>leftTitle</key>
 				<string>To</string>
 				<key>defaultAddress</key>
@@ -39,7 +39,7 @@
 			</dict>
 			<dict>
 				<key>type</key>
-				<string>MapOptionsTaskComponentViewController</string>
+				<string>MapOptions</string>
 				<key>options</key>
 				<array>
 					<string>driving</string>
@@ -63,6 +63,61 @@
 		<string>https://itunes.apple.com/us/app/google-maps/id585027354?mt=8</string>
 		<key>appImage</key>
 		<string>gmaps</string>
+	</dict>
+	<dict>
+		<key>appName</key>
+		<string>Venmo</string>
+		<key>action</key>
+		<string>Make a Payment With Venmo</string>
+		<key>components</key>
+		<array>
+			<dict>
+				<key>type</key>
+				<string>Contact</string>
+				<key>leftTitle</key>
+				<string>Recipient</string>
+				<key>placeholder</key>
+				<string>Add Contact...</string>
+				<key>required</key>
+				<true/>
+				<key>value</key>
+				<string>phone</string>
+			</dict>
+			<dict>
+				<key>type</key>
+				<string>Text</string>
+				<key>leftTitle</key>
+				<string>Amount</string>
+				<key>placeholder</key>
+				<string>$0.00</string>
+				<key>required</key>
+				<true/>
+				<key>value</key>
+				<string>currency</string>
+				<key>keyboard</key>
+				<string>NumberPad</string>
+			</dict>
+			<dict>
+				<key>type</key>
+				<string>Text</string>
+				<key>leftTitle</key>
+				<string>Message</string>
+				<key>placeholder</key>
+				<string>Whats it for?</string>
+				<key>required</key>
+				<true/>
+				<key>value</key>
+				<string>text</string>
+			</dict>
+		</array>
+		<key>shortcutSelector</key>
+		<string>venmoShortcutWithRecipient:amount:message:</string>
+		<key>urlScheme</key>
+		<string>venmo://</string>
+		<key>appStoreLink</key>
+		<string>https://itunes.apple.com/us/app/venmo/id351727428?mt=8</string>
+		<key>appImage</key>
+		<string>venmo</string>
 	</dict>
 </array>
 </plist>

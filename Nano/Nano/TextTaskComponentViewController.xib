@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextTaskComponentViewController">
+            <connections>
+                <outlet property="bottomBorder" destination="k2o-Pd-LlQ" id="jGe-oj-uAf"/>
+                <outlet property="bottomShadow" destination="AfE-IG-x0F" id="lwk-mR-Z6u"/>
+                <outlet property="textField" destination="J5f-oz-BwL" id="BeX-PR-bXb"/>
+                <outlet property="titleLabel" destination="UhY-Wq-CS0" id="uCF-4Q-Q5P"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="To" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UhY-Wq-CS0">
+                    <rect key="frame" x="20" y="17" width="21" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" red="0.61453683039999996" green="0.61453683039999996" blue="0.61453683039999996" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k2o-Pd-LlQ">
+                    <rect key="frame" x="0.0" y="55" width="320" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="grey shadow" translatesAutoresizingMaskIntoConstraints="NO" id="AfE-IG-x0F">
+                    <rect key="frame" x="0.0" y="53" width="320" height="3"/>
+                </imageView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Text..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J5f-oz-BwL">
+                    <rect key="frame" x="49" y="13" width="263" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="editedText:" destination="-1" eventType="editingDidEnd" id="WhD-47-Xed"/>
+                        <outlet property="delegate" destination="-1" id="lqF-z8-XAj"/>
+                    </connections>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="J5f-oz-BwL" firstAttribute="leading" secondItem="UhY-Wq-CS0" secondAttribute="trailing" constant="8" id="57R-dE-OdM"/>
+                <constraint firstItem="UhY-Wq-CS0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="oRX-wP-XOW"/>
+                <constraint firstAttribute="trailing" secondItem="J5f-oz-BwL" secondAttribute="trailing" constant="8" id="rgg-3A-ESy"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="grey shadow" width="640" height="6"/>
+    </resources>
+</document>
