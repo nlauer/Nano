@@ -7,6 +7,14 @@
 		<string>Google Maps</string>
 		<key>action</key>
 		<string>Google Maps Directions</string>
+		<key>shortcutSelector</key>
+		<string>googleMapsShortcutFrom:to:mode:</string>
+		<key>urlScheme</key>
+		<string>comgooglemaps://</string>
+		<key>appStoreLink</key>
+		<string>https://itunes.apple.com/us/app/google-maps/id585027354?mt=8</string>
+		<key>appImage</key>
+		<string>gmaps</string>
 		<key>components</key>
 		<array>
 			<dict>
@@ -55,20 +63,20 @@
 				<string>mode</string>
 			</dict>
 		</array>
-		<key>shortcutSelector</key>
-		<string>googleMapsShortcutFrom:to:mode:</string>
-		<key>urlScheme</key>
-		<string>comgooglemaps://</string>
-		<key>appStoreLink</key>
-		<string>https://itunes.apple.com/us/app/google-maps/id585027354?mt=8</string>
-		<key>appImage</key>
-		<string>gmaps</string>
 	</dict>
 	<dict>
 		<key>appName</key>
 		<string>Venmo</string>
 		<key>action</key>
 		<string>Make a Payment With Venmo</string>
+		<key>shortcutSelector</key>
+		<string>venmoShortcutWithRecipient:amount:message:</string>
+		<key>urlScheme</key>
+		<string>venmo://</string>
+		<key>appStoreLink</key>
+		<string>https://itunes.apple.com/us/app/venmo/id351727428?mt=8</string>
+		<key>appImage</key>
+		<string>venmo</string>
 		<key>components</key>
 		<array>
 			<dict>
@@ -110,20 +118,20 @@
 				<string>text</string>
 			</dict>
 		</array>
-		<key>shortcutSelector</key>
-		<string>venmoShortcutWithRecipient:amount:message:</string>
-		<key>urlScheme</key>
-		<string>venmo://</string>
-		<key>appStoreLink</key>
-		<string>https://itunes.apple.com/us/app/venmo/id351727428?mt=8</string>
-		<key>appImage</key>
-		<string>venmo</string>
 	</dict>
 	<dict>
 		<key>appName</key>
 		<string>Uber</string>
 		<key>action</key>
 		<string>Call an Uber</string>
+		<key>shortcutSelector</key>
+		<string>uberShortcutFrom:to:</string>
+		<key>New item</key>
+		<string>uber://</string>
+		<key>appStoreLink</key>
+		<string>https://itunes.apple.com/us/app/uber/id368677368?mt=8</string>
+		<key>appImage</key>
+		<string>uber</string>
 		<key>components</key>
 		<array>
 			<dict>
@@ -155,14 +163,35 @@
 				<string>placeName</string>
 			</dict>
 		</array>
+	</dict>
+	<dict>
+		<key>appName</key>
+		<string>Rdio</string>
+		<key>action</key>
+		<string>Play an Artist with Rdio</string>
 		<key>shortcutSelector</key>
-		<string>uberShortcutFrom:to:</string>
-		<key>New item</key>
-		<string>uber://</string>
+		<string>rdioShortcutForArtistName:</string>
+		<key>urlScheme</key>
+		<string>rdio://</string>
 		<key>appStoreLink</key>
-		<string>https://itunes.apple.com/us/app/uber/id368677368?mt=8</string>
+		<string>https://itunes.apple.com/us/app/rdio-music/id335060889?mt=8</string>
 		<key>appImage</key>
-		<string>uber</string>
+		<string>rdio</string>
+		<key>components</key>
+		<array>
+			<dict>
+				<key>type</key>
+				<string>Text</string>
+				<key>leftTitle</key>
+				<string>Artist</string>
+				<key>placeholder</key>
+				<string>Name...</string>
+				<key>required</key>
+				<true/>
+				<key>value</key>
+				<string>text</string>
+			</dict>
+		</array>
 	</dict>
 </array>
 </plist>
