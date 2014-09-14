@@ -59,6 +59,9 @@
 
 + (Shortcut *)uberShortcutFrom:(NSString *)from to:(NSString *)to
 {
+    if ([from isEqualToString:@""]) {
+        from = @"my_location";
+    }
     Shortcut *shortcut = [[Shortcut alloc] init];
     shortcut.name = [NSString stringWithFormat:@"Uber Home for $10"];
     shortcut.icon = @"uber";
@@ -69,7 +72,8 @@
 
 + (NSURL *)uberURLForFrom:(NSString *)from to:(NSString *)to
 {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"uber://?action=setPickup&pickup[formatted_address]=%@&[formatted_address]=%@", from, to]];
+    NSLog(@"%@", [NSString stringWithFormat:@"uber://?action=setPickup&pickup[formatted_address]=%@&[formatted_address]=%@", from, to]);
+    return [NSURL URLWithString:[[NSString stringWithFormat:@"uber://?action=setPickup&pickup[formatted_address]=%@&[formatted_address]=%@", from, to] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 }
 
 + (Shortcut *)smsShortcutForNumber:(NSString *)number name:(NSString *)name

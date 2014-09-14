@@ -119,5 +119,50 @@
 		<key>appImage</key>
 		<string>venmo</string>
 	</dict>
+	<dict>
+		<key>appName</key>
+		<string>Uber</string>
+		<key>action</key>
+		<string>Call an Uber</string>
+		<key>components</key>
+		<array>
+			<dict>
+				<key>type</key>
+				<string>MapSearch</string>
+				<key>leftTitle</key>
+				<string>From</string>
+				<key>defaultAddress</key>
+				<string>Current Location</string>
+				<key>placeholder</key>
+				<string>Starting Address...</string>
+				<key>required</key>
+				<string>NO</string>
+				<key>value</key>
+				<string>placeName</string>
+			</dict>
+			<dict>
+				<key>type</key>
+				<string>MapSearch</string>
+				<key>leftTitle</key>
+				<string>To</string>
+				<key>defaultAddress</key>
+				<string>Ending Location</string>
+				<key>placeholder</key>
+				<string>Ending Address...</string>
+				<key>required</key>
+				<string>YES</string>
+				<key>value</key>
+				<string>placeName</string>
+			</dict>
+		</array>
+		<key>shortcutSelector</key>
+		<string>uberShortcutFrom:to:</string>
+		<key>New item</key>
+		<string>uber://</string>
+		<key>appStoreLink</key>
+		<string>https://itunes.apple.com/us/app/uber/id368677368?mt=8</string>
+		<key>appImage</key>
+		<string>uber</string>
+	</dict>
 </array>
 </plist>
