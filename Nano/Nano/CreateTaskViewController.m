@@ -92,13 +92,13 @@
 - (void)carouselCurrentItemIndexDidChange:(iCarousel *)carousel
 {
     [self.currentTaskVC.view removeFromSuperview];
-    [self loadTaskVCForAppAtIndex:[carousel currentItemIndex] WithRefresh:NO];
+    [self loadTaskVCForAppAtIndex:(int)[carousel currentItemIndex] WithRefresh:NO];
 }
 
 -(void)refreshCurrentTask
 {
     [self.currentTaskVC.view removeFromSuperview];
-    [self loadTaskVCForAppAtIndex:[self.carousel currentItemIndex] WithRefresh:YES];
+    [self loadTaskVCForAppAtIndex:(int)[self.carousel currentItemIndex] WithRefresh:YES];
 }
 
 -(void)loadTaskVCForAppAtIndex:(int)index WithRefresh:(BOOL)refresh
