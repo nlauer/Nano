@@ -17,11 +17,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
+            <rect key="frame" x="0.0" y="0.0" width="300" height="68"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9un-ed-dJM">
-                    <rect key="frame" x="40" y="13" width="42" height="42"/>
+                    <rect key="frame" x="24" y="13" width="42" height="42"/>
                     <state key="normal" title="Button" image="car">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -31,7 +31,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8v-Ui-cXW">
-                    <rect key="frame" x="106" y="13" width="42" height="42"/>
+                    <rect key="frame" x="94" y="13" width="42" height="42"/>
                     <state key="normal" title="Button" image="cycle">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -41,7 +41,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0xQ-KD-o2g">
-                    <rect key="frame" x="172" y="13" width="42" height="42"/>
+                    <rect key="frame" x="164" y="13" width="42" height="42"/>
                     <state key="normal" title="Button" image="trans">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -51,7 +51,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="560-Co-3eW">
-                    <rect key="frame" x="238" y="13" width="42" height="42"/>
+                    <rect key="frame" x="234" y="13" width="42" height="42"/>
                     <state key="normal" title="Button" image="walk">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -61,11 +61,11 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IWO-x0-oXw">
-                    <rect key="frame" x="0.0" y="67" width="320" height="1"/>
+                    <rect key="frame" x="0.0" y="67" width="300" height="1"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="grey shadow" translatesAutoresizingMaskIntoConstraints="NO" id="gzk-b1-hUQ">
-                    <rect key="frame" x="0.0" y="65" width="320" height="3"/>
+                    <rect key="frame" x="0.0" y="65" width="300" height="3"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

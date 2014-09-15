@@ -15,8 +15,8 @@
 
 @implementation MapSearchTaskComponentViewController
 
-- (MapSearchTaskComponentViewController *)initWithComponentData:(NSDictionary *)data {
-    self = [super initWithComponentData:data];
+- (MapSearchTaskComponentViewController *)initWithComponentData:(NSDictionary *)data WithArgs:(NSArray *)args {
+    self = [super initWithComponentData:data WithArgs:args];
     if( !self ) return nil;
     
     self.leftTitle = data[@"leftTitle"];
@@ -29,10 +29,11 @@
     [super viewDidLoad];
     self.titleLabel.text = self.leftTitle;
     self.addressLabel.text = self.data[@"defaultAddress"];
+    [super loadArgs];
 }
 
 - (void)setPlace:(SPGooglePlacesAutocompletePlace *)place {
-    self.addressLabel.text = place.name;
+    self.placeName = place.name;
     _place = place;
     [self.parent rerenderButtons];
 }
@@ -45,12 +46,9 @@
 }
 
 // VALUES
-- (NSString *)placeName {
-    if (self.place) {
-        return self.place.name;
-    } else {
-        return nil;
-    }
+- (void)setPlaceName:(NSString *)placeName {
+    self.addressLabel.text = placeName;
+    _placeName = placeName;
 }
 
 - (NSString *)placeNameDefault {

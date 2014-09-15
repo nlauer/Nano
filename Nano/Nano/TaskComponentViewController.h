@@ -14,10 +14,13 @@
 @property (strong, nonatomic) TaskViewController *parent;
 @property (strong, nonatomic) NSDictionary *data;
 @property (strong, nonatomic) NSArray *values;
+@property (strong, nonatomic) NSArray *args;
 @property (weak, nonatomic) UIView *bottomBorder;
 @property (weak, nonatomic) UIImageView *bottomShadow;
 
-- (TaskComponentViewController *)initWithComponentData:(NSDictionary *)data;
+- (TaskComponentViewController *)initWithComponentData:(NSDictionary *)data
+                                              WithArgs:(NSArray *)args;
+- (void)loadArgs;
 - (BOOL)isCompleted;
 - (NSArray *)shortcutValues;
 

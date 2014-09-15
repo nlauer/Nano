@@ -8,13 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import "iCarousel.h"
-#import "TaskViewController.h"
+#import "Shortcut.h"
 
-@interface CreateTaskViewController : UIViewController <iCarouselDataSource, iCarouselDelegate>
+@class TaskViewController;
+
+@protocol TaskContainerProtocol <NSObject>
+
+-(void)rerenderButtons;
+
+@end
+
+@interface CreateTaskViewController : UIViewController <iCarouselDataSource, iCarouselDelegate, TaskContainerProtocol>
 @property (weak, nonatomic) IBOutlet iCarousel *carousel;
 @property (weak, nonatomic) IBOutlet UILabel *taskLabel;
 @property (weak, nonatomic) IBOutlet UIView *containerView;
-@property (weak, nonatomic) IBOutlet UIView *submitView;
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
 @property (weak, nonatomic) IBOutlet UIButton *createNewButton;
 @property (weak, nonatomic) IBOutlet UILabel *successLabel;
@@ -25,6 +32,6 @@
 @property (strong, nonatomic) NSArray *appData;
 @property (strong, nonatomic) NSMutableArray *appVCs;
 
--(void)rerenderButtons;
-
+//temp
+@property (strong, nonatomic) Shortcut *shortcut;
 @end

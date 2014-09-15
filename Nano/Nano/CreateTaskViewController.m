@@ -9,6 +9,8 @@
 #import "CreateTaskViewController.h"
 #import "GoogleMapsTaskViewController.h"
 #import "ShortcutStore.h"
+#import "TaskViewController.h"
+#import "EditTaskViewController.h"
 
 @interface CreateTaskViewController ()
 
@@ -36,7 +38,7 @@
 
     self.carousel.type = iCarouselTypeLinear;
     for (NSDictionary *data in self.appData) {
-        TaskViewController *vc = [[TaskViewController alloc] initWithPlistData:data WithMainController:self];
+        TaskViewController *vc = [[TaskViewController alloc] initWithPlistData:data WithMainController:self WithArgs:nil];
         [self.appVCs addObject:vc];
     }
 
@@ -103,7 +105,7 @@
 {
     TaskViewController *taskVC = self.appVCs[index];
     if (refresh || !taskVC) {
-        taskVC = [[TaskViewController alloc] initWithPlistData:self.appData[index] WithMainController:self];
+        taskVC = [[TaskViewController alloc] initWithPlistData:self.appData[index] WithMainController:self WithArgs:nil];
         self.appVCs[index] = taskVC;
     }
     self.taskLabel.text = taskVC.action;
@@ -115,6 +117,7 @@
 
 - (IBAction)submitButtonClicked:(id)sender {
     Shortcut *shortcut = [self.currentTaskVC formShortcut];
+    self.shortcut = shortcut;
     [[ShortcutStore sharedStore] addShortcutToStore:shortcut];
     [self.submitButton setHidden:YES];
     [self.successLabel setHidden:NO];
@@ -123,6 +126,9 @@
 }
 
 - (IBAction)createNewButtonClicked:(id)sender {
+    EditTaskViewController *editvc = [[EditTaskViewController alloc] init];
+    editvc.shortcut = self.shortcut;
+    [self presentViewController:editvc animated:YES completion:nil];
     [self refreshCurrentTask];
     [self.successLabel setHidden:YES];
     [self.createNewButton setHidden:YES];

@@ -14,8 +14,8 @@
 
 @implementation ContactTaskComponentViewController
 
-- (ContactTaskComponentViewController *)initWithComponentData:(NSDictionary *)data {
-    self = [super initWithComponentData:data];
+- (ContactTaskComponentViewController *)initWithComponentData:(NSDictionary *)data WithArgs:(NSArray *)args {
+    self = [super initWithComponentData:data WithArgs:args];
     if( !self ) return nil;
     
     self.leftTitle = data[@"leftTitle"];
@@ -26,6 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.titleLabel.text = self.leftTitle;
+    [super loadArgs];
 }
 
 - (IBAction)buttonPressed:(id)sender {

@@ -22,4 +22,7 @@
 @property (strong, nonatomic) NSString *searchPlaceholder;
 @property (strong, nonatomic) SPGooglePlacesAutocompletePlace *place;
 
+// VALUES
+@property (strong, nonatomic) NSString *placeName;
+
 @end

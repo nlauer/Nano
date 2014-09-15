@@ -16,11 +16,13 @@
 
 @implementation TaskViewController
 
--(TaskViewController *)initWithPlistData:(NSDictionary *)data WithMainController:(CreateTaskViewController *)mainVC {
+-(TaskViewController *)initWithPlistData:(NSDictionary *)data WithMainController:(CreateTaskViewController *)mainVC WithArgs:(NSArray *)args {
     self = [super init];
     if( !self ) return nil;
 
     self.mainVC = mainVC;
+    self.data = data;
+    self.args = args;
     self.saved = NO;
     self.appName = data[@"appName"];
     self.action = data[@"action"];
@@ -36,11 +38,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     int height = 0;
+    int argCount = 0;
+    
     for (NSDictionary *component in self.components) {
+        NSArray *args = nil;
+        if (self.args) {
+            // initialize component with saved shortcut args
+            int numArgs = ((NSArray *)component[@"values"]).count;
+            args = [self.args subarrayWithRange:NSMakeRange(argCount, numArgs)];
+            argCount += numArgs;
+        }
+        
         NSString *classname = [component[@"type"] stringByAppendingString:@"TaskComponentViewController"];
         Class compClass = NSClassFromString(classname);
-        UIViewController *componentVC = [[compClass alloc] initWithComponentData:component];
+        UIViewController *componentVC = [[compClass alloc] initWithComponentData:component WithArgs:args];
         ((TaskComponentViewController *)componentVC).parent = self;
 
         componentVC.view.frame = CGRectMake(0, height, componentVC.view.frame.size.width, componentVC.view.frame.size.height);
@@ -52,9 +65,9 @@
     }
     
     // set shadow on last component
-    TaskComponentViewController *lastComponentVC = [self.componentVCs lastObject];
-    [lastComponentVC.bottomBorder setHidden:YES];
-    [lastComponentVC.bottomShadow setHidden:NO];
+//    TaskComponentViewController *lastComponentVC = [self.componentVCs lastObject];
+//    [lastComponentVC.bottomBorder setHidden:YES];
+//    [lastComponentVC.bottomShadow setHidden:NO];
     
     if (![self deviceHasApp]) {
         [self disableAllButtonsInView:self.view];
@@ -70,7 +83,7 @@
         [args addObjectsFromArray:[self.componentVCs[i] shortcutValues]];
     }
     
-    return [Shortcut shortcutForSelectorString:self.shortcutSelectorString WithArgs:args];
+    return [Shortcut shortcutForSelectorString:self.shortcutSelectorString WithArgs:args WithPlistData:self.data];
 }
 
 - (BOOL)shouldShowSubmit {

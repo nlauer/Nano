@@ -11,20 +11,26 @@
 @implementation Shortcut
 
 + (Shortcut *)shortcutForSelectorString:(NSString *)string
-                               WithArgs:(NSArray *)args {
+                               WithArgs:(NSArray *)args
+                               WithPlistData:(NSDictionary *)data {
     SEL sel = NSSelectorFromString(string);
     NSMethodSignature *sig = [Shortcut methodSignatureForSelector:sel];
     NSInvocation *inv = [NSInvocation invocationWithMethodSignature:sig];
     [inv setTarget:[Shortcut class]];
     [inv setSelector:sel];
     for (int i = 0; i < args.count; i++) {
-        NSString *arg = args[i];
+        id arg = args[i];
+        if ([arg isEqual:[NSNull null]]) {
+            arg = nil;
+        }
         [inv setArgument:&arg atIndex:2+i];
     }
     
     Shortcut *shortcut;
     [inv invoke];
     [inv getReturnValue:&shortcut];
+    shortcut.args = args;
+    shortcut.data = data;
     return shortcut;
 }
 

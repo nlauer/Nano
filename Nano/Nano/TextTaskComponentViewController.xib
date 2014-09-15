@@ -15,7 +15,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+            <rect key="frame" x="0.0" y="0.0" width="300" height="56"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="To" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UhY-Wq-CS0">
@@ -25,14 +25,14 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k2o-Pd-LlQ">
-                    <rect key="frame" x="0.0" y="55" width="320" height="1"/>
+                    <rect key="frame" x="0.0" y="55" width="300" height="1"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="grey shadow" translatesAutoresizingMaskIntoConstraints="NO" id="AfE-IG-x0F">
-                    <rect key="frame" x="0.0" y="53" width="320" height="3"/>
+                    <rect key="frame" x="0.0" y="53" width="300" height="3"/>
                 </imageView>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Text..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J5f-oz-BwL">
-                    <rect key="frame" x="49" y="13" width="263" height="30"/>
+                    <rect key="frame" x="49" y="13" width="243" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>

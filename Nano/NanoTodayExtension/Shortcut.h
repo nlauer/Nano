@@ -16,9 +16,12 @@
 @property (strong, nonatomic) NSString *message;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *icon;
+@property (strong, nonatomic) NSArray *args;
+@property (strong, nonatomic) NSDictionary *data;
 
 + (Shortcut *)shortcutForSelectorString:(NSString *)string
-                               WithArgs:(NSArray *)args;
+                               WithArgs:(NSArray *)args
+                          WithPlistData:(NSDictionary *)data;
 
 + (Shortcut *)venmoShortcutWithRecipient:(NSString *)recipient
                                   amount:(NSString *)amount

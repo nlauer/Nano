@@ -12,6 +12,8 @@
 		5C93182BF5254FD8B508E08C /* libPods-NanoTodayExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFF5FDB0FC454816978E1BBB /* libPods-NanoTodayExtension.a */; };
 		620B23E119BC25B4004B4804 /* CreateTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 620B23DF19BC25B4004B4804 /* CreateTaskViewController.m */; };
 		620B23E219BC25B4004B4804 /* CreateTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 620B23E019BC25B4004B4804 /* CreateTaskViewController.xib */; };
+		621F106C19C6B0A700B038A6 /* EditTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 621F106A19C6B0A700B038A6 /* EditTaskViewController.m */; };
+		621F106D19C6B0A700B038A6 /* EditTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 621F106B19C6B0A700B038A6 /* EditTaskViewController.xib */; };
 		627FF49719C2378800984C60 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 627FF49619C2378800984C60 /* AddressBook.framework */; };
 		627FF49919C2378E00984C60 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 627FF49819C2378E00984C60 /* AddressBookUI.framework */; };
 		627FF49D19C2468A00984C60 /* ContactTaskComponentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 627FF49B19C2468A00984C60 /* ContactTaskComponentViewController.m */; };
@@ -113,6 +115,9 @@
 		620B23DE19BC25B4004B4804 /* CreateTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateTaskViewController.h; sourceTree = "<group>"; };
 		620B23DF19BC25B4004B4804 /* CreateTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateTaskViewController.m; sourceTree = "<group>"; };
 		620B23E019BC25B4004B4804 /* CreateTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateTaskViewController.xib; sourceTree = "<group>"; };
+		621F106919C6B0A700B038A6 /* EditTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTaskViewController.h; sourceTree = "<group>"; };
+		621F106A19C6B0A700B038A6 /* EditTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTaskViewController.m; sourceTree = "<group>"; };
+		621F106B19C6B0A700B038A6 /* EditTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditTaskViewController.xib; sourceTree = "<group>"; };
 		627FF49619C2378800984C60 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		627FF49819C2378E00984C60 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		627FF49A19C2468A00984C60 /* ContactTaskComponentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactTaskComponentViewController.h; sourceTree = "<group>"; };
@@ -228,6 +233,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		621F106E19C6B0AC00B038A6 /* Edit Task */ = {
+			isa = PBXGroup;
+			children = (
+				621F106919C6B0A700B038A6 /* EditTaskViewController.h */,
+				621F106A19C6B0A700B038A6 /* EditTaskViewController.m */,
+				621F106B19C6B0A700B038A6 /* EditTaskViewController.xib */,
+			);
+			name = "Edit Task";
+			sourceTree = "<group>";
+		};
 		627FF49F19C2469200984C60 /* Contact */ = {
 			isa = PBXGroup;
 			children = (
@@ -449,6 +464,7 @@
 			children = (
 				6295D6FE19BC6FDC00254B0E /* Create Task */,
 				62C3C5EF19BEADE600469CF9 /* Tasks */,
+				621F106E19C6B0AC00B038A6 /* Edit Task */,
 				6295D6FF19BC6FF800254B0E /* Shortcut */,
 				6295D6FB19BC6FA700254B0E /* Map Search */,
 				627FF4B619C35CC100984C60 /* Old files */,
@@ -674,6 +690,7 @@
 				6295D71019BC727500254B0E /* IMessageTaskViewController.xib in Resources */,
 				627FF4B319C3435C00984C60 /* Tasks.plist in Resources */,
 				62C3C5E919BC9C0D00469CF9 /* YoTaskViewController.xib in Resources */,
+				621F106D19C6B0A700B038A6 /* EditTaskViewController.xib in Resources */,
 				627FF49E19C2468A00984C60 /* ContactTaskComponentViewController.xib in Resources */,
 				62C3C5E319BC9BF200469CF9 /* FBTaskViewController.xib in Resources */,
 			);
@@ -791,6 +808,7 @@
 				62C3C5E219BC9BF200469CF9 /* FBTaskViewController.m in Sources */,
 				6295D70319BC705300254B0E /* VenmoTaskViewController.m in Sources */,
 				627FF4B019C262F700984C60 /* TaskViewController.m in Sources */,
+				621F106C19C6B0A700B038A6 /* EditTaskViewController.m in Sources */,
 				85E6F22A19BC367400C79EE0 /* Shortcut.m in Sources */,
 				8567004819BBA98D007DA4BB /* main.m in Sources */,
 			);

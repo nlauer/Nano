@@ -14,8 +14,8 @@
 
 @implementation MapOptionsTaskComponentViewController
 
-- (MapOptionsTaskComponentViewController *)initWithComponentData:(NSDictionary *)data {
-    self = [super initWithComponentData:data];
+- (MapOptionsTaskComponentViewController *)initWithComponentData:(NSDictionary *)data WithArgs:(NSArray *)args {
+    self = [super initWithComponentData:data WithArgs:args];
     if( !self ) return nil;
     
     self.modes = data[@"options"];
@@ -27,9 +27,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.buttons = @[self.carButton, self.cycleButton, self.transButton, self.walkButton];
+    [super loadArgs];
 }
 
 - (void)setMode:(NSString *)mode {
+    [self.buttons setValue:[NSNumber numberWithBool:NO] forKey:@"selected"];
+    [self.buttons[[self.modes indexOfObject:mode]] setSelected:YES];
     [self.parent rerenderButtons];
     _mode = mode;
 }

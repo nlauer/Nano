@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "Shortcut.h"
-
-@class CreateTaskViewController;
+#import "CreateTaskViewController.h"
 
 @interface TaskViewController : UIViewController
 
-@property (strong, nonatomic) CreateTaskViewController *mainVC;
+@property (strong, nonatomic) UIViewController<TaskContainerProtocol> *mainVC;
+@property (strong, nonatomic) NSDictionary *data;
+@property (strong, nonatomic) NSArray *args;
 @property (nonatomic) BOOL saved;
 @property (strong, nonatomic) NSString *appName;
 @property (strong, nonatomic) NSString *action;
@@ -24,7 +25,9 @@
 @property (strong, nonatomic) UIImage *appImage;
 @property (strong, nonatomic) NSMutableArray *componentVCs;
 
--(TaskViewController *)initWithPlistData:(NSDictionary *)data WithMainController:(CreateTaskViewController *)mainVC;
+-(TaskViewController *)initWithPlistData:(NSDictionary *)data
+                      WithMainController:(UIViewController<TaskContainerProtocol> *)mainVC
+                                WithArgs:(NSArray *)args;
 -(Shortcut *)formShortcut;
 -(BOOL)shouldShowSubmit;
 -(BOOL)deviceHasApp;
