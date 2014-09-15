@@ -45,7 +45,10 @@
     Shortcut *shortcut = [[Shortcut alloc] init];
     NSRange firstComma = [to rangeOfString:@","];
     // TODO there is a bug here if theres no comma
-    shortcut.name = [NSString stringWithFormat:@"%@ to %@", [mode capitalizedString], [to stringByReplacingCharactersInRange:NSMakeRange(firstComma.location, to.length - firstComma.location) withString:@""]];
+    if (firstComma.length != NSNotFound) {
+        to = [to stringByReplacingCharactersInRange:NSMakeRange(firstComma.location, to.length - firstComma.location) withString:@""];
+    }
+    shortcut.name = [NSString stringWithFormat:@"%@ to %@", [mode capitalizedString], to];
     shortcut.icon = @"google";
     shortcut.url = [self googleMapsURLFrom:from to:to mode:mode];
     NSLog(@"%@", shortcut.url);
