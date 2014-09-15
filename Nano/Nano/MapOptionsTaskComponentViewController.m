@@ -14,11 +14,10 @@
 
 @implementation MapOptionsTaskComponentViewController
 
-- (UIViewController *)initWithComponentData:(NSDictionary *)data {
-    self = [super init];
+- (MapOptionsTaskComponentViewController *)initWithComponentData:(NSDictionary *)data {
+    self = [super initWithComponentData:data];
     if( !self ) return nil;
     
-    self.data = data;
     self.modes = data[@"options"];
     self.mode = data[@"defaultOption"];
     

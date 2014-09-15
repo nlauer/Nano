@@ -32,7 +32,8 @@
                             to:(NSString *)to;
 
 + (Shortcut *)smsShortcutForNumber:(NSString *)number
-                              name:(NSString *)name;
+                              name:(NSString *)name
+                           message:(NSString *)message;
 
 + (Shortcut *)yelpShortcutForSearch:(NSString *)search;
 

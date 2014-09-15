@@ -26,10 +26,15 @@
 				<string>Current Location</string>
 				<key>placeholder</key>
 				<string>Starting Address...</string>
-				<key>required</key>
-				<false/>
-				<key>value</key>
-				<string>placeName</string>
+				<key>values</key>
+				<array>
+					<dict>
+						<key>value</key>
+						<string>placeName</string>
+						<key>required</key>
+						<false/>
+					</dict>
+				</array>
 			</dict>
 			<dict>
 				<key>type</key>
@@ -40,10 +45,15 @@
 				<string>Ending Location</string>
 				<key>placeholder</key>
 				<string>Ending Address...</string>
-				<key>required</key>
-				<true/>
-				<key>value</key>
-				<string>placeName</string>
+				<key>values</key>
+				<array>
+					<dict>
+						<key>value</key>
+						<string>placeName</string>
+						<key>required</key>
+						<true/>
+					</dict>
+				</array>
 			</dict>
 			<dict>
 				<key>type</key>
@@ -57,10 +67,15 @@
 				</array>
 				<key>defaultOption</key>
 				<string>driving</string>
-				<key>required</key>
-				<true/>
-				<key>value</key>
-				<string>mode</string>
+				<key>values</key>
+				<array>
+					<dict>
+						<key>value</key>
+						<string>mode</string>
+						<key>required</key>
+						<true/>
+					</dict>
+				</array>
 			</dict>
 		</array>
 	</dict>
@@ -68,7 +83,7 @@
 		<key>appName</key>
 		<string>Venmo</string>
 		<key>action</key>
-		<string>Make a Payment With Venmo</string>
+		<string>Make a Payment with Venmo</string>
 		<key>shortcutSelector</key>
 		<string>venmoShortcutWithRecipient:amount:message:</string>
 		<key>urlScheme</key>
@@ -86,10 +101,15 @@
 				<string>Recipient</string>
 				<key>placeholder</key>
 				<string>Add Contact...</string>
-				<key>required</key>
-				<true/>
-				<key>value</key>
-				<string>phone</string>
+				<key>values</key>
+				<array>
+					<dict>
+						<key>value</key>
+						<string>phone</string>
+						<key>required</key>
+						<true/>
+					</dict>
+				</array>
 			</dict>
 			<dict>
 				<key>type</key>
@@ -98,10 +118,15 @@
 				<string>Amount</string>
 				<key>placeholder</key>
 				<string>$0.00</string>
-				<key>required</key>
-				<true/>
-				<key>value</key>
-				<string>currency</string>
+				<key>values</key>
+				<array>
+					<dict>
+						<key>value</key>
+						<string>currency</string>
+						<key>required</key>
+						<true/>
+					</dict>
+				</array>
 				<key>keyboard</key>
 				<string>NumberPad</string>
 			</dict>
@@ -112,10 +137,15 @@
 				<string>Message</string>
 				<key>placeholder</key>
 				<string>Whats it for?</string>
-				<key>required</key>
-				<true/>
-				<key>value</key>
-				<string>text</string>
+				<key>values</key>
+				<array>
+					<dict>
+						<key>value</key>
+						<string>text</string>
+						<key>required</key>
+						<true/>
+					</dict>
+				</array>
 			</dict>
 		</array>
 	</dict>
@@ -143,10 +173,15 @@
 				<string>Current Location</string>
 				<key>placeholder</key>
 				<string>Starting Address...</string>
-				<key>required</key>
-				<string>NO</string>
-				<key>value</key>
-				<string>placeName</string>
+				<key>values</key>
+				<array>
+					<dict>
+						<key>value</key>
+						<string>placeName</string>
+						<key>required</key>
+						<false/>
+					</dict>
+				</array>
 			</dict>
 			<dict>
 				<key>type</key>
@@ -157,10 +192,15 @@
 				<string>Ending Location</string>
 				<key>placeholder</key>
 				<string>Ending Address...</string>
-				<key>required</key>
-				<string>YES</string>
-				<key>value</key>
-				<string>placeName</string>
+				<key>values</key>
+				<array>
+					<dict>
+						<key>value</key>
+						<string>placeName</string>
+						<key>required</key>
+						<true/>
+					</dict>
+				</array>
 			</dict>
 		</array>
 	</dict>
@@ -186,10 +226,172 @@
 				<string>Artist</string>
 				<key>placeholder</key>
 				<string>Name...</string>
-				<key>required</key>
-				<true/>
-				<key>value</key>
-				<string>text</string>
+				<key>values</key>
+				<array>
+					<dict>
+						<key>value</key>
+						<string>text</string>
+						<key>required</key>
+						<true/>
+					</dict>
+				</array>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>appName</key>
+		<string>Yelp</string>
+		<key>action</key>
+		<string>Search Nearby with Yelp</string>
+		<key>shortcutSelector</key>
+		<string>yelpShortcutForSearch:</string>
+		<key>urlScheme</key>
+		<string>yelp://</string>
+		<key>appStoreLink</key>
+		<string>https://itunes.apple.com/us/app/yelp/id284910350?mt=8</string>
+		<key>appImage</key>
+		<string>yelp</string>
+		<key>components</key>
+		<array>
+			<dict>
+				<key>type</key>
+				<string>Text</string>
+				<key>leftTitle</key>
+				<string>Nearby</string>
+				<key>placeholder</key>
+				<string>Search...</string>
+				<key>values</key>
+				<array>
+					<dict>
+						<key>value</key>
+						<string>text</string>
+						<key>required</key>
+						<true/>
+					</dict>
+				</array>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>appName</key>
+		<string>Facebook</string>
+		<key>action</key>
+		<string>Facebook Event Page</string>
+		<key>shortcutSelector</key>
+		<string>facebookEventShortcutForEventID:eventName:</string>
+		<key>urlScheme</key>
+		<string>fb://</string>
+		<key>appStoreLink</key>
+		<string>https://itunes.apple.com/us/app/facebook/id284882215?mt=8</string>
+		<key>appImage</key>
+		<string>fb</string>
+		<key>components</key>
+		<array>
+			<dict>
+				<key>type</key>
+				<string>Text</string>
+				<key>leftTitle</key>
+				<string>Event</string>
+				<key>placeholder</key>
+				<string>Name...</string>
+				<key>values</key>
+				<array>
+					<dict>
+						<key>value</key>
+						<string>text</string>
+						<key>required</key>
+						<true/>
+					</dict>
+				</array>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>appName</key>
+		<string>iMessage</string>
+		<key>action</key>
+		<string>Send an iMessage</string>
+		<key>shortcutSelector</key>
+		<string>smsShortcutForNumber:name:message:</string>
+		<key>urlScheme</key>
+		<string>sms:</string>
+		<key>appImage</key>
+		<string>imessage</string>
+		<key>components</key>
+		<array>
+			<dict>
+				<key>type</key>
+				<string>Contact</string>
+				<key>leftTitle</key>
+				<string>To</string>
+				<key>placeholder</key>
+				<string>Contact...</string>
+				<key>values</key>
+				<array>
+					<dict>
+						<key>value</key>
+						<string>phone</string>
+						<key>required</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>required</key>
+						<false/>
+						<key>value</key>
+						<string>fullName</string>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>type</key>
+				<string>Text</string>
+				<key>leftTitle</key>
+				<string>Message</string>
+				<key>placeholder</key>
+				<string>Type Here...</string>
+				<key>values</key>
+				<array>
+					<dict>
+						<key>value</key>
+						<string>text</string>
+						<key>required</key>
+						<false/>
+					</dict>
+				</array>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>appName</key>
+		<string>Yo</string>
+		<key>action</key>
+		<string>Send a Yo</string>
+		<key>shortcutSelector</key>
+		<string>yoShortcutForRecipient:</string>
+		<key>urlScheme</key>
+		<string>yo://</string>
+		<key>appStoreLink</key>
+		<string>https://itunes.apple.com/us/app/yo./id834335592?mt=8</string>
+		<key>appImage</key>
+		<string>yo</string>
+		<key>components</key>
+		<array>
+			<dict>
+				<key>type</key>
+				<string>Text</string>
+				<key>leftTitle</key>
+				<string>To</string>
+				<key>placeholder</key>
+				<string>Yo username...</string>
+				<key>values</key>
+				<array>
+					<dict>
+						<key>value</key>
+						<string>text</string>
+						<key>required</key>
+						<true/>
+					</dict>
+				</array>
 			</dict>
 		</array>
 	</dict>

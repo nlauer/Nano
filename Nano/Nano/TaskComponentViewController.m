@@ -14,16 +14,36 @@
 
 @implementation TaskComponentViewController
 
-- (BOOL)isCompleted {
-    return ![self.data[@"required"] boolValue] || [self performSelector:NSSelectorFromString(self.data[@"value"])];
+- (TaskComponentViewController *)initWithComponentData:(NSDictionary *)data {
+    self = [super init];
+    if( !self ) return nil;
+    
+    self.data = data;
+    self.values = data[@"values"];
+    
+    return self;
 }
 
-- (NSString *)shortcutValue {
-    if ([self performSelector:NSSelectorFromString(self.data[@"value"])]) {
-        return [self performSelector:NSSelectorFromString(self.data[@"value"])];
-    } else {
-        return [self performSelector:NSSelectorFromString([self.data[@"value"] stringByAppendingString:@"Default"])];
+- (BOOL)isCompleted {
+    BOOL isCompleted = YES;
+    for (NSDictionary *dict in self.values) {
+        isCompleted = isCompleted &&
+            (![dict[@"required"] boolValue]
+             || [self performSelector:NSSelectorFromString(dict[@"value"])]);
     }
+    return isCompleted;
+}
+
+- (NSArray *)shortcutValues {
+    NSMutableArray *shortcutValues = [[NSMutableArray alloc] initWithCapacity:self.values.count];
+    for (NSDictionary *dict in self.values) {
+        if ([self performSelector:NSSelectorFromString(dict[@"value"])]) {
+            [shortcutValues addObject:[self performSelector:NSSelectorFromString(dict[@"value"])]];
+        } else {
+            [shortcutValues addObject:[self performSelector:NSSelectorFromString([dict[@"value"] stringByAppendingString:@"Default"])]];
+        }
+    }
+    return shortcutValues;
 }
 
 @end

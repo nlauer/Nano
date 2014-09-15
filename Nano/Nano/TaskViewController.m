@@ -65,9 +65,9 @@
 }
 
 - (Shortcut *)formShortcut {
-    NSMutableArray *args = [[NSMutableArray alloc] initWithCapacity:self.components.count];
+    NSMutableArray *args = [[NSMutableArray alloc] init];
     for (int i = 0; i < self.components.count; i++) {
-        args[i] = [self.componentVCs[i] shortcutValue];
+        [args addObjectsFromArray:[self.componentVCs[i] shortcutValues]];
     }
     
     return [Shortcut shortcutForSelectorString:self.shortcutSelectorString WithArgs:args];

@@ -38,7 +38,7 @@
 }
 
 -(Shortcut *)formShortcut {
-    return [Shortcut smsShortcutForNumber:self.recipientField.text name:self.nameField.text];
+    return [Shortcut smsShortcutForNumber:self.recipientField.text name:self.nameField.text message:nil];
 }
 
 -(void)dismissKeyboard {

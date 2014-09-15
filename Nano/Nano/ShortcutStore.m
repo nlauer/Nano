@@ -39,7 +39,7 @@
             [self addShortcutToStore:[Shortcut rdioShortcutForArtistName:@"Moonbeam"]];
             [self addShortcutToStore:[Shortcut yoShortcutForRecipient:@"jlauer"]];
 //            [self addShortcutToStore:[Shortcut venmoShortcutWithRecipient:@"jlauer" amount:1 message:@"payback"]];
-            [self addShortcutToStore:[Shortcut smsShortcutForNumber:@"4159351717" name:@"Josh Lauer"]];
+            [self addShortcutToStore:[Shortcut smsShortcutForNumber:@"4159351717" name:@"Josh Lauer" message:nil]];
             [self addShortcutToStore:[Shortcut uberShortcutFrom:@"" to:@"Home"]];
             [self addShortcutToStore:[Shortcut googleMapsShortcutFrom:@"" to:@"1333 Gough Street, San Francisco, CA" mode:@"transit"]];
         }

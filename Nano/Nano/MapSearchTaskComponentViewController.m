@@ -15,11 +15,10 @@
 
 @implementation MapSearchTaskComponentViewController
 
-- (UIViewController *)initWithComponentData:(NSDictionary *)data {
-    self = [super init];
+- (MapSearchTaskComponentViewController *)initWithComponentData:(NSDictionary *)data {
+    self = [super initWithComponentData:data];
     if( !self ) return nil;
     
-    self.data = data;
     self.leftTitle = data[@"leftTitle"];
     self.searchPlaceholder = data[@"placeholder"];
     

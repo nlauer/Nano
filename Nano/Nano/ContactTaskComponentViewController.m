@@ -14,11 +14,10 @@
 
 @implementation ContactTaskComponentViewController
 
-- (UIViewController *)initWithComponentData:(NSDictionary *)data {
-    self = [super init];
+- (ContactTaskComponentViewController *)initWithComponentData:(NSDictionary *)data {
+    self = [super initWithComponentData:data];
     if( !self ) return nil;
     
-    self.data = data;
     self.leftTitle = data[@"leftTitle"];
     
     return self;

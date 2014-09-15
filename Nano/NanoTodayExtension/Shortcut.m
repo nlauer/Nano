@@ -76,19 +76,24 @@
     return [NSURL URLWithString:[[NSString stringWithFormat:@"uber://?action=setPickup&pickup[formatted_address]=%@&[formatted_address]=%@", from, to] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 }
 
-+ (Shortcut *)smsShortcutForNumber:(NSString *)number name:(NSString *)name
++ (Shortcut *)smsShortcutForNumber:(NSString *)number name:(NSString *)name message:(NSString *)message
 {
     Shortcut *shortcut = [[Shortcut alloc] init];
     shortcut.name = [NSString stringWithFormat:@"Text Message %@", name];
+    shortcut.message = message;
     shortcut.icon = @"imessage";
-    shortcut.url = [self smsURLForPhoneNumber:number];
+    shortcut.url = [self smsURLForPhoneNumber:number message:message];
 
     return shortcut;
 }
 
-+ (NSURL *)smsURLForPhoneNumber:(NSString *)number
++ (NSURL *)smsURLForPhoneNumber:(NSString *)number message:(NSString *)message
 {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"sms:%@", number]];
+    NSString *url = [NSString stringWithFormat:@"sms:%@", number];
+    if (message) {
+        url = [url stringByAppendingString:[NSString stringWithFormat:@";body=%@", message]];
+    }
+    return [NSURL URLWithString:url];
 }
 
 + (Shortcut *)yelpShortcutForSearch:(NSString *)search
