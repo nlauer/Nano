@@ -77,4 +77,16 @@
     [sharedDefaults synchronize];
 }
 
+- (void)removeAllShortcuts {
+    [self.shortcuts removeAllObjects];
+    NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:self.shortcuts];
+    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.lauer.NanoExtension"];
+    [sharedDefaults setObject:encodedObject forKey:@"shortcuts"];
+    [sharedDefaults synchronize];
+}
+
+- (NSArray *)getSharedShortcuts {
+    return self.shortcuts;
+}
+
 @end

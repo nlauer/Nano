@@ -4,10 +4,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GoogleMapsTaskSearchViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController">
             <connections>
-                <outlet property="searchBar" destination="IIi-uN-Qnd" id="tCH-Sp-n7Z"/>
-                <outlet property="searchDisplayController" destination="5n2-NQ-jrp" id="geY-Nb-P8p"/>
+                <outlet property="tableView" destination="NgP-ML-eY8" id="XuP-px-0GS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,27 +15,22 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IIi-uN-Qnd">
+                <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K7m-fX-CpJ">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                    <textInputTraits key="textInputTraits"/>
+                </navigationBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="NgP-ML-eY8">
+                    <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
-                        <outlet property="delegate" destination="-1" id="GKo-li-Gqk"/>
+                        <outlet property="dataSource" destination="-1" id="WCY-Pb-uDf"/>
+                        <outlet property="delegate" destination="-1" id="fV5-xO-eA6"/>
                     </connections>
-                </searchBar>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
-        <searchDisplayController id="5n2-NQ-jrp">
-            <connections>
-                <outlet property="delegate" destination="-1" id="jc5-j3-wYD"/>
-                <outlet property="searchBar" destination="IIi-uN-Qnd" id="vDH-1E-jnO"/>
-                <outlet property="searchContentsController" destination="-1" id="pV4-p9-2V9"/>
-                <outlet property="searchResultsDataSource" destination="-1" id="uJ0-aO-RYZ"/>
-                <outlet property="searchResultsDelegate" destination="-1" id="jYA-iY-vW9"/>
-            </connections>
-        </searchDisplayController>
     </objects>
 </document>

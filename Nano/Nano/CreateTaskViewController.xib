@@ -31,6 +31,9 @@
                             </state>
                             <state key="selected" image="profile-pressed"/>
                             <state key="highlighted" image="profile-pressed"/>
+                            <connections>
+                                <action selector="profileButtonClicked:" destination="-1" eventType="touchUpInside" id="LCe-Qd-thf"/>
+                            </connections>
                         </button>
                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U3w-zP-iUV" customClass="iCarousel">
                             <rect key="frame" x="0.0" y="44" width="320" height="94"/>

@@ -11,6 +11,7 @@
 #import "ShortcutStore.h"
 #import "TaskViewController.h"
 #import "EditTaskViewController.h"
+#import "ProfileViewController.h"
 
 @interface CreateTaskViewController ()
 
@@ -43,6 +44,16 @@
     }
 
     [self loadTaskVCForAppAtIndex:0 WithRefresh:NO];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 #pragma mark -
@@ -126,9 +137,6 @@
 }
 
 - (IBAction)createNewButtonClicked:(id)sender {
-    EditTaskViewController *editvc = [[EditTaskViewController alloc] init];
-    editvc.shortcut = self.shortcut;
-    [self presentViewController:editvc animated:YES completion:nil];
     [self refreshCurrentTask];
     [self.successLabel setHidden:YES];
     [self.createNewButton setHidden:YES];
@@ -136,6 +144,12 @@
 
 - (IBAction)downloadAppButtonClicked:(id)sender {
     [self.currentTaskVC openInAppStore];
+}
+
+- (IBAction)profileButtonClicked:(id)sender {
+    ProfileViewController *profileVC = [[ProfileViewController alloc] init];
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    [self.navigationController pushViewController:profileVC animated:YES];
 }
 
 -(void)rerenderButtons{

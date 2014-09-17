@@ -55,7 +55,7 @@
         to = [to stringByReplacingCharactersInRange:NSMakeRange(firstComma.location, to.length - firstComma.location) withString:@""];
     }
     shortcut.name = [NSString stringWithFormat:@"%@ to %@", [mode capitalizedString], to];
-    shortcut.icon = @"google";
+    shortcut.icon = @"gmaps";
     shortcut.url = [self googleMapsURLFrom:from to:to mode:mode];
     NSLog(@"%@", shortcut.url);
     return shortcut;

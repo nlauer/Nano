@@ -36,6 +36,8 @@
 		6295D70A19BC718C00254B0E /* YelpTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6295D70819BC718C00254B0E /* YelpTaskViewController.xib */; };
 		6295D70F19BC727500254B0E /* IMessageTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6295D70D19BC727500254B0E /* IMessageTaskViewController.m */; };
 		6295D71019BC727500254B0E /* IMessageTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6295D70E19BC727500254B0E /* IMessageTaskViewController.xib */; };
+		62AF105C19CA223000ACD003 /* ShortcutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 62AF105A19CA223000ACD003 /* ShortcutTableViewCell.m */; };
+		62AF105D19CA223000ACD003 /* ShortcutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62AF105B19CA223000ACD003 /* ShortcutTableViewCell.xib */; };
 		62B1349419BC0258009C784F /* GoogleMapsTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62B1349319BC0258009C784F /* GoogleMapsTaskViewController.xib */; };
 		62B1349819BC0B49009C784F /* GoogleMapsTaskSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B1349619BC0B49009C784F /* GoogleMapsTaskSearchViewController.m */; };
 		62B1349919BC0B49009C784F /* GoogleMapsTaskSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62B1349719BC0B49009C784F /* GoogleMapsTaskSearchViewController.xib */; };
@@ -47,6 +49,8 @@
 		62C3C5E319BC9BF200469CF9 /* FBTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62C3C5E119BC9BF200469CF9 /* FBTaskViewController.xib */; };
 		62C3C5E819BC9C0D00469CF9 /* YoTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C3C5E619BC9C0D00469CF9 /* YoTaskViewController.m */; };
 		62C3C5E919BC9C0D00469CF9 /* YoTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62C3C5E719BC9C0D00469CF9 /* YoTaskViewController.xib */; };
+		62D2AD8919C920AB0080992D /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62D2AD8719C920AB0080992D /* ProfileViewController.m */; };
+		62D2AD8A19C920AB0080992D /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62D2AD8819C920AB0080992D /* ProfileViewController.xib */; };
 		8567004819BBA98D007DA4BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8567004719BBA98D007DA4BB /* main.m */; };
 		8567004B19BBA98D007DA4BB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8567004A19BBA98D007DA4BB /* AppDelegate.m */; };
 		8567005319BBA98D007DA4BB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8567005219BBA98D007DA4BB /* Images.xcassets */; };
@@ -57,7 +61,7 @@
 		8567007A19BBADAB007DA4BB /* NanoTodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8567006C19BBADAB007DA4BB /* NanoTodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		85E6F21519BBF8FE00C79EE0 /* Shortcut.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E6F21419BBF8FE00C79EE0 /* Shortcut.m */; };
 		85E6F21D19BC0E5F00C79EE0 /* fb.png in Resources */ = {isa = PBXBuildFile; fileRef = 85E6F21719BC0E5E00C79EE0 /* fb.png */; };
-		85E6F21E19BC0E5F00C79EE0 /* google.png in Resources */ = {isa = PBXBuildFile; fileRef = 85E6F21819BC0E5F00C79EE0 /* google.png */; };
+		85E6F21E19BC0E5F00C79EE0 /* gmaps.png in Resources */ = {isa = PBXBuildFile; fileRef = 85E6F21819BC0E5F00C79EE0 /* gmaps.png */; };
 		85E6F21F19BC0E5F00C79EE0 /* imessage.png in Resources */ = {isa = PBXBuildFile; fileRef = 85E6F21919BC0E5F00C79EE0 /* imessage.png */; };
 		85E6F22019BC0E5F00C79EE0 /* screen-mock.png in Resources */ = {isa = PBXBuildFile; fileRef = 85E6F21A19BC0E5F00C79EE0 /* screen-mock.png */; };
 		85E6F22119BC0E5F00C79EE0 /* venmo.png in Resources */ = {isa = PBXBuildFile; fileRef = 85E6F21B19BC0E5F00C79EE0 /* venmo.png */; };
@@ -151,6 +155,9 @@
 		6295D70C19BC727500254B0E /* IMessageTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMessageTaskViewController.h; sourceTree = "<group>"; };
 		6295D70D19BC727500254B0E /* IMessageTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMessageTaskViewController.m; sourceTree = "<group>"; };
 		6295D70E19BC727500254B0E /* IMessageTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IMessageTaskViewController.xib; sourceTree = "<group>"; };
+		62AF105919CA223000ACD003 /* ShortcutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShortcutTableViewCell.h; sourceTree = "<group>"; };
+		62AF105A19CA223000ACD003 /* ShortcutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShortcutTableViewCell.m; sourceTree = "<group>"; };
+		62AF105B19CA223000ACD003 /* ShortcutTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShortcutTableViewCell.xib; sourceTree = "<group>"; };
 		62B1349319BC0258009C784F /* GoogleMapsTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GoogleMapsTaskViewController.xib; sourceTree = "<group>"; };
 		62B1349519BC0B49009C784F /* GoogleMapsTaskSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleMapsTaskSearchViewController.h; sourceTree = "<group>"; };
 		62B1349619BC0B49009C784F /* GoogleMapsTaskSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleMapsTaskSearchViewController.m; sourceTree = "<group>"; };
@@ -168,6 +175,9 @@
 		62C3C5E619BC9C0D00469CF9 /* YoTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YoTaskViewController.m; sourceTree = "<group>"; };
 		62C3C5E719BC9C0D00469CF9 /* YoTaskViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YoTaskViewController.xib; sourceTree = "<group>"; };
 		62C3C5F019BF674600469CF9 /* TaskViewControllerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskViewControllerProtocol.h; sourceTree = "<group>"; };
+		62D2AD8619C920AB0080992D /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		62D2AD8719C920AB0080992D /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		62D2AD8819C920AB0080992D /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		70B00AEE4C8E4CA7B5E228CF /* Pods-Nano.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nano.xcconfig"; path = "Pods/Pods-Nano.xcconfig"; sourceTree = "<group>"; };
 		8567004219BBA98B007DA4BB /* Nano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nano.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8567004619BBA98D007DA4BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -189,7 +199,7 @@
 		85E6F21319BBF8FE00C79EE0 /* Shortcut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Shortcut.h; path = NanoTodayExtension/Shortcut.h; sourceTree = SOURCE_ROOT; };
 		85E6F21419BBF8FE00C79EE0 /* Shortcut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Shortcut.m; path = NanoTodayExtension/Shortcut.m; sourceTree = SOURCE_ROOT; };
 		85E6F21719BC0E5E00C79EE0 /* fb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb.png; sourceTree = "<group>"; };
-		85E6F21819BC0E5F00C79EE0 /* google.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = google.png; sourceTree = "<group>"; };
+		85E6F21819BC0E5F00C79EE0 /* gmaps.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gmaps.png; sourceTree = "<group>"; };
 		85E6F21919BC0E5F00C79EE0 /* imessage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imessage.png; sourceTree = "<group>"; };
 		85E6F21A19BC0E5F00C79EE0 /* screen-mock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screen-mock.png"; sourceTree = "<group>"; };
 		85E6F21B19BC0E5F00C79EE0 /* venmo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = venmo.png; sourceTree = "<group>"; };
@@ -436,6 +446,19 @@
 			name = Tasks;
 			sourceTree = "<group>";
 		};
+		62D2AD8B19C920B00080992D /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				62D2AD8619C920AB0080992D /* ProfileViewController.h */,
+				62D2AD8719C920AB0080992D /* ProfileViewController.m */,
+				62D2AD8819C920AB0080992D /* ProfileViewController.xib */,
+				62AF105919CA223000ACD003 /* ShortcutTableViewCell.h */,
+				62AF105A19CA223000ACD003 /* ShortcutTableViewCell.m */,
+				62AF105B19CA223000ACD003 /* ShortcutTableViewCell.xib */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
 		8567003919BBA988007DA4BB = {
 			isa = PBXGroup;
 			children = (
@@ -465,6 +488,7 @@
 				6295D6FE19BC6FDC00254B0E /* Create Task */,
 				62C3C5EF19BEADE600469CF9 /* Tasks */,
 				621F106E19C6B0AC00B038A6 /* Edit Task */,
+				62D2AD8B19C920B00080992D /* Profile */,
 				6295D6FF19BC6FF800254B0E /* Shortcut */,
 				6295D6FB19BC6FA700254B0E /* Map Search */,
 				627FF4B619C35CC100984C60 /* Old files */,
@@ -546,7 +570,7 @@
 				85E6F22519BC2FF800C79EE0 /* rdio.png */,
 				85E6F22319BC274D00C79EE0 /* uber.png */,
 				85E6F21719BC0E5E00C79EE0 /* fb.png */,
-				85E6F21819BC0E5F00C79EE0 /* google.png */,
+				85E6F21819BC0E5F00C79EE0 /* gmaps.png */,
 				85E6F21919BC0E5F00C79EE0 /* imessage.png */,
 				85E6F21A19BC0E5F00C79EE0 /* screen-mock.png */,
 				85E6F21B19BC0E5F00C79EE0 /* venmo.png */,
@@ -684,6 +708,7 @@
 				6295D70419BC705300254B0E /* VenmoTaskViewController.xib in Resources */,
 				627FF4AB19C25F9D00984C60 /* MapOptionsTaskComponentViewController.xib in Resources */,
 				627FF4C019C4D6FC00984C60 /* TextTaskComponentViewController.xib in Resources */,
+				62AF105D19CA223000ACD003 /* ShortcutTableViewCell.xib in Resources */,
 				62B1349919BC0B49009C784F /* GoogleMapsTaskSearchViewController.xib in Resources */,
 				620B23E219BC25B4004B4804 /* CreateTaskViewController.xib in Resources */,
 				62C3C5DD19BC9BD800469CF9 /* RdioTaskViewController.xib in Resources */,
@@ -693,6 +718,7 @@
 				621F106D19C6B0A700B038A6 /* EditTaskViewController.xib in Resources */,
 				627FF49E19C2468A00984C60 /* ContactTaskComponentViewController.xib in Resources */,
 				62C3C5E319BC9BF200469CF9 /* FBTaskViewController.xib in Resources */,
+				62D2AD8A19C920AB0080992D /* ProfileViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -714,7 +740,7 @@
 				85E6F22219BC0E5F00C79EE0 /* yelp.png in Resources */,
 				85E6F22119BC0E5F00C79EE0 /* venmo.png in Resources */,
 				85E6F21F19BC0E5F00C79EE0 /* imessage.png in Resources */,
-				85E6F21E19BC0E5F00C79EE0 /* google.png in Resources */,
+				85E6F21E19BC0E5F00C79EE0 /* gmaps.png in Resources */,
 				85E6F21D19BC0E5F00C79EE0 /* fb.png in Resources */,
 				85E6F22019BC0E5F00C79EE0 /* screen-mock.png in Resources */,
 			);
@@ -790,6 +816,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62AF105C19CA223000ACD003 /* ShortcutTableViewCell.m in Sources */,
 				627FF4BA19C36DD600984C60 /* MapSearchTaskComponentViewController.m in Sources */,
 				627FF4C419C4E5AB00984C60 /* TaskComponentViewController.m in Sources */,
 				620B23E119BC25B4004B4804 /* CreateTaskViewController.m in Sources */,
@@ -798,6 +825,7 @@
 				62B9265419BBEB82003A2533 /* GoogleMapsTaskViewController.m in Sources */,
 				6295D6F919BC6C0B00254B0E /* UberTaskViewController.m in Sources */,
 				62C3C5E819BC9C0D00469CF9 /* YoTaskViewController.m in Sources */,
+				62D2AD8919C920AB0080992D /* ProfileViewController.m in Sources */,
 				62C3C5DC19BC9BD800469CF9 /* RdioTaskViewController.m in Sources */,
 				627FF4BF19C4D6FC00984C60 /* TextTaskComponentViewController.m in Sources */,
 				6295D70919BC718C00254B0E /* YelpTaskViewController.m in Sources */,

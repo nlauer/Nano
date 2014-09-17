@@ -24,10 +24,20 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     CreateTaskViewController *viewController = [[CreateTaskViewController alloc] init];
-    self.window.rootViewController = viewController;
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    
+    UIColor *textColor = [UIColor colorWithRed:74.0f/255 green:74.0f/255 blue:74.0f/255 alpha:1.0f];
+    [[UINavigationBar appearance] setTintColor:textColor];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: textColor}];
+    [[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"back"]];
+    [[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"back"]];
+
+    self.window.rootViewController = navController;
     [self.window makeKeyAndVisible];
 
     [ShortcutStore sharedStore];
+    // uncomment for testing
+    [[ShortcutStore sharedStore] removeAllShortcuts];
     
     return YES;
 }

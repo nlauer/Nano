@@ -42,7 +42,7 @@
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    if ([self.data[@"value"] isEqualToString:@"currency"]) {
+    if ([self.data[@"values"][0][@"value"] isEqualToString:@"currency"]) {
         NSString *cleanCentString = [[textField.text
                                       componentsSeparatedByCharactersInSet:
                                       [[NSCharacterSet decimalDigitCharacterSet] invertedSet]]
