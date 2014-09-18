@@ -163,6 +163,8 @@
     [encoder encodeObject:self.name forKey:@"name"];
     [encoder encodeObject:self.message forKey:@"message"];
     [encoder encodeObject:[NSNumber numberWithUnsignedInteger:self.amount] forKey:@"amount"];
+    [encoder encodeObject:self.args forKey:@"args"];
+    [encoder encodeObject:self.data forKey:@"data"];
 }
 
 - (id)initWithCoder:(NSCoder *)decoder {
@@ -174,6 +176,8 @@
         self.name = [decoder decodeObjectForKey:@"name"];
         self.message = [decoder decodeObjectForKey:@"message"];
         self.amount = [[decoder decodeObjectForKey:@"amount"] unsignedIntegerValue];
+        self.args = [decoder decodeObjectForKey:@"args"];
+        self.data = [decoder decodeObjectForKey:@"data"];
     }
     return self;
 }
