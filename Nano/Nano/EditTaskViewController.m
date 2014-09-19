@@ -18,6 +18,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        self.title = self.shortcut.data[@"appName"];
     }
     return self;
 }
@@ -37,13 +38,15 @@
 }
 
 - (IBAction)updateButtonClicked:(id)sender {
+    [[ShortcutStore sharedStore] removeShortcutFromStore:self.shortcut];
     self.shortcut = [self.taskVC formShortcut];
     [[ShortcutStore sharedStore] addShortcutToStore:self.shortcut];
-    [self.successLabel setHidden:NO];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)deleteButtonClicked:(id)sender {
     [[ShortcutStore sharedStore] removeShortcutFromStore:self.shortcut];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)rerenderButtons{

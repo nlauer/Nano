@@ -8,7 +8,6 @@
             <connections>
                 <outlet property="containerView" destination="mHj-JL-UHC" id="18D-sH-4Vl"/>
                 <outlet property="deleteButton" destination="x4W-Vk-ve2" id="peQ-uu-J8i"/>
-                <outlet property="successLabel" destination="hET-tA-OdP" id="Sgd-wc-3q7"/>
                 <outlet property="updateButton" destination="hUt-Mb-FnO" id="0pk-mD-6mb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -49,12 +48,6 @@
                         <action selector="deleteButtonClicked:" destination="-1" eventType="touchUpInside" id="IhG-2f-uuU"/>
                     </connections>
                 </button>
-                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your shortcut has been updated!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hET-tA-OdP">
-                    <rect key="frame" x="42" y="380" width="238" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <color key="textColor" red="0.60784316059999999" green="0.6549019814" blue="0.69019609689999994" alpha="1" colorSpace="deviceRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
             <nil key="simulatedStatusBarMetrics"/>

@@ -23,8 +23,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *taskLabel;
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
-@property (weak, nonatomic) IBOutlet UIButton *createNewButton;
-@property (weak, nonatomic) IBOutlet UILabel *successLabel;
 @property (weak, nonatomic) IBOutlet UIButton *downloadAppButton;
 
 @property (strong, nonatomic) TaskViewController *currentTaskVC;

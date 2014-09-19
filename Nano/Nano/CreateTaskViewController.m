@@ -131,15 +131,10 @@
     self.shortcut = shortcut;
     [[ShortcutStore sharedStore] addShortcutToStore:shortcut];
     [self.submitButton setHidden:YES];
-    [self.successLabel setHidden:NO];
-    [self.createNewButton setHidden:NO];
     self.currentTaskVC.saved = YES;
-}
-
-- (IBAction)createNewButtonClicked:(id)sender {
+    [self pushProfile];
     [self refreshCurrentTask];
-    [self.successLabel setHidden:YES];
-    [self.createNewButton setHidden:YES];
+
 }
 
 - (IBAction)downloadAppButtonClicked:(id)sender {
@@ -147,6 +142,10 @@
 }
 
 - (IBAction)profileButtonClicked:(id)sender {
+    [self pushProfile];
+}
+
+- (void)pushProfile {
     ProfileViewController *profileVC = [[ProfileViewController alloc] init];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     [self.navigationController pushViewController:profileVC animated:YES];
@@ -155,12 +154,8 @@
 -(void)rerenderButtons{
     if (self.currentTaskVC.saved) {
         [self.submitButton setHidden:YES];
-        [self.successLabel setHidden:NO];
-        [self.createNewButton setHidden:NO];
     } else {
         [self.submitButton setHidden:![self.currentTaskVC shouldShowSubmit]];
-        [self.successLabel setHidden:YES];
-        [self.createNewButton setHidden:YES];
     }
     
     if (self.currentTaskVC.deviceHasApp) {

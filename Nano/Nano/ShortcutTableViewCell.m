@@ -16,11 +16,14 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 - (IBAction)enableToggled:(id)sender {
+    if ([self.enabledSwitch isOn]) {
+        // add shortcut to store
+    } else {
+        // remove shortcut from store
+    }
 }
 
 @end

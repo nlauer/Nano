@@ -10,6 +10,7 @@
 #import "ShortcutStore.h"
 #import "Shortcut.h"
 #import "ShortcutTableViewCell.h"
+#import "EditTaskViewController.h"
 
 @interface ProfileViewController ()
 
@@ -28,6 +29,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
 }
 
 #pragma mark UITableViewDelegate/DataSource methods
@@ -57,7 +63,11 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    EditTaskViewController *editVC = [[EditTaskViewController alloc] init];
+    editVC.shortcut = self.shortcuts[indexPath.row];
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    [self.navigationController pushViewController:editVC animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 @end

@@ -16,7 +16,6 @@
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 @property (weak, nonatomic) IBOutlet UIButton *updateButton;
 @property (weak, nonatomic) IBOutlet UIButton *deleteButton;
-@property (weak, nonatomic) IBOutlet UILabel *successLabel;
 
 @property (strong, nonatomic) TaskViewController *taskVC;
 @property (strong, nonatomic) Shortcut *shortcut;
