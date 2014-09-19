@@ -26,7 +26,7 @@
         [inv setArgument:&arg atIndex:2+i];
     }
     
-    Shortcut *shortcut;
+    __unsafe_unretained Shortcut *shortcut;
     [inv invoke];
     [inv getReturnValue:&shortcut];
     shortcut.args = args;
