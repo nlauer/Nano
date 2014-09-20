@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Shortcut.h"
+
 
 @interface ShortcutTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *actionLabel;
 @property (weak, nonatomic) IBOutlet UISwitch *enabledSwitch;
+
+@property (strong, nonatomic) Shortcut *shortcut;
 
 @end

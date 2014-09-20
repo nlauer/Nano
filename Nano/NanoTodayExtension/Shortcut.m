@@ -31,6 +31,7 @@
     [inv getReturnValue:&shortcut];
     shortcut.args = args;
     shortcut.data = data;
+    shortcut.enabled = YES;
     return shortcut;
 }
 

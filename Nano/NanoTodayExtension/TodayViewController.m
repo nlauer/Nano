@@ -58,7 +58,7 @@
 - (void)updateShortcutURLs
 {
     NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.lauer.NanoExtension"];
-    NSData *encodedObject = [sharedDefaults objectForKey:@"shortcuts"];
+    NSData *encodedObject = [sharedDefaults objectForKey:@"enabledShortcuts"];
     self.shortcutURLs = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
     self.preferredContentSize = CGSizeMake(0, 50*[self.shortcutURLs count]);
     self.tableView.bounds = CGRectMake(0, 0, 320, 50*[self.shortcutURLs count]);

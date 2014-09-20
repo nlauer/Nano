@@ -52,36 +52,54 @@
 {
     NSLog(@"Added shortcut with URL %@", shortcut.url);
     [self.shortcuts insertObject:shortcut atIndex:0];
-    if (self.shortcuts.count > 8) {
-        [self.shortcuts removeLastObject];
-    }
-    // TODO I get a bug here in the simulator whenever I try to add 2 shortcuts from the same VC
-    NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:self.shortcuts];
-    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.lauer.NanoExtension"];
-    [sharedDefaults setObject:encodedObject forKey:@"shortcuts"];
-    [sharedDefaults synchronize];
+    [self saveStore];
 }
 
 - (void)removeShortcutFromStore:(Shortcut *)shortcut
 {
-    for (Shortcut *oldShortcut in self.shortcuts) {
-        if ([shortcut isEqual:oldShortcut]) {
-            [self.shortcuts removeObject:shortcut];
-            break;
+    int index = [self.shortcuts indexOfObject:shortcut];
+    if (index != NSNotFound) {
+        [self.shortcuts removeObjectAtIndex:index];
+        [self saveStore];
+    } else {
+        NSLog(@"Shortcut not in store!");
+    }
+}
+
+- (void)updateShortcutInStore:(Shortcut *)oldShortcut To:(Shortcut *)newShortcut {
+    int index = [self.shortcuts indexOfObject:oldShortcut];
+    if (index != NSNotFound) {
+        self.shortcuts[index] = newShortcut;
+        [self saveStore];
+    } else {
+        NSLog(@"Shortcut not in store!");
+    }
+}
+
+- (void)saveStore {
+    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.lauer.NanoExtension"];
+    
+    NSData *encodedShortcuts = [NSKeyedArchiver archivedDataWithRootObject:self.shortcuts];
+    [sharedDefaults setObject:encodedShortcuts forKey:@"shortcuts"];
+    
+    NSMutableArray *enabledShortcuts = [[NSMutableArray alloc] init];
+    for (Shortcut *shortcut in self.shortcuts) {
+        if (shortcut.enabled) {
+            [enabledShortcuts addObject:shortcut];
+            if (enabledShortcuts.count >= 8) {
+                break;
+            }
         }
     }
+    NSData *encodedEnabledShortcuts = [NSKeyedArchiver archivedDataWithRootObject:enabledShortcuts];
+    [sharedDefaults setObject:encodedEnabledShortcuts forKey:@"enabledShortcuts"];
 
-    NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:self.shortcuts];
-    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.lauer.NanoExtension"];
-    [sharedDefaults setObject:encodedObject forKey:@"shortcuts"];
     [sharedDefaults synchronize];
 }
 
 - (void)removeAllShortcuts {
     [self.shortcuts removeAllObjects];
-    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.lauer.NanoExtension"];
-    [sharedDefaults setObject:nil forKey:@"shortcuts"];
-    [sharedDefaults synchronize];
+    [self saveStore];
 }
 
 - (NSArray *)getSharedShortcuts {

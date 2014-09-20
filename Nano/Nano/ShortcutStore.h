@@ -15,6 +15,7 @@
 + (id)sharedStore;
 - (void)addShortcutToStore:(Shortcut *)shortcut;
 - (void)removeShortcutFromStore:(Shortcut *)shortcut;
+- (void)updateShortcutInStore:(Shortcut *)oldShortcut To:(Shortcut *)newShortcut;
 - (void)removeAllShortcuts;
 - (NSArray *)getSharedShortcuts;
 

@@ -57,6 +57,8 @@
     Shortcut *shortcut = self.shortcuts[indexPath.row];
     cell.iconImageView.image = [UIImage imageNamed:[shortcut.icon stringByAppendingString:@"-profile"]];
     cell.actionLabel.text = shortcut.name;
+    cell.shortcut = shortcut;
+    [cell.enabledSwitch setOn:shortcut.enabled];
     
     return cell;
 

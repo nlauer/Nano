@@ -7,6 +7,7 @@
 //
 
 #import "ShortcutTableViewCell.h"
+#import "ShortcutStore.h"
 
 @implementation ShortcutTableViewCell
 
@@ -19,11 +20,13 @@
 }
 
 - (IBAction)enableToggled:(id)sender {
+    Shortcut *oldShortcut = self.shortcut;
     if ([self.enabledSwitch isOn]) {
-        // add shortcut to store
+        self.shortcut.enabled = YES;
     } else {
-        // remove shortcut from store
+        self.shortcut.enabled = NO;
     }
+    [[ShortcutStore sharedStore] updateShortcutInStore:oldShortcut To:self.shortcut];
 }
 
 @end

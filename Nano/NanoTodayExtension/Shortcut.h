@@ -18,6 +18,7 @@
 @property (strong, nonatomic) NSString *icon;
 @property (strong, nonatomic) NSArray *args;
 @property (strong, nonatomic) NSDictionary *data;
+@property (nonatomic) BOOL enabled;
 
 + (Shortcut *)shortcutForSelectorString:(NSString *)string
                                WithArgs:(NSArray *)args

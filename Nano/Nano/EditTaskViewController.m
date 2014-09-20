@@ -38,9 +38,9 @@
 }
 
 - (IBAction)updateButtonClicked:(id)sender {
-    [[ShortcutStore sharedStore] removeShortcutFromStore:self.shortcut];
+    Shortcut *oldShortcut = self.shortcut;
     self.shortcut = [self.taskVC formShortcut];
-    [[ShortcutStore sharedStore] addShortcutToStore:self.shortcut];
+    [[ShortcutStore sharedStore] updateShortcutInStore:oldShortcut To:self.shortcut];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
